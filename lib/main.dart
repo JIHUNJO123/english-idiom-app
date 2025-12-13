@@ -130,7 +130,7 @@ class EnglishVocabApp extends StatelessWidget {
         ),
         useMaterial3: false, // Material 2 사용 (shader 컴파일 문제 방지)
         appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -155,7 +155,7 @@ class EnglishVocabApp extends StatelessWidget {
         ),
         useMaterial3: true,
         appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
