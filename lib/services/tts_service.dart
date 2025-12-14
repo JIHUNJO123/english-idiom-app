@@ -17,8 +17,23 @@ class TtsService {
     if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
       _flutterTts = FlutterTts();
       _isSupported = true;
+      
+      // iOS에서 오디오 세션 설정
+      if (Platform.isIOS) {
+        await _flutterTts!.setSharedInstance(true);
+        await _flutterTts!.setIosAudioCategory(
+          IosTextToSpeechAudioCategory.ambient,
+          [
+            IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+            IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+            IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+          ],
+          IosTextToSpeechAudioMode.voicePrompt,
+        );
+      }
+      
       await _flutterTts!.setLanguage("en-US");
-      await _flutterTts!.setSpeechRate(0.5);
+      await _flutterTts!.setSpeechRate(Platform.isIOS ? 0.4 : 0.5);
       await _flutterTts!.setVolume(1.0);
     } else {
       _isSupported = false;
