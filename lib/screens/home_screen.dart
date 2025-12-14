@@ -23,12 +23,24 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _translatedDefinition;
   bool _isLoading = true;
   bool _isBannerAdLoaded = false;
+  String? _lastLanguage; // 마지막 로드된 언어 추적
 
   @override
   void initState() {
     super.initState();
     _loadTodayWord();
     _loadBannerAd();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // 언어 변경 감지하여 오늘의 단어 새로고침
+    final currentLanguage = TranslationService.instance.currentLanguage;
+    if (_lastLanguage != null && _lastLanguage != currentLanguage) {
+      _loadTodayWord();
+    }
+    _lastLanguage = currentLanguage;
   }
 
   Future<void> _loadBannerAd() async {
@@ -301,9 +313,9 @@ class _HomeScreenState extends State<HomeScreen> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
-      mainAxisSpacing: 16,
-      crossAxisSpacing: 16,
-      childAspectRatio: 0.95,
+      mainAxisSpacing: 12,
+      crossAxisSpacing: 12,
+      childAspectRatio: 1.3,
       children: [
         _buildMenuCard(
           icon: Icons.list_alt,
@@ -374,24 +386,33 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+          child: Row(
             children: [
-              Icon(icon, size: 52, color: color),
-              const SizedBox(height: 16),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+              Icon(icon, size: 36, color: color),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: TextStyle(color: Colors.grey[600], fontSize: 11),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                subtitle,
-                style: TextStyle(color: Colors.grey[600], fontSize: 13),
-                textAlign: TextAlign.center,
               ),
             ],
           ),

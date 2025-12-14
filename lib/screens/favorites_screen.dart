@@ -3,6 +3,7 @@ import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
 import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../utils/pos_helper.dart';
+import '../services/translation_service.dart';
 import 'word_detail_screen.dart';
 import 'favorites_flashcard_screen.dart';
 
@@ -15,7 +16,9 @@ class FavoritesScreen extends StatefulWidget {
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
   List<Word> _favorites = [];
+  Map<int, String> _translatedDefinitions = {}; // 번역된 정의 캐시
   bool _isLoading = true;
+  bool _showNativeLanguage = true; // 모국어/영어 전환 (기본: 모국어)
 
   @override
   void initState() {
@@ -25,8 +28,26 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
 
   Future<void> _loadFavorites() async {
     final favorites = await DatabaseHelper.instance.getFavorites();
+
+    // 번역 적용
+    final translationService = TranslationService.instance;
+    await translationService.init();
+
+    Map<int, String> translations = {};
+    if (translationService.needsTranslation) {
+      for (var word in favorites) {
+        final translated = await translationService.translate(
+          word.definition,
+          word.id,
+          'definition',
+        );
+        translations[word.id] = translated;
+      }
+    }
+
     setState(() {
       _favorites = favorites;
+      _translatedDefinitions = translations;
       _isLoading = false;
     });
   }
@@ -78,6 +99,22 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         title: Text(l10n.favorites),
         centerTitle: true,
         actions: [
+          // 영어/모국어 전환 버튼
+          if (_favorites.isNotEmpty &&
+              TranslationService.instance.needsTranslation)
+            IconButton(
+              icon: Icon(
+                _showNativeLanguage ? Icons.translate : Icons.language,
+                color:
+                    _showNativeLanguage ? Theme.of(context).primaryColor : null,
+              ),
+              tooltip: _showNativeLanguage ? 'English' : l10n.language,
+              onPressed: () {
+                setState(() {
+                  _showNativeLanguage = !_showNativeLanguage;
+                });
+              },
+            ),
           if (_favorites.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.style),
@@ -251,7 +288,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              word.definition,
+                              _showNativeLanguage
+                                  ? (_translatedDefinitions[word.id] ??
+                                      word.definition)
+                                  : word.definition,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),

@@ -29,6 +29,7 @@ class _WordListScreenState extends State<WordListScreen> {
   bool _isBannerAdLoaded = false;
   int _flashcardViewCount = 0; // 플래시카드 전면 광고용 카운터
   double _wordFontSize = 1.0; // 단어 폰트 크기 배율
+  bool _showNativeLanguage = true; // 모국어/영어 전환 (기본: 모국어)
 
   // 리스트 모드용 스크롤 컨트롤러
   final ScrollController _listScrollController = ScrollController();
@@ -262,6 +263,21 @@ class _WordListScreenState extends State<WordListScreen> {
         title: Text(title),
         centerTitle: true,
         actions: [
+          // 영어/모국어 전환 버튼
+          if (_words.isNotEmpty && TranslationService.instance.needsTranslation)
+            IconButton(
+              icon: Icon(
+                _showNativeLanguage ? Icons.translate : Icons.language,
+                color:
+                    _showNativeLanguage ? Theme.of(context).primaryColor : null,
+              ),
+              tooltip: _showNativeLanguage ? 'English' : l10n.language,
+              onPressed: () {
+                setState(() {
+                  _showNativeLanguage = !_showNativeLanguage;
+                });
+              },
+            ),
           // 정렬 옵션
           if (_words.isNotEmpty)
             PopupMenuButton<String>(
@@ -446,7 +462,7 @@ class _WordListScreenState extends State<WordListScreen> {
                 ),
               ),
               subtitle:
-                  isLoading
+                  isLoading && _showNativeLanguage
                       ? Row(
                         children: [
                           SizedBox(
@@ -468,7 +484,9 @@ class _WordListScreenState extends State<WordListScreen> {
                         ],
                       )
                       : Text(
-                        translatedDef ?? word.definition,
+                        _showNativeLanguage
+                            ? (translatedDef ?? word.definition)
+                            : word.definition,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 13, color: Colors.grey[600]),

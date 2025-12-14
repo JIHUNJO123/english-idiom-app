@@ -6,6 +6,7 @@ import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 import 'screens/home_screen.dart';
 import 'services/translation_service.dart';
 import 'services/ad_service.dart';
@@ -14,8 +15,12 @@ import 'services/purchase_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Windows, Linux, macOS에서 sqflite 초기화 (웹 제외)
-  if (!kIsWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+  // 플랫폼별 sqflite 초기화
+  if (kIsWeb) {
+    // 웹에서 sqflite 초기화
+    databaseFactory = databaseFactoryFfiWeb;
+  } else if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    // Windows, Linux, macOS에서 sqflite 초기화
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   }

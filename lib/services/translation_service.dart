@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui' as ui;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../db/database_helper.dart';
@@ -69,7 +70,25 @@ class TranslationService {
   /// 언어 설정 초기화
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
-    _currentLanguage = prefs.getString('nativeLanguage') ?? 'en';
+    final savedLanguage = prefs.getString('nativeLanguage');
+
+    if (savedLanguage != null) {
+      // 저장된 언어가 있으면 사용
+      _currentLanguage = savedLanguage;
+    } else {
+      // 저장된 언어가 없으면 기기 언어 자동 감지
+      final deviceLocale = ui.PlatformDispatcher.instance.locale;
+      final deviceLangCode = deviceLocale.languageCode;
+
+      // 지원하는 언어인지 확인
+      final isSupported = supportedLanguages.any(
+        (lang) => lang.code == deviceLangCode,
+      );
+      _currentLanguage = isSupported ? deviceLangCode : 'en';
+
+      // 자동 감지된 언어 저장
+      await prefs.setString('nativeLanguage', _currentLanguage);
+    }
   }
 
   /// 모국어 설정
