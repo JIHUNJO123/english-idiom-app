@@ -12,7 +12,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?“… Salita Ngayong Araw';
+  String get todayWord => 'ðŸ“… Salita Ngayong Araw';
 
   @override
   String get learning => 'Pag-aaral';
@@ -60,10 +60,10 @@ class AppLocalizationsTl extends AppLocalizations {
   String get removedFromFavorites => 'Tinanggal sa mga paborito';
 
   @override
-  String get definition => '?“– Kahulugan';
+  String get definition => 'ðŸ“– Kahulugan';
 
   @override
-  String get example => '?’¬ Halimbawa';
+  String get example => 'ðŸ’¬ Halimbawa';
 
   @override
   String get translating => 'Nagsasalin...';
@@ -274,13 +274,13 @@ class AppLocalizationsTl extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Salita?’Kahulugan';
+  String get wordToMeaningMode => 'Salitaâ†’Kahulugan';
 
   @override
-  String get meaningToWordMode => 'Kahulugan?’Salita';
+  String get meaningToWordMode => 'Kahuluganâ†’Salita';
 
   @override
-  String get quizComplete => '?Ž‰ Tapos na ang Quiz!';
+  String get quizComplete => 'ðŸŽ‰ Tapos na ang Quiz!';
 
   @override
   String correctAnswers(int percentage) {
@@ -297,16 +297,16 @@ class AppLocalizationsTl extends AppLocalizations {
   String get quizCompleteMessage => 'Tapos na ang Quiz!';
 
   @override
-  String get excellent => 'Napakahusay! ?ŒŸ';
+  String get excellent => 'Napakahusay! ðŸŒŸ';
 
   @override
-  String get greatJob => 'Magaling! ?‘';
+  String get greatJob => 'Magaling! ðŸ‘';
 
   @override
-  String get goodStart => 'Magandang Simula! ?’ª';
+  String get goodStart => 'Magandang Simula! ðŸ’ª';
 
   @override
-  String get keepPracticing => 'Magpatuloy sa Pagsasanay! ?“š';
+  String get keepPracticing => 'Magpatuloy sa Pagsasanay! ðŸ“š';
 
   @override
   String questionProgress(int current, int total) {
@@ -357,4 +357,25 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get buy => 'Bumili';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

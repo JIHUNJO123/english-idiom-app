@@ -403,7 +403,6 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
             child,
           ],
         ),
-        ),
       ),
     );
   }

@@ -12,31 +12,31 @@ class AppLocalizationsBn extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� আজকে�?শব্দ';
+  String get todayWord => '📅 আজকের শব্দ';
 
   @override
   String get learning => 'শেখা';
 
   @override
-  String get levelLearning => 'স্তর অনুযায়�? শেখা';
+  String get levelLearning => 'স্তর অনুযায়ী শেখা';
 
   @override
   String get allWords => 'সব শব্দ';
 
   @override
-  String get viewAllWords => 'সব শব্দ দেখু�?;
+  String get viewAllWords => 'সব শব্দ দেখুন';
 
   @override
-  String get favorites => 'পছন্দে�?;
+  String get favorites => 'পছন্দের';
 
   @override
   String get savedWords => 'সংরক্ষিত শব্দ';
 
   @override
-  String get flashcard => 'ফ্ল্�?��শকার্ড';
+  String get flashcard => 'ফ্ল্যাশকার্ড';
 
   @override
-  String get cardLearning => 'কার্�?দি�?���?শিখু�?;
+  String get cardLearning => 'কার্ড দিয়ে শিখুন';
 
   @override
   String get search => 'খুঁজুন';
@@ -48,31 +48,31 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settings => 'সেটিংস';
 
   @override
-  String get noWords => 'কোনো শব্দ পাওয়া �?���?��নি';
+  String get noWords => 'কোনো শব্দ পাওয়া যায়নি';
 
   @override
-  String get cannotLoadWords => 'শব্দ লো�?কর�?�?��চ্ছে না';
+  String get cannotLoadWords => 'শব্দ লোড করা যাচ্ছে না';
 
   @override
-  String get addedToFavorites => 'পছন্দে �?���?কর�?হয়েছে';
+  String get addedToFavorites => 'পছন্দে যোগ করা হয়েছে';
 
   @override
-  String get removedFromFavorites => 'পছন্�?�?��কে সরান�?হয়েছে';
+  String get removedFromFavorites => 'পছন্দ থেকে সরানো হয়েছে';
 
   @override
-  String get definition => '?�� সংজ্ঞা';
+  String get definition => '📖 সংজ্ঞা';
 
   @override
-  String get example => '?�� উদাহরণ';
+  String get example => '💬 উদাহরণ';
 
   @override
-  String get translating => 'অনুবাদ হচ্ছ�?..';
+  String get translating => 'অনুবাদ হচ্ছে...';
 
   @override
-  String get listenPronunciation => 'উচ্চার�?শুনু�?;
+  String get listenPronunciation => 'উচ্চারণ শুনুন';
 
   @override
-  String get markAsLearned => 'শেখা হিসেবে চিহ্নি�?করুন';
+  String get markAsLearned => 'শেখা হিসেবে চিহ্নিত করুন';
 
   @override
   String get previous => 'আগের';
@@ -81,7 +81,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get next => 'পরের';
 
   @override
-  String get pronunciation => 'উচ্চার�?;
+  String get pronunciation => 'উচ্চারণ';
 
   @override
   String cardCount(int current, int total) {
@@ -89,22 +89,22 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => 'উল্টাত�?ট্�?���?করুন';
+  String get tapToFlip => 'উল্টাতে ট্যাপ করুন';
 
   @override
-  String get levelA1 => 'প্রা�?��িক �?;
+  String get levelA1 => 'প্রাথমিক ১';
 
   @override
-  String get levelA2 => 'প্রা�?��িক �?;
+  String get levelA2 => 'প্রাথমিক ২';
 
   @override
-  String get levelB1 => '�?��্যবর্তী �?;
+  String get levelB1 => 'মধ্যবর্তী ১';
 
   @override
-  String get levelB2 => '�?��্যবর্তী �?;
+  String get levelB2 => 'মধ্যবর্তী ২';
 
   @override
-  String get levelC1 => 'উন্ন�?;
+  String get levelC1 => 'উন্নত';
 
   @override
   String levelWords(String level) {
@@ -112,152 +112,152 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get flashcardMode => 'ফ্ল্�?��শকার্ড �?���?;
+  String get flashcardMode => 'ফ্ল্যাশকার্ড মোড';
 
   @override
-  String get listMode => 'তালিকা �?���?;
+  String get listMode => 'তালিকা মোড';
 
   @override
-  String get language => '�?��ষা';
+  String get language => 'ভাষা';
 
   @override
-  String get selectLanguage => 'আপনা�?�?��ষা নির্বাচন করুন';
+  String get selectLanguage => 'আপনার ভাষা নির্বাচন করুন';
 
   @override
   String languageChanged(String language) {
-    return '�?��ষা $language �?পরিবর্তি�?হয়েছে';
+    return 'ভাষা $language এ পরিবর্তিত হয়েছে';
   }
 
   @override
   String get translationInfo => 'অনুবাদ তথ্য';
 
   @override
-  String get translationInfoDesc => 'শব্দ দেখা�?সম�?�� অনুবাদ স্বয়ংক্রি�?���?��বে ডাউনলো�?হবে। ডাউনলোডে�?পর�?অফলাইন ব্�?��হারে�?জন্য স্�?��ন�?�?���?��বে সংরক্ষিত �?��কবে।';
+  String get translationInfoDesc => 'শব্দ দেখার সময় অনুবাদ স্বয়ংক্রিয়ভাবে ডাউনলোড হবে। ডাউনলোডের পরে অফলাইন ব্যবহারের জন্য স্থানীয়ভাবে সংরক্ষিত থাকবে।';
 
   @override
-  String get ok => 'ঠি�?আছ�?;
+  String get ok => 'ঠিক আছে';
 
   @override
-  String get darkMode => 'ডার্�?�?���?;
+  String get darkMode => 'ডার্ক মোড';
 
   @override
-  String get speechRate => 'কথার গত�?;
+  String get speechRate => 'কথার গতি';
 
   @override
-  String get notifications => 'বিজ্ঞপ্ত�?;
+  String get notifications => 'বিজ্ঞপ্তি';
 
   @override
-  String get dailyReminder => 'দৈনি�?রি�?��ইন্ডার';
+  String get dailyReminder => 'দৈনিক রিমাইন্ডার';
 
   @override
   String get about => 'সম্পর্কে';
 
   @override
-  String get version => 'সংস্কর�?;
+  String get version => 'সংস্করণ';
 
   @override
-  String get developer => 'ডে�?��লপার';
+  String get developer => 'ডেভেলপার';
 
   @override
   String get searchHint => 'শব্দ খুঁজুন...';
 
   @override
-  String get noSearchResults => 'কোনো ফলাফ�?পাওয়া �?���?��নি';
+  String get noSearchResults => 'কোনো ফলাফল পাওয়া যায়নি';
 
   @override
   String get typeToSearch => 'শব্দ খুঁজতে টাইপ করুন';
 
   @override
-  String get noFavorites => 'এখনো কোনো পছন্�?নে�?;
+  String get noFavorites => 'এখনো কোনো পছন্দ নেই';
 
   @override
-  String get addFavoritesHint => 'হার্�?আইকন�?ট্�?���?কর�?শব্দ পছন্দে �?���?করুন';
+  String get addFavoritesHint => 'হার্ট আইকনে ট্যাপ করে শব্দ পছন্দে যোগ করুন';
 
   @override
-  String get posNoun => 'বিশেষ্�?;
+  String get posNoun => 'বিশেষ্য';
 
   @override
-  String get posVerb => 'ক্রি�?���?;
+  String get posVerb => 'ক্রিয়া';
 
   @override
   String get posAdjective => 'বিশেষণ';
 
   @override
-  String get posAdverb => 'ক্রি�?���?বিশেষণ';
+  String get posAdverb => 'ক্রিয়া বিশেষণ';
 
   @override
-  String get posPronoun => 'সর্বনা�?;
+  String get posPronoun => 'সর্বনাম';
 
   @override
-  String get posPreposition => 'অব্য�?��';
+  String get posPreposition => 'অব্যয়';
 
   @override
-  String get posConjunction => 'সং�?��জক';
+  String get posConjunction => 'সংযোজক';
 
   @override
   String get posInterjection => 'আবেগসূচক';
 
   @override
-  String get posArticle => 'প্রবন্�?;
+  String get posArticle => 'প্রবন্ধ';
 
   @override
   String get posDeterminer => 'নির্ধারক';
 
   @override
-  String get posAuxiliary => 'সহায়ক ক্রি�?���?;
+  String get posAuxiliary => 'সহায়ক ক্রিয়া';
 
   @override
-  String get posPhrasal => 'বাক্�?��ংশ ক্রি�?���?;
+  String get posPhrasal => 'বাক্যাংশ ক্রিয়া';
 
   @override
-  String get showTranslationFirst => 'আগ�?অনুবাদ দেখা�?;
+  String get showTranslationFirst => 'আগে অনুবাদ দেখান';
 
   @override
-  String get showTranslationFirstDesc => 'ইংরেজি�?আগ�?অনুবাদিত অর্থ দেখা�?;
+  String get showTranslationFirstDesc => 'ইংরেজির আগে অনুবাদিত অর্থ দেখান';
 
   @override
   String get display => 'প্রদর্শন';
 
   @override
-  String get useDarkTheme => 'ডার্�?�?���?ব্�?��হা�?করুন';
+  String get useDarkTheme => 'ডার্ক থিম ব্যবহার করুন';
 
   @override
-  String get restartToApply => '�?���?পরিবর্তন প্রয়ো�?করতে অ্�?���?রিস্টার্�?করুন';
+  String get restartToApply => 'থিম পরিবর্তন প্রয়োগ করতে অ্যাপ রিস্টার্ট করুন';
 
   @override
   String get learningSection => 'শেখা';
 
   @override
   String currentSpeed(String speed) {
-    return 'বর্ত�?���? ${speed}x';
+    return 'বর্তমান: ${speed}x';
   }
 
   @override
-  String get getDailyReminders => 'দৈনি�?শেখা�?রি�?��ইন্ডার পা�?;
+  String get getDailyReminders => 'দৈনিক শেখার রিমাইন্ডার পান';
 
   @override
-  String get copyright => 'কপিরাই�?;
+  String get copyright => 'কপিরাইট';
 
   @override
-  String get copyrightDesc => 'সব সংজ্ঞা �?���?বা AI-জেনারেটে�?;
+  String get copyrightDesc => 'সব সংজ্ঞা মূল বা AI-জেনারেটেড';
 
   @override
-  String get copyrightNotice => 'কপিরাই�?বিজ্ঞপ্ত�?;
+  String get copyrightNotice => 'কপিরাইট বিজ্ঞপ্তি';
 
   @override
-  String get copyrightContent => 'এই অ্�?��পে�?সমস্�?শব্দ সংজ্ঞা এব�?উদাহরণ বাক্�?�?���?বা AI-জেনারেটেড।\n\nঅনুবাদ MyMemory API দ্বারা সরবরাহ কর�?হয়।';
+  String get copyrightContent => 'এই অ্যাপের সমস্ত শব্দ সংজ্ঞা এবং উদাহরণ বাক্য মূল বা AI-জেনারেটেড।\n\nঅনুবাদ MyMemory API দ্বারা সরবরাহ করা হয়।';
 
   @override
-  String get privacyPolicy => 'গোপনী�?��তা ন�?তি';
+  String get privacyPolicy => 'গোপনীয়তা নীতি';
 
   @override
-  String get privacyContent => 'এই অ্�?���?কোনো ব্�?��্তিগ�?তথ্য সংগ্রহ, সংরক্ষ�?বা শে�?��ার কর�?না�?;
+  String get privacyContent => 'এই অ্যাপ কোনো ব্যক্তিগত তথ্য সংগ্রহ, সংরক্ষণ বা শেয়ার করে না।';
 
   @override
-  String get alphabetical => 'বর্ণানুক্র�?���?;
+  String get alphabetical => 'বর্ণানুক্রমিক';
 
   @override
-  String get random => 'এলোমেল�?;
+  String get random => 'এলোমেলো';
 
   @override
   String get quiz => 'কুইজ';
@@ -274,13 +274,13 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'শব্দ?�অর্�?;
+  String get wordToMeaningMode => 'শব্দ→অর্থ';
 
   @override
-  String get meaningToWordMode => 'অর্থ?�শব্�?;
+  String get meaningToWordMode => 'অর্থ→শব্দ';
 
   @override
-  String get quizComplete => '?�� কুইজ সম্পূর্ণ!';
+  String get quizComplete => '🎉 কুইজ সম্পূর্ণ!';
 
   @override
   String correctAnswers(int percentage) {
@@ -288,7 +288,7 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get exit => 'বে�?হন';
+  String get exit => 'বের হন';
 
   @override
   String get tryAgain => 'আবার চেষ্টা করুন';
@@ -297,16 +297,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String get quizCompleteMessage => 'কুইজ সম্পূর্ণ!';
 
   @override
-  String get excellent => 'চমৎকার! ?��';
+  String get excellent => 'চমৎকার! 🌟';
 
   @override
-  String get greatJob => 'দারু�? ?��';
+  String get greatJob => 'দারুণ! 👏';
 
   @override
-  String get goodStart => '�?��লো শুরু! ?��';
+  String get goodStart => 'ভালো শুরু! 💪';
 
   @override
-  String get keepPracticing => 'অনুশীলন চালি�?���?�?���? ?��';
+  String get keepPracticing => 'অনুশীলন চালিয়ে যান! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,16 +314,16 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'এই শব্দের অর্থ ক�??';
+  String get whatIsTheMeaning => 'এই শব্দের অর্থ কী?';
 
   @override
-  String get whichWordMatches => 'কো�?শব্দটি এই অর্থের সা�?�� �?��লে?';
+  String get whichWordMatches => 'কোন শব্দটি এই অর্থের সাথে মেলে?';
 
   @override
   String get nextQuestion => 'পরবর্তী';
 
   @override
-  String get loading => 'লো�?হচ্ছ�?..';
+  String get loading => 'লোড হচ্ছে...';
 
   @override
   String get removeAds => 'বিজ্ঞাপন সরান';
@@ -332,29 +332,50 @@ class AppLocalizationsBn extends AppLocalizations {
   String get removeAdsTitle => 'সব বিজ্ঞাপন সরান';
 
   @override
-  String get removeAdsDesc => 'বিজ্ঞাপন-�?��ক্�?শেখা�?অভিজ্ঞতা উপ�?���?করুন';
+  String get removeAdsDesc => 'বিজ্ঞাপন-মুক্ত শেখার অভিজ্ঞতা উপভোগ করুন';
 
   @override
-  String get adsRemoved => 'বিজ্ঞাপন সরান�?হয়েছে';
+  String get adsRemoved => 'বিজ্ঞাপন সরানো হয়েছে';
 
   @override
-  String get enjoyAdFree => 'আপনা�?বিজ্ঞাপন-�?��ক্�?অভিজ্ঞতা উপ�?���?করুন!';
+  String get enjoyAdFree => 'আপনার বিজ্ঞাপন-মুক্ত অভিজ্ঞতা উপভোগ করুন!';
 
   @override
   String get restorePurchase => 'কেনাকাটা পুনরুদ্ধার করুন';
 
   @override
-  String get restorePurchaseDesc => 'অ্�?���?পুনরায�?ইনস্টল করেছেন বা ডি�?��ইস পরিবর্তন করেছেন? বিজ্ঞাপন-�?��ক্�?কেনাকাটা পুনরুদ্ধার করতে এখান�?ট্�?���?করুন�?;
+  String get restorePurchaseDesc => 'অ্যাপ পুনরায় ইনস্টল করেছেন বা ডিভাইস পরিবর্তন করেছেন? বিজ্ঞাপন-মুক্ত কেনাকাটা পুনরুদ্ধার করতে এখানে ট্যাপ করুন।';
 
   @override
-  String get purchaseFailed => 'কেনাকাটা ব্�?��্থ হয়েছে�?অনুগ্র�?কর�?আবার চেষ্টা করুন�?;
+  String get purchaseFailed => 'কেনাকাটা ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
 
   @override
-  String get purchaseRestored => 'কেনাকাটা সফলভাব�?পুনরুদ্ধার হয়েছে!';
+  String get purchaseRestored => 'কেনাকাটা সফলভাবে পুনরুদ্ধার হয়েছে!';
 
   @override
-  String get noPurchaseToRestore => 'পুনরুদ্ধার করার জন্য কোনো কেনাকাটা পাওয়া �?���?��নি';
+  String get noPurchaseToRestore => 'পুনরুদ্ধার করার জন্য কোনো কেনাকাটা পাওয়া যায়নি';
 
   @override
-  String get buy => 'কিনু�?;
+  String get buy => 'কিনুন';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

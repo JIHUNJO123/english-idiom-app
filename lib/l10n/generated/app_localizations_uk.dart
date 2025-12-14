@@ -12,76 +12,76 @@ class AppLocalizationsUk extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� Слово дн?';
+  String get todayWord => '📅 Слово дня';
 
   @override
-  String get learning => '?ав?анн?';
+  String get learning => 'Навчання';
 
   @override
-  String get levelLearning => '?ав?анн? за ??вн?ми';
+  String get levelLearning => 'Навчання за рівнями';
 
   @override
-  String get allWords => 'У?? ?лова';
+  String get allWords => 'Усі слова';
 
   @override
-  String get viewAllWords => '?е?егл?н??и в?? ?лова';
+  String get viewAllWords => 'Переглянути всі слова';
 
   @override
-  String get favorites => '?б?ане';
+  String get favorites => 'Обране';
 
   @override
-  String get savedWords => '?бе?ежен? ?лова';
+  String get savedWords => 'Збережені слова';
 
   @override
-  String get flashcard => '?а??ки';
+  String get flashcard => 'Картки';
 
   @override
-  String get cardLearning => '??и?и?? з ка??ками';
+  String get cardLearning => 'Вчитися з картками';
 
   @override
-  String get search => '?о??к';
+  String get search => 'Пошук';
 
   @override
-  String get searchWords => 'Ш?ка?и ?лова';
+  String get searchWords => 'Шукати слова';
 
   @override
-  String get settings => '?ала???ванн?';
+  String get settings => 'Налаштування';
 
   @override
-  String get noWords => 'Сл?в не знайдено';
+  String get noWords => 'Слів не знайдено';
 
   @override
-  String get cannotLoadWords => '?е вдало?? заван?ажи?и ?лова';
+  String get cannotLoadWords => 'Не вдалося завантажити слова';
 
   @override
-  String get addedToFavorites => '?одано до об?аного';
+  String get addedToFavorites => 'Додано до обраного';
 
   @override
-  String get removedFromFavorites => '?идалено з об?аного';
+  String get removedFromFavorites => 'Видалено з обраного';
 
   @override
-  String get definition => '?�� ?изна?енн?';
+  String get definition => '📖 Визначення';
 
   @override
-  String get example => '?�� ??иклад';
+  String get example => '💬 Приклад';
 
   @override
-  String get translating => '?е?еклада?мо...';
+  String get translating => 'Перекладаємо...';
 
   @override
-  String get listenPronunciation => '??о?л??а?и вимов?';
+  String get listenPronunciation => 'Прослухати вимову';
 
   @override
-  String get markAsLearned => '?озна?и?и ?к вив?ене';
+  String get markAsLearned => 'Позначити як вивчене';
 
   @override
-  String get previous => '?опе?едн?';
+  String get previous => 'Попереднє';
 
   @override
-  String get next => '?а???пне';
+  String get next => 'Наступне';
 
   @override
-  String get pronunciation => '?имова';
+  String get pronunciation => 'Вимова';
 
   @override
   String cardCount(int current, int total) {
@@ -89,22 +89,22 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => '?а?и?н???, ?об пе?еве?н??и';
+  String get tapToFlip => 'Натисніть, щоб перевернути';
 
   @override
-  String get levelA1 => '?о?а?к?ве?? 1';
+  String get levelA1 => 'Початківець 1';
 
   @override
-  String get levelA2 => '?о?а?к?ве?? 2';
+  String get levelA2 => 'Початківець 2';
 
   @override
-  String get levelB1 => 'Се?едн?й 1';
+  String get levelB1 => 'Середній 1';
 
   @override
-  String get levelB2 => 'Се?едн?й 2';
+  String get levelB2 => 'Середній 2';
 
   @override
-  String get levelC1 => '??о??н??ий';
+  String get levelC1 => 'Просунутий';
 
   @override
   String levelWords(String level) {
@@ -112,201 +112,201 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get flashcardMode => '?ежим ка??ок';
+  String get flashcardMode => 'Режим карток';
 
   @override
-  String get listMode => '?ежим ?пи?к?';
+  String get listMode => 'Режим списку';
 
   @override
-  String get language => '?ова';
+  String get language => 'Мова';
 
   @override
-  String get selectLanguage => '?ибе???? мов?';
+  String get selectLanguage => 'Виберіть мову';
 
   @override
   String languageChanged(String language) {
-    return '?ов? зм?нено на $language';
+    return 'Мову змінено на $language';
   }
 
   @override
-  String get translationInfo => '?н?о?ма??? п?о пе?еклад';
+  String get translationInfo => 'Інформація про переклад';
 
   @override
-  String get translationInfoDesc => '?е?еклади заван?аж?????? ав?ома?и?но п?д ?а? пе?егл?д? ?л?в. ???л? заван?аженн? вони збе??га????? локал?но дл? о?лайн-вико?и??анн?.';
+  String get translationInfoDesc => 'Переклади завантажуються автоматично під час перегляду слів. Після завантаження вони зберігаються локально для офлайн-використання.';
 
   @override
   String get ok => 'OK';
 
   @override
-  String get darkMode => 'Темний ?ежим';
+  String get darkMode => 'Темний режим';
 
   @override
-  String get speechRate => 'Швидк???? мовленн?';
+  String get speechRate => 'Швидкість мовлення';
 
   @override
-  String get notifications => 'Спов??енн?';
+  String get notifications => 'Сповіщення';
 
   @override
-  String get dailyReminder => 'Щоденне нагад?ванн?';
+  String get dailyReminder => 'Щоденне нагадування';
 
   @override
-  String get about => '??о дода?ок';
+  String get about => 'Про додаток';
 
   @override
-  String get version => '?е????';
+  String get version => 'Версія';
 
   @override
-  String get developer => '?оз?обник';
+  String get developer => 'Розробник';
 
   @override
-  String get searchHint => 'Ш?ка?и ?лова...';
+  String get searchHint => 'Шукати слова...';
 
   @override
-  String get noSearchResults => '?ез?л??а??в не знайдено';
+  String get noSearchResults => 'Результатів не знайдено';
 
   @override
-  String get typeToSearch => '?вед??? дл? по??к? ?л?в';
+  String get typeToSearch => 'Введіть для пошуку слів';
 
   @override
-  String get noFavorites => '?оки ?о нема? об?аного';
+  String get noFavorites => 'Поки що немає обраного';
 
   @override
-  String get addFavoritesHint => '?одай?е ?лова до об?аного, на?и?н?в?и на ?конк? ?е???';
+  String get addFavoritesHint => 'Додайте слова до обраного, натиснувши на іконку серця';
 
   @override
-  String get posNoun => '?менник';
+  String get posNoun => 'іменник';
 
   @override
-  String get posVerb => 'д???лово';
+  String get posVerb => 'дієслово';
 
   @override
-  String get posAdjective => 'п?икме?ник';
+  String get posAdjective => 'прикметник';
 
   @override
-  String get posAdverb => 'п?и?л?вник';
+  String get posAdverb => 'прислівник';
 
   @override
   String get posPronoun => 'займенник';
 
   @override
-  String get posPreposition => 'п?ийменник';
+  String get posPreposition => 'прийменник';
 
   @override
-  String get posConjunction => '?пол??ник';
+  String get posConjunction => 'сполучник';
 
   @override
-  String get posInterjection => 'виг?к';
+  String get posInterjection => 'вигук';
 
   @override
-  String get posArticle => 'а??икл?';
+  String get posArticle => 'артикль';
 
   @override
-  String get posDeterminer => 'де?е?м?на?ив';
+  String get posDeterminer => 'детермінатив';
 
   @override
-  String get posAuxiliary => 'допом?жне д???лово';
+  String get posAuxiliary => 'допоміжне дієслово';
 
   @override
-  String get posPhrasal => '??азове д???лово';
+  String get posPhrasal => 'фразове дієслово';
 
   @override
-  String get showTranslationFirst => 'Спо?а?к? показа?и пе?еклад';
+  String get showTranslationFirst => 'Спочатку показати переклад';
 
   @override
-  String get showTranslationFirstDesc => '?оказ?ва?и пе?екладене зна?енн? пе?ед англ?й??ким';
+  String get showTranslationFirstDesc => 'Показувати перекладене значення перед англійським';
 
   @override
-  String get display => '??доб?аженн?';
+  String get display => 'Відображення';
 
   @override
-  String get useDarkTheme => '?ико?и??ов?ва?и ?емн? ?ем?';
+  String get useDarkTheme => 'Використовувати темну тему';
 
   @override
-  String get restartToApply => '?е?езап?????? дода?ок дл? за??о??ванн? зм?ни ?еми';
+  String get restartToApply => 'Перезапустіть додаток для застосування зміни теми';
 
   @override
-  String get learningSection => '?ав?анн?';
+  String get learningSection => 'Навчання';
 
   @override
   String currentSpeed(String speed) {
-    return '?о?о?на: ${speed}x';
+    return 'Поточна: ${speed}x';
   }
 
   @override
-  String get getDailyReminders => '???им?ва?и ?оденн? нагад?ванн? п?о нав?анн?';
+  String get getDailyReminders => 'Отримувати щоденні нагадування про навчання';
 
   @override
-  String get copyright => '?в?о???ке п?аво';
+  String get copyright => 'Авторське право';
 
   @override
-  String get copyrightDesc => 'У?? визна?енн? о?иг?нал?н? або згене?ован? Ш?';
+  String get copyrightDesc => 'Усі визначення оригінальні або згенеровані ШІ';
 
   @override
-  String get copyrightNotice => '?ов?домленн? п?о ав?о???ке п?аво';
+  String get copyrightNotice => 'Повідомлення про авторське право';
 
   @override
-  String get copyrightContent => 'У?? визна?енн? ?л?в ?а п?иклади ?е?ен? ? ??ом? дода?к? ? о?иг?нал?ними або згене?ованими Ш?.';
+  String get copyrightContent => 'Усі визначення слів та приклади речень у цьому додатку є оригінальними або згенерованими ШІ.';
 
   @override
-  String get privacyPolicy => '?ол??ика кон??ден??йно???';
+  String get privacyPolicy => 'Політика конфіденційності';
 
   @override
-  String get privacyContent => 'Цей дода?ок не зби?а?, не збе??га? ?а не пе?еда? жодно? пе??онал?но? ?н?о?ма???.';
+  String get privacyContent => 'Цей додаток не збирає, не зберігає та не передає жодної персональної інформації.';
 
   @override
-  String get alphabetical => '?а ал?ав??ом';
+  String get alphabetical => 'За алфавітом';
 
   @override
-  String get random => '?ипадково';
+  String get random => 'Випадково';
 
   @override
-  String get quiz => 'Те??';
+  String get quiz => 'Тест';
 
   @override
-  String get testYourself => '?е?ев???е ?ебе';
+  String get testYourself => 'Перевірте себе';
 
   @override
-  String get wordQuiz => 'Те?? ?л?в';
+  String get wordQuiz => 'Тест слів';
 
   @override
   String quizWithLevel(String level) {
-    return 'Те?? $level';
+    return 'Тест $level';
   }
 
   @override
-  String get wordToMeaningMode => 'Слово?�Значенн�?;
+  String get wordToMeaningMode => 'Слово→Значення';
 
   @override
-  String get meaningToWordMode => '?на?енн??�Слов�?;
+  String get meaningToWordMode => 'Значення→Слово';
 
   @override
-  String get quizComplete => '?�� Те?? заве??ено!';
+  String get quizComplete => '🎉 Тест завершено!';
 
   @override
   String correctAnswers(int percentage) {
-    return '$percentage% п?авил?но';
+    return '$percentage% правильно';
   }
 
   @override
-  String get exit => '?ий?и';
+  String get exit => 'Вийти';
 
   @override
-  String get tryAgain => 'Сп?об?ва?и ?е';
+  String get tryAgain => 'Спробувати ще';
 
   @override
-  String get quizCompleteMessage => 'Те?? заве??ено!';
+  String get quizCompleteMessage => 'Тест завершено!';
 
   @override
-  String get excellent => '??дм?нно! ?��';
+  String get excellent => 'Відмінно! 🌟';
 
   @override
-  String get greatJob => 'Ч?дово! ?��';
+  String get greatJob => 'Чудово! 👏';
 
   @override
-  String get goodStart => '?а?ний по?а?ок! ?��';
+  String get goodStart => 'Гарний початок! 💪';
 
   @override
-  String get keepPracticing => '??одовж?й?е п?ак?ик?ва?и??! ?��';
+  String get keepPracticing => 'Продовжуйте практикуватися! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Що озна?а? ?е ?лово?';
+  String get whatIsTheMeaning => 'Що означає це слово?';
 
   @override
-  String get whichWordMatches => 'Яке ?лово в?дпов?да? ??ом? зна?енн??';
+  String get whichWordMatches => 'Яке слово відповідає цьому значенню?';
 
   @override
-  String get nextQuestion => '?ал?';
+  String get nextQuestion => 'Далі';
 
   @override
-  String get loading => '?аван?аженн?...';
+  String get loading => 'Завантаження...';
 
   @override
-  String get removeAds => '?идали?и ?еклам?';
+  String get removeAds => 'Видалити рекламу';
 
   @override
-  String get removeAdsTitle => '?идали?и в?? ?еклам?';
+  String get removeAdsTitle => 'Видалити всю рекламу';
 
   @override
-  String get removeAdsDesc => '?а?олодж?й?е?? нав?анн?м без ?еклами';
+  String get removeAdsDesc => 'Насолоджуйтесь навчанням без реклами';
 
   @override
-  String get adsRemoved => '?еклам? видалено';
+  String get adsRemoved => 'Рекламу видалено';
 
   @override
-  String get enjoyAdFree => '?а?олодж?й?е?? без ?еклами!';
+  String get enjoyAdFree => 'Насолоджуйтесь без реклами!';
 
   @override
-  String get restorePurchase => '??днови?и пок?пк?';
+  String get restorePurchase => 'Відновити покупку';
 
   @override
-  String get restorePurchaseDesc => '?е?ев??ановили за??о??нок або зм?нили п?и????й? ?а?и?н??? ???, ?об в?днови?и пок?пк? без ?еклами.';
+  String get restorePurchaseDesc => 'Перевстановили застосунок або змінили пристрій? Натисніть тут, щоб відновити покупку без реклами.';
 
   @override
-  String get purchaseFailed => '?ок?пка не вдала??. Сп?об?й?е ?е ?аз.';
+  String get purchaseFailed => 'Покупка не вдалася. Спробуйте ще раз.';
 
   @override
-  String get purchaseRestored => '?ок?пк? ??п??но в?дновлено!';
+  String get purchaseRestored => 'Покупку успішно відновлено!';
 
   @override
-  String get noPurchaseToRestore => '?ема? пок?пок дл? в?дновленн?';
+  String get noPurchaseToRestore => 'Немає покупок для відновлення';
 
   @override
-  String get buy => '??пи?и';
+  String get buy => 'Купити';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

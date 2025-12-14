@@ -12,7 +12,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?“… Mot du jour';
+  String get todayWord => 'ðŸ“… Mot du jour';
 
   @override
   String get learning => 'Apprendre';
@@ -60,10 +60,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get removedFromFavorites => 'RetirÃ© des favoris';
 
   @override
-  String get definition => '?“– DÃ©finition';
+  String get definition => 'ðŸ“– DÃ©finition';
 
   @override
-  String get example => '?’¬ Exemple';
+  String get example => 'ðŸ’¬ Exemple';
 
   @override
   String get translating => 'Traduction...';
@@ -150,7 +150,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dailyReminder => 'Rappel quotidien';
 
   @override
-  String get about => '? propos';
+  String get about => 'Ã€ propos';
 
   @override
   String get version => 'Version';
@@ -274,13 +274,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Mot?’Sens';
+  String get wordToMeaningMode => 'Motâ†’Sens';
 
   @override
-  String get meaningToWordMode => 'Sens?’Mot';
+  String get meaningToWordMode => 'Sensâ†’Mot';
 
   @override
-  String get quizComplete => '?Ž‰ Quiz terminÃ©!';
+  String get quizComplete => 'ðŸŽ‰ Quiz terminÃ©!';
 
   @override
   String correctAnswers(int percentage) {
@@ -297,16 +297,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get quizCompleteMessage => 'Quiz terminÃ©!';
 
   @override
-  String get excellent => 'Excellent! ?ŒŸ';
+  String get excellent => 'Excellent! ðŸŒŸ';
 
   @override
-  String get greatJob => 'Bon travail! ?‘';
+  String get greatJob => 'Bon travail! ðŸ‘';
 
   @override
-  String get goodStart => 'Bon dÃ©but! ?’ª';
+  String get goodStart => 'Bon dÃ©but! ðŸ’ª';
 
   @override
-  String get keepPracticing => 'Continuez Ã  pratiquer! ?“š';
+  String get keepPracticing => 'Continuez Ã  pratiquer! ðŸ“š';
 
   @override
   String questionProgress(int current, int total) {
@@ -357,4 +357,25 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get buy => 'Acheter';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

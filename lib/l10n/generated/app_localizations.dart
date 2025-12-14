@@ -69,12 +69,12 @@ import 'app_localizations_zh.dart';
 ///
 /// iOS applications define key application metadata, including supported
 /// locales, in an Info.plist file that is built into the application bundle.
-/// To configure the locales supported by your app, you?ôll need to edit this
+/// To configure the locales supported by your app, you‚Äôll need to edit this
 /// file.
 ///
-/// First, open your project?ôs ios/Runner.xcworkspace Xcode workspace file.
+/// First, open your project‚Äôs ios/Runner.xcworkspace Xcode workspace file.
 /// Then, in the Project Navigator, open the Info.plist file under the Runner
-/// project?ôs Runner folder.
+/// project‚Äôs Runner folder.
 ///
 /// Next, select the Information Property List item, select Add Item from the
 /// Editor menu, then select Localizations from the pop-up menu.
@@ -150,7 +150,7 @@ abstract class AppLocalizations {
   /// No description provided for @todayWord.
   ///
   /// In en, this message translates to:
-  /// **'?ìÖ Today\'s Word'**
+  /// **'üìÖ Today\'s Word'**
   String get todayWord;
 
   /// No description provided for @learning.
@@ -246,13 +246,13 @@ abstract class AppLocalizations {
   /// No description provided for @definition.
   ///
   /// In en, this message translates to:
-  /// **'?ìñ Definition'**
+  /// **'üìñ Definition'**
   String get definition;
 
   /// No description provided for @example.
   ///
   /// In en, this message translates to:
-  /// **'?í¨ Example'**
+  /// **'üí¨ Example'**
   String get example;
 
   /// No description provided for @translating.
@@ -654,19 +654,19 @@ abstract class AppLocalizations {
   /// No description provided for @wordToMeaningMode.
   ///
   /// In en, this message translates to:
-  /// **'Word?íMeaning'**
+  /// **'Word‚ÜíMeaning'**
   String get wordToMeaningMode;
 
   /// No description provided for @meaningToWordMode.
   ///
   /// In en, this message translates to:
-  /// **'Meaning?íWord'**
+  /// **'Meaning‚ÜíWord'**
   String get meaningToWordMode;
 
   /// No description provided for @quizComplete.
   ///
   /// In en, this message translates to:
-  /// **'?éâ Quiz Complete!'**
+  /// **'üéâ Quiz Complete!'**
   String get quizComplete;
 
   /// No description provided for @correctAnswers.
@@ -696,25 +696,25 @@ abstract class AppLocalizations {
   /// No description provided for @excellent.
   ///
   /// In en, this message translates to:
-  /// **'Excellent! ?åü'**
+  /// **'Excellent! üåü'**
   String get excellent;
 
   /// No description provided for @greatJob.
   ///
   /// In en, this message translates to:
-  /// **'Great Job! ?ëè'**
+  /// **'Great Job! üëè'**
   String get greatJob;
 
   /// No description provided for @goodStart.
   ///
   /// In en, this message translates to:
-  /// **'Good Start! ?í™'**
+  /// **'Good Start! üí™'**
   String get goodStart;
 
   /// No description provided for @keepPracticing.
   ///
   /// In en, this message translates to:
-  /// **'Keep Practicing! ?ìö'**
+  /// **'Keep Practicing! üìö'**
   String get keepPracticing;
 
   /// No description provided for @questionProgress.
@@ -812,6 +812,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Buy'**
   String get buy;
+
+  /// No description provided for @wordFontSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Flashcard Word Size'**
+  String get wordFontSize;
+
+  /// No description provided for @fontSizeSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get fontSizeSmall;
+
+  /// No description provided for @fontSizeMediumSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium Small'**
+  String get fontSizeMediumSmall;
+
+  /// No description provided for @fontSizeNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get fontSizeNormal;
+
+  /// No description provided for @fontSizeMediumLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium Large'**
+  String get fontSizeMediumLarge;
+
+  /// No description provided for @fontSizeLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'Large'**
+  String get fontSizeLarge;
+
+  /// No description provided for @fontSizeExtraLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra Large'**
+  String get fontSizeExtraLarge;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

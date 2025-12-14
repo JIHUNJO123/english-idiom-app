@@ -12,76 +12,76 @@ class AppLocalizationsJa extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� 今日??���?;
+  String get todayWord => '📅 今日の単語';
 
   @override
-  String get learning => '�?��';
+  String get learning => '学習';
 
   @override
-  String get levelLearning => '?�ベ?�別�?��';
+  String get levelLearning => 'レベル別学習';
 
   @override
-  String get allWords => '?�単�?;
+  String get allWords => '全単語';
 
   @override
-  String get viewAllWords => '?�べ?�の?�語?�見??;
+  String get viewAllWords => 'すべての単語を見る';
 
   @override
-  String get favorites => '?�気?�入??;
+  String get favorites => 'お気に入り';
 
   @override
-  String get savedWords => '保存?�た?�語';
+  String get savedWords => '保存した単語';
 
   @override
-  String get flashcard => '?�ラ?�シ?�カ?�ド';
+  String get flashcard => 'フラッシュカード';
 
   @override
-  String get cardLearning => '?�ー?�で�?��';
+  String get cardLearning => 'カードで学習';
 
   @override
   String get search => '検索';
 
   @override
-  String get searchWords => '?�語?�探??;
+  String get searchWords => '単語を探す';
 
   @override
-  String get settings => '�?��';
+  String get settings => '設定';
 
   @override
-  String get noWords => '?�語?�あ?�ま?�ん';
+  String get noWords => '単語がありません';
 
   @override
-  String get cannotLoadWords => '?�語?�読?�込?�ま?�ん';
+  String get cannotLoadWords => '単語を読み込めません';
 
   @override
-  String get addedToFavorites => '?�気?�入?�に追加?�ま?�た';
+  String get addedToFavorites => 'お気に入りに追加しました';
 
   @override
-  String get removedFromFavorites => '?�気?�入?�か?�削?�し?�し??;
+  String get removedFromFavorites => 'お気に入りから削除しました';
 
   @override
-  String get definition => '?�� ?�味';
+  String get definition => '📖 意味';
 
   @override
-  String get example => '?�� 例文';
+  String get example => '💬 例文';
 
   @override
-  String get translating => '翻訳�?..';
+  String get translating => '翻訳中...';
 
   @override
-  String get listenPronunciation => '?�音?�聞??;
+  String get listenPronunciation => '発音を聞く';
 
   @override
-  String get markAsLearned => '�?��済み';
+  String get markAsLearned => '学習済み';
 
   @override
-  String get previous => '?�へ';
+  String get previous => '前へ';
 
   @override
   String get next => '次へ';
 
   @override
-  String get pronunciation => '?�音';
+  String get pronunciation => '発音';
 
   @override
   String cardCount(int current, int total) {
@@ -89,198 +89,198 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => '?�ッ?�し??��返す';
+  String get tapToFlip => 'タップして裏返す';
 
   @override
-  String get levelA1 => '?�級1';
+  String get levelA1 => '初級1';
 
   @override
-  String get levelA2 => '?�級2';
+  String get levelA2 => '初級2';
 
   @override
-  String get levelB1 => '�?��1';
+  String get levelB1 => '中級1';
 
   @override
-  String get levelB2 => '�?��2';
+  String get levelB2 => '中級2';
 
   @override
   String get levelC1 => '上級';
 
   @override
   String levelWords(String level) {
-    return '$level ?�語';
+    return '$level 単語';
   }
 
   @override
-  String get flashcardMode => '?�ラ?�シ?�カ?�ド?�ー??;
+  String get flashcardMode => 'フラッシュカードモード';
 
   @override
-  String get listMode => '?�ス?�モ?�ド';
+  String get listMode => 'リストモード';
 
   @override
-  String get language => '言�?;
+  String get language => '言語';
 
   @override
-  String get selectLanguage => '言語を?�択';
+  String get selectLanguage => '言語を選択';
 
   @override
   String languageChanged(String language) {
-    return '$language?�変?�し?�し??;
+    return '$languageに変更しました';
   }
 
   @override
-  String get translationInfo => '翻訳?�つ?�て';
+  String get translationInfo => '翻訳について';
 
   @override
-  String get translationInfoDesc => '?�語?�見?�と?�動?�に翻訳?��??�ン??��?�さ?�ま?�。�??�ン??��?�し?�翻訳は?�フ?�イ?�で?�使?�で?�ま?��?;
+  String get translationInfoDesc => '単語を見ると自動的に翻訳がダウンロードされます。ダウンロードした翻訳はオフラインでも使用できます。';
 
   @override
   String get ok => 'OK';
 
   @override
-  String get darkMode => '?�?�ク?�ー??;
+  String get darkMode => 'ダークモード';
 
   @override
-  String get speechRate => '�?��上げ?�度';
+  String get speechRate => '読み上げ速度';
 
   @override
-  String get notifications => '?�知';
+  String get notifications => '通知';
 
   @override
-  String get dailyReminder => '毎日??��?�イ?��???;
+  String get dailyReminder => '毎日のリマインダー';
 
   @override
-  String get about => '?�報';
+  String get about => '情報';
 
   @override
-  String get version => '?�ー?�ョ??;
+  String get version => 'バージョン';
 
   @override
-  String get developer => '?�発??;
+  String get developer => '開発者';
 
   @override
-  String get searchHint => '?�語?�検�?..';
+  String get searchHint => '単語を検索...';
 
   @override
-  String get noSearchResults => '検索結果?�あ?�ま?�ん';
+  String get noSearchResults => '検索結果がありません';
 
   @override
-  String get typeToSearch => '?�語?�検索し?�く?�さ??;
+  String get typeToSearch => '単語を検索してください';
 
   @override
-  String get noFavorites => '?�気?�入?�が?�り?�せ??;
+  String get noFavorites => 'お気に入りがありません';
 
   @override
-  String get addFavoritesHint => '?�ー?�ア?�コ?�を?�ッ?�し?�お気に?�り?�追??;
+  String get addFavoritesHint => 'ハートアイコンをタップしてお気に入りに追加';
 
   @override
-  String get posNoun => '?�詞';
+  String get posNoun => '名詞';
 
   @override
-  String get posVerb => '?�詞';
+  String get posVerb => '動詞';
 
   @override
-  String get posAdjective => '形�?�?;
+  String get posAdjective => '形容詞';
 
   @override
-  String get posAdverb => '??��';
+  String get posAdverb => '副詞';
 
   @override
-  String get posPronoun => '代名�?;
+  String get posPronoun => '代名詞';
 
   @override
-  String get posPreposition => '?�置�?;
+  String get posPreposition => '前置詞';
 
   @override
-  String get posConjunction => '?�続�?;
+  String get posConjunction => '接続詞';
 
   @override
-  String get posInterjection => '?�投�?;
+  String get posInterjection => '間投詞';
 
   @override
-  String get posArticle => '?�詞';
+  String get posArticle => '冠詞';
 
   @override
-  String get posDeterminer => '?�定�?;
+  String get posDeterminer => '限定詞';
 
   @override
-  String get posAuxiliary => '?�動�?;
+  String get posAuxiliary => '助動詞';
 
   @override
-  String get posPhrasal => '?�動�?;
+  String get posPhrasal => '句動詞';
 
   @override
-  String get showTranslationFirst => '翻訳?�先?�表�?;
+  String get showTranslationFirst => '翻訳を先に表示';
 
   @override
-  String get showTranslationFirstDesc => '?�語??��?�翻訳さ?�た?�味?�表�?;
+  String get showTranslationFirstDesc => '英語の前に翻訳された意味を表示';
 
   @override
   String get display => '表示';
 
   @override
-  String get useDarkTheme => '?�?�ク?�ー?�を使用';
+  String get useDarkTheme => 'ダークテーマを使用';
 
   @override
-  String get restartToApply => '?�ー?�変?�を?�用?�る?�は?�プ?�を?�起??;
+  String get restartToApply => 'テーマ変更を適用するにはアプリを再起動';
 
   @override
-  String get learningSection => '�?��';
+  String get learningSection => '学習';
 
   @override
   String currentSpeed(String speed) {
-    return '?�在: $speed?��?;
+    return '現在: $speed倍速';
   }
 
   @override
-  String get getDailyReminders => '毎日�?��?�マ?�ン?�?�を?�け?�る';
+  String get getDailyReminders => '毎日学習リマインダーを受け取る';
 
   @override
-  String get copyright => '?�作�?;
+  String get copyright => '著作権';
 
   @override
-  String get copyrightDesc => '?�べ?�の定義??��?�ジ?�ル?�た?�AI?�成';
+  String get copyrightDesc => 'すべての定義はオリジナルまたはAI生成';
 
   @override
-  String get copyrightNotice => '?�作権情??;
+  String get copyrightNotice => '著作権情報';
 
   @override
-  String get copyrightContent => '?�の?�プ?�の?�べ?�の?�語定義?�例?�は?�リ?�ナ?�ま?�はAI?�生?�さ?�て?�ま?�。著作権??��?�辞?�コ?�テ?�ツ??��?�さ?�て?�ま?�ん??n\n翻訳?�MyMemory API（無?�翻訳サ?�ビ?�）?�提供さ?�て?�ま?��?;
+  String get copyrightContent => 'このアプリのすべての単語定義と例文はオリジナルまたはAIで生成されています。著作権のある辞書コンテンツは使用されていません。\n\n翻訳はMyMemory API（無料翻訳サービス）で提供されています。';
 
   @override
-  String get privacyPolicy => '?�ラ?�バ?�ー?�リ?�ー';
+  String get privacyPolicy => 'プライバシーポリシー';
 
   @override
-  String get privacyContent => '?�の?�プ?�は?�人?�報?�収?�、保存、共?�し?�せ?��?n\n翻訳?�ク?�ス?�はMyMemory API?�送信?�れ??��?�さ?�ま?�。ユ?�ザ?�デ?�タ??��?�サ?�バ?�に保存?�れ?�せ?��?;
+  String get privacyContent => 'このアプリは個人情報を収集、保存、共有しません。\n\n翻訳リクエストはMyMemory APIに送信されて処理されます。ユーザーデータは外部サーバーに保存されません。';
 
   @override
-  String get alphabetical => '?�ル?�ァ?�ッ?�順';
+  String get alphabetical => 'アルファベット順';
 
   @override
-  String get random => '?�ン?�??;
+  String get random => 'ランダム';
 
   @override
-  String get quiz => '??��??;
+  String get quiz => 'クイズ';
 
   @override
-  String get testYourself => '実力?�ス??;
+  String get testYourself => '実力テスト';
 
   @override
-  String get wordQuiz => '?�語??��??;
+  String get wordQuiz => '単語クイズ';
 
   @override
   String quizWithLevel(String level) {
-    return '$level ??��??;
+    return '$level クイズ';
   }
 
   @override
-  String get wordToMeaningMode => '?�語?�意??;
+  String get wordToMeaningMode => '単語→意味';
 
   @override
-  String get meaningToWordMode => '?�味?�単�?;
+  String get meaningToWordMode => '意味→単語';
 
   @override
-  String get quizComplete => '?�� ??��?�完了！';
+  String get quizComplete => '🎉 クイズ完了！';
 
   @override
   String correctAnswers(int percentage) {
@@ -291,22 +291,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get exit => '終了';
 
   @override
-  String get tryAgain => '?�う一�?;
+  String get tryAgain => 'もう一度';
 
   @override
-  String get quizCompleteMessage => '??��?�完了！';
+  String get quizCompleteMessage => 'クイズ完了！';
 
   @override
-  String get excellent => '完璧?�す�??��';
+  String get excellent => '完璧です！ 🌟';
 
   @override
-  String get greatJob => '?�く?�き?�し?�！ ?��';
+  String get greatJob => 'よくできました！ 👏';
 
   @override
-  String get goodStart => '?�い?�タ?�ト�??��';
+  String get goodStart => 'いいスタート！ 💪';
 
   @override
-  String get keepPracticing => '?�っ?�練習し?�う�??��';
+  String get keepPracticing => 'もっと練習しよう！ 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => '?�の?�語??��?�は何で?�か�?;
+  String get whatIsTheMeaning => 'この単語の意味は何ですか？';
 
   @override
-  String get whichWordMatches => '?�の?�味?�合?�単語は�?;
+  String get whichWordMatches => 'この意味に合う単語は？';
 
   @override
   String get nextQuestion => '次へ';
 
   @override
-  String get loading => '�?��込み�?..';
+  String get loading => '読み込み中...';
 
   @override
-  String get removeAds => '広告?�削??;
+  String get removeAds => '広告を削除';
 
   @override
-  String get removeAdsTitle => '?�べ?�の広告?�削??;
+  String get removeAdsTitle => 'すべての広告を削除';
 
   @override
-  String get removeAdsDesc => '広告?�し???習体験を?��??�み?�だ?�い';
+  String get removeAdsDesc => '広告なしの学習体験をお楽しみください';
 
   @override
-  String get adsRemoved => '広告?�削?�さ?�ま?�た';
+  String get adsRemoved => '広告が削除されました';
 
   @override
-  String get enjoyAdFree => '広告?�し??��験を?��??�み?�だ?�い�?;
+  String get enjoyAdFree => '広告なしの体験をお楽しみください！';
 
   @override
-  String get restorePurchase => '購入?�復??;
+  String get restorePurchase => '購入を復元';
 
   @override
-  String get restorePurchaseDesc => '?�イ?�ス?�ー?�ま?�は機種変更?�ま?�た?�？?�ち?�を?�ッ?�し??��?�削?�の購入?�復?�し?�く?�さ?��?;
+  String get restorePurchaseDesc => '再インストールまたは機種変更しましたか？こちらをタップして広告削除の購入を復元してください。';
 
   @override
-  String get purchaseFailed => '購入?�失?�し?�し?�。も?��?度お試し?�だ?�い??;
+  String get purchaseFailed => '購入に失敗しました。もう一度お試しください。';
 
   @override
-  String get purchaseRestored => '購入?��?常に復元?�れ?�し?�！';
+  String get purchaseRestored => '購入が正常に復元されました！';
 
   @override
-  String get noPurchaseToRestore => '復元?�る購入?�見?�か?�ま?�ん';
+  String get noPurchaseToRestore => '復元する購入が見つかりません';
 
   @override
   String get buy => '購入';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

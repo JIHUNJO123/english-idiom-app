@@ -12,76 +12,76 @@ class AppLocalizationsUr extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� آج کا ??ظ';
+  String get todayWord => '📅 آج کا لفظ';
 
   @override
-  String get learning => 'س?کھ?ا';
+  String get learning => 'سیکھنا';
 
   @override
-  String get levelLearning => 'سطح ک? ?طاب? س?کھ?ا';
+  String get levelLearning => 'سطح کے مطابق سیکھنا';
 
   @override
-  String get allWords => 'ت?ا? ا??اظ';
+  String get allWords => 'تمام الفاظ';
 
   @override
-  String get viewAllWords => 'ت?ا? ا??اظ د?کھ?ں';
+  String get viewAllWords => 'تمام الفاظ دیکھیں';
 
   @override
-  String get favorites => 'پس?د?د?';
+  String get favorites => 'پسندیدہ';
 
   @override
-  String get savedWords => '?ح??ظ ا??اظ';
+  String get savedWords => 'محفوظ الفاظ';
 
   @override
-  String get flashcard => '???ش کار?';
+  String get flashcard => 'فلیش کارڈ';
 
   @override
-  String get cardLearning => 'کار?ز س? س?کھ?ں';
+  String get cardLearning => 'کارڈز سے سیکھیں';
 
   @override
-  String get search => 'ت?اش';
+  String get search => 'تلاش';
 
   @override
-  String get searchWords => 'ا??اظ ت?اش کر?ں';
+  String get searchWords => 'الفاظ تلاش کریں';
 
   @override
-  String get settings => 'ترت?بات';
+  String get settings => 'ترتیبات';
 
   @override
-  String get noWords => 'ک?ئ? ا??اظ ???ں ???';
+  String get noWords => 'کوئی الفاظ نہیں ملے';
 
   @override
-  String get cannotLoadWords => 'ا??اظ ??? ???ں ?? سک?';
+  String get cannotLoadWords => 'الفاظ لوڈ نہیں ہو سکے';
 
   @override
-  String get addedToFavorites => 'پس?د?د? ??ں شا??';
+  String get addedToFavorites => 'پسندیدہ میں شامل';
 
   @override
-  String get removedFromFavorites => 'پس?د?د? س? ?ٹا د?ا گ?ا';
+  String get removedFromFavorites => 'پسندیدہ سے ہٹا دیا گیا';
 
   @override
-  String get definition => '?�� تعر??';
+  String get definition => '📖 تعریف';
 
   @override
-  String get example => '?�� ?ثا?';
+  String get example => '💬 مثال';
 
   @override
-  String get translating => 'ترج?? ?? ر?ا ??...';
+  String get translating => 'ترجمہ ہو رہا ہے...';
 
   @override
-  String get listenPronunciation => 'ت??ظ س??ں';
+  String get listenPronunciation => 'تلفظ سنیں';
 
   @override
-  String get markAsLearned => 'س?کھا ??ا ?شا? ?گائ?ں';
+  String get markAsLearned => 'سیکھا ہوا نشان لگائیں';
 
   @override
-  String get previous => 'پ?ھ?ا';
+  String get previous => 'پچھلا';
 
   @override
-  String get next => 'اگ?ا';
+  String get next => 'اگلا';
 
   @override
-  String get pronunciation => 'ت??ظ';
+  String get pronunciation => 'تلفظ';
 
   @override
   String cardCount(int current, int total) {
@@ -89,198 +89,198 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => 'پ?ٹ?? ک? ??? ٹ?پ کر?ں';
+  String get tapToFlip => 'پلٹنے کے لیے ٹیپ کریں';
 
   @override
-  String get levelA1 => 'ابتدائ? ۱';
+  String get levelA1 => 'ابتدائی ۱';
 
   @override
-  String get levelA2 => 'ابتدائ? ۲';
+  String get levelA2 => 'ابتدائی ۲';
 
   @override
-  String get levelB1 => 'در??ا?? ۱';
+  String get levelB1 => 'درمیانی ۱';
 
   @override
-  String get levelB2 => 'در??ا?? ۲';
+  String get levelB2 => 'درمیانی ۲';
 
   @override
-  String get levelC1 => 'ا???ا?س';
+  String get levelC1 => 'ایڈوانس';
 
   @override
   String levelWords(String level) {
-    return '$level ا??اظ';
+    return '$level الفاظ';
   }
 
   @override
-  String get flashcardMode => '???ش کار? ???';
+  String get flashcardMode => 'فلیش کارڈ موڈ';
 
   @override
-  String get listMode => '??رست ???';
+  String get listMode => 'فہرست موڈ';
 
   @override
-  String get language => 'زبا?';
+  String get language => 'زبان';
 
   @override
-  String get selectLanguage => 'اپ?? زبا? ??تخب کر?ں';
+  String get selectLanguage => 'اپنی زبان منتخب کریں';
 
   @override
   String languageChanged(String language) {
-    return 'زبا? $language ??ں تبد?? ?? گئ?';
+    return 'زبان $language میں تبدیل ہو گئی';
   }
 
   @override
-  String get translationInfo => 'ترج?? ک? ?ع???ات';
+  String get translationInfo => 'ترجمہ کی معلومات';
 
   @override
-  String get translationInfoDesc => 'ا??اظ د?کھت? ??ت ترج?? خ?د بخ?د ?اؤ? ??? ??ں گ?? آ? ?ائ? استع?ا? ک? ??? ??ا?? ط?ر پر ?ح??ظ ??ں گ??';
+  String get translationInfoDesc => 'الفاظ دیکھتے وقت ترجمے خود بخود ڈاؤن لوڈ ہوں گے۔ آف لائن استعمال کے لیے مقامی طور پر محفوظ ہوں گے۔';
 
   @override
-  String get ok => 'ٹھ?ک ??';
+  String get ok => 'ٹھیک ہے';
 
   @override
-  String get darkMode => '?ارک ???';
+  String get darkMode => 'ڈارک موڈ';
 
   @override
-  String get speechRate => 'ب???? ک? ر?تار';
+  String get speechRate => 'بولنے کی رفتار';
 
   @override
-  String get notifications => 'اط?اعات';
+  String get notifications => 'اطلاعات';
 
   @override
-  String get dailyReminder => 'ر?زا?? ?اد د?ا??';
+  String get dailyReminder => 'روزانہ یاد دہانی';
 
   @override
-  String get about => 'ک? بار? ??ں';
+  String get about => 'کے بارے میں';
 
   @override
-  String get version => '?ر??';
+  String get version => 'ورژن';
 
   @override
-  String get developer => '????پر';
+  String get developer => 'ڈویلپر';
 
   @override
-  String get searchHint => 'ا??اظ ت?اش کر?ں...';
+  String get searchHint => 'الفاظ تلاش کریں...';
 
   @override
-  String get noSearchResults => 'ک?ئ? ?تائج ???ں ???';
+  String get noSearchResults => 'کوئی نتائج نہیں ملے';
 
   @override
-  String get typeToSearch => 'ا??اظ ت?اش کر?? ک? ??? ٹائپ کر?ں';
+  String get typeToSearch => 'الفاظ تلاش کرنے کے لیے ٹائپ کریں';
 
   @override
-  String get noFavorites => 'ابھ? ک?ئ? پس?د?د? ???ں';
+  String get noFavorites => 'ابھی کوئی پسندیدہ نہیں';
 
   @override
-  String get addFavoritesHint => 'د? ک? آئ?ک? پر ٹ?پ کرک? ا??اظ پس?د?د? ??ں شا?? کر?ں';
+  String get addFavoritesHint => 'دل کے آئیکن پر ٹیپ کرکے الفاظ پسندیدہ میں شامل کریں';
 
   @override
-  String get posNoun => 'اس?';
+  String get posNoun => 'اسم';
 
   @override
-  String get posVerb => '?ع?';
+  String get posVerb => 'فعل';
 
   @override
-  String get posAdjective => 'ص?ت';
+  String get posAdjective => 'صفت';
 
   @override
-  String get posAdverb => '?تع?? ?ع?';
+  String get posAdverb => 'متعلق فعل';
 
   @override
-  String get posPronoun => 'ض??ر';
+  String get posPronoun => 'ضمیر';
 
   @override
-  String get posPreposition => 'حر? جار';
+  String get posPreposition => 'حرف جار';
 
   @override
-  String get posConjunction => 'حر? عط?';
+  String get posConjunction => 'حرف عطف';
 
   @override
-  String get posInterjection => 'حر? ?دا';
+  String get posInterjection => 'حرف ندا';
 
   @override
-  String get posArticle => 'حر? تعر??';
+  String get posArticle => 'حرف تعریف';
 
   @override
-  String get posDeterminer => '?ع??';
+  String get posDeterminer => 'معین';
 
   @override
-  String get posAuxiliary => '?ع? ?عا??';
+  String get posAuxiliary => 'فعل معاون';
 
   @override
-  String get posPhrasal => '?حا?رات? ?ع?';
+  String get posPhrasal => 'محاوراتی فعل';
 
   @override
-  String get showTranslationFirst => 'پ??? ترج?? دکھائ?ں';
+  String get showTranslationFirst => 'پہلے ترجمہ دکھائیں';
 
   @override
-  String get showTranslationFirstDesc => 'ا?گر?ز? س? پ??? ترج?? شد? ?ع?? دکھائ?ں';
+  String get showTranslationFirstDesc => 'انگریزی سے پہلے ترجمہ شدہ معنی دکھائیں';
 
   @override
-  String get display => '?سپ??';
+  String get display => 'ڈسپلے';
 
   @override
-  String get useDarkTheme => '?ارک تھ?? استع?ا? کر?ں';
+  String get useDarkTheme => 'ڈارک تھیم استعمال کریں';
 
   @override
-  String get restartToApply => 'تھ?? تبد??? ?اگ? کر?? ک? ??? ا?پ د?بار? شر?ع کر?ں';
+  String get restartToApply => 'تھیم تبدیلی لاگو کرنے کے لیے ایپ دوبارہ شروع کریں';
 
   @override
-  String get learningSection => 'س?کھ?ا';
+  String get learningSection => 'سیکھنا';
 
   @override
   String currentSpeed(String speed) {
-    return '??ج?د?: ${speed}x';
+    return 'موجودہ: ${speed}x';
   }
 
   @override
-  String get getDailyReminders => 'ر?زا?? س?کھ?? ک? ?اد د?ا??اں حاص? کر?ں';
+  String get getDailyReminders => 'روزانہ سیکھنے کی یاد دہانیاں حاصل کریں';
 
   @override
-  String get copyright => 'کاپ? رائٹ';
+  String get copyright => 'کاپی رائٹ';
 
   @override
-  String get copyrightDesc => 'ت?ا? تعر???ں اص?? ?ا AI س? ت?ار کرد? ??ں';
+  String get copyrightDesc => 'تمام تعریفیں اصلی یا AI سے تیار کردہ ہیں';
 
   @override
-  String get copyrightNotice => 'کاپ? رائٹ ??ٹس';
+  String get copyrightNotice => 'کاپی رائٹ نوٹس';
 
   @override
-  String get copyrightContent => 'اس ا?پ ??ں ت?ا? ا??اظ ک? تعر???ں ا?ر ?ثا?? ج??? اص?? ?ا AI س? ت?ار کرد? ??ں?';
+  String get copyrightContent => 'اس ایپ میں تمام الفاظ کی تعریفیں اور مثالی جملے اصلی یا AI سے تیار کردہ ہیں۔';
 
   @override
-  String get privacyPolicy => 'رازدار? ک? پا??س?';
+  String get privacyPolicy => 'رازداری کی پالیسی';
 
   @override
-  String get privacyContent => '?? ا?پ ک?ئ? ذات? ?ع???ات ج?ع? ذخ?ر? ?ا ش?ئر ???ں کرت??';
+  String get privacyContent => 'یہ ایپ کوئی ذاتی معلومات جمع، ذخیرہ یا شیئر نہیں کرتی۔';
 
   @override
-  String get alphabetical => 'حر?? ت?ج?';
+  String get alphabetical => 'حروف تہجی';
 
   @override
-  String get random => 'ب? ترت?ب';
+  String get random => 'بے ترتیب';
 
   @override
-  String get quiz => 'ک?ئز';
+  String get quiz => 'کوئز';
 
   @override
-  String get testYourself => 'خ?د ک? آز?ائ?ں';
+  String get testYourself => 'خود کو آزمائیں';
 
   @override
-  String get wordQuiz => '??ظ ک?ئز';
+  String get wordQuiz => 'لفظ کوئز';
 
   @override
   String quizWithLevel(String level) {
-    return '$level ک?ئز';
+    return '$level کوئز';
   }
 
   @override
-  String get wordToMeaningMode => '??ظ?�معن�?;
+  String get wordToMeaningMode => 'لفظ←معنی';
 
   @override
-  String get meaningToWordMode => '?ع???�لف�?;
+  String get meaningToWordMode => 'معنی←لفظ';
 
   @override
-  String get quizComplete => '?�� ک?ئز ?ک??!';
+  String get quizComplete => '🎉 کوئز مکمل!';
 
   @override
   String correctAnswers(int percentage) {
@@ -288,25 +288,25 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get exit => 'با?ر ?ک??ں';
+  String get exit => 'باہر نکلیں';
 
   @override
-  String get tryAgain => 'د?بار? ک?شش کر?ں';
+  String get tryAgain => 'دوبارہ کوشش کریں';
 
   @override
-  String get quizCompleteMessage => 'ک?ئز ?ک??!';
+  String get quizCompleteMessage => 'کوئز مکمل!';
 
   @override
-  String get excellent => 'ب?تر??! ?��';
+  String get excellent => 'بہترین! 🌟';
 
   @override
-  String get greatJob => 'شاباش! ?��';
+  String get greatJob => 'شاباش! 👏';
 
   @override
-  String get goodStart => 'ا?ھ? شر?عات! ?��';
+  String get goodStart => 'اچھی شروعات! 💪';
 
   @override
-  String get keepPracticing => '?ش? جار? رکھ?ں! ?��';
+  String get keepPracticing => 'مشق جاری رکھیں! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'اس ??ظ کا ?ط?ب ک?ا ???';
+  String get whatIsTheMeaning => 'اس لفظ کا مطلب کیا ہے؟';
 
   @override
-  String get whichWordMatches => 'ک?? سا ??ظ اس ?ع?? س? ??تا ???';
+  String get whichWordMatches => 'کون سا لفظ اس معنی سے ملتا ہے؟';
 
   @override
-  String get nextQuestion => 'اگ?ا';
+  String get nextQuestion => 'اگلا';
 
   @override
-  String get loading => '??? ?? ر?ا ??...';
+  String get loading => 'لوڈ ہو رہا ہے...';
 
   @override
-  String get removeAds => 'اشت?ارات ?ٹائ?ں';
+  String get removeAds => 'اشتہارات ہٹائیں';
 
   @override
-  String get removeAdsTitle => 'ت?ا? اشت?ارات ?ٹائ?ں';
+  String get removeAdsTitle => 'تمام اشتہارات ہٹائیں';
 
   @override
-  String get removeAdsDesc => 'اشت?ارات ک? بغ?ر س?کھ?? کا ?ط? اٹھائ?ں';
+  String get removeAdsDesc => 'اشتہارات کے بغیر سیکھنے کا لطف اٹھائیں';
 
   @override
-  String get adsRemoved => 'اشت?ارات ?ٹا د?? گئ?';
+  String get adsRemoved => 'اشتہارات ہٹا دیے گئے';
 
   @override
-  String get enjoyAdFree => 'اشت?ارات ک? بغ?ر تجرب? کا ?ط? اٹھائ?ں!';
+  String get enjoyAdFree => 'اشتہارات کے بغیر تجربے کا لطف اٹھائیں!';
 
   @override
-  String get restorePurchase => 'خر?دار? بحا? کر?ں';
+  String get restorePurchase => 'خریداری بحال کریں';
 
   @override
-  String get restorePurchaseDesc => 'ا?پ د?بار? ا?سٹا? ک? ?ا ???ائس بد??? اشت?ار ?ر? خر?دار? بحا? کر?? ک? ??? ??اں ٹ?پ کر?ں?';
+  String get restorePurchaseDesc => 'ایپ دوبارہ انسٹال کی یا ڈیوائس بدلی؟ اشتہار فری خریداری بحال کرنے کے لیے یہاں ٹیپ کریں۔';
 
   @override
-  String get purchaseFailed => 'خر?دار? ?اکا?? برا? کر? د?بار? ک?شش کر?ں?';
+  String get purchaseFailed => 'خریداری ناکام۔ براہ کرم دوبارہ کوشش کریں۔';
 
   @override
-  String get purchaseRestored => 'خر?دار? کا??اب? س? بحا? ?? گئ?!';
+  String get purchaseRestored => 'خریداری کامیابی سے بحال ہو گئی!';
 
   @override
-  String get noPurchaseToRestore => 'بحا? کر?? ک? ??? ک?ئ? خر?دار? ???ں ???';
+  String get noPurchaseToRestore => 'بحال کرنے کے لیے کوئی خریداری نہیں ملی';
 
   @override
-  String get buy => 'خر?د?ں';
+  String get buy => 'خریدیں';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

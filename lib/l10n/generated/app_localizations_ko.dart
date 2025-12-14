@@ -12,73 +12,73 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� ?�늘???�어';
+  String get todayWord => '📅 오늘의 단어';
 
   @override
-  String get learning => '?�습?�기';
+  String get learning => '학습하기';
 
   @override
-  String get levelLearning => '?�이?�별 ?�습';
+  String get levelLearning => '난이도별 학습';
 
   @override
-  String get allWords => '?�체 ?�어';
+  String get allWords => '전체 단어';
 
   @override
-  String get viewAllWords => '모든 ?�어 보기';
+  String get viewAllWords => '모든 단어 보기';
 
   @override
   String get favorites => '즐겨찾기';
 
   @override
-  String get savedWords => '?�?�한 ?�어';
+  String get savedWords => '저장한 단어';
 
   @override
-  String get flashcard => '?�래?�카??;
+  String get flashcard => '플래시카드';
 
   @override
-  String get cardLearning => '카드�??�습';
+  String get cardLearning => '카드로 학습';
 
   @override
-  String get search => '검??;
+  String get search => '검색';
 
   @override
-  String get searchWords => '?�어 찾기';
+  String get searchWords => '단어 찾기';
 
   @override
-  String get settings => '?�정';
+  String get settings => '설정';
 
   @override
-  String get noWords => '?�어가 ?�습?�다';
+  String get noWords => '단어가 없습니다';
 
   @override
-  String get cannotLoadWords => '?�어�?불러?????�습?�다';
+  String get cannotLoadWords => '단어를 불러올 수 없습니다';
 
   @override
-  String get addedToFavorites => '즐겨찾기??추�??�었?�니??;
+  String get addedToFavorites => '즐겨찾기에 추가되었습니다';
 
   @override
-  String get removedFromFavorites => '즐겨찾기?�서 ?�거?�었?�니??;
+  String get removedFromFavorites => '즐겨찾기에서 제거되었습니다';
 
   @override
-  String get definition => '?�� ??;
+  String get definition => '📖 뜻';
 
   @override
-  String get example => '?�� ?�문';
+  String get example => '💬 예문';
 
   @override
-  String get translating => '번역 �?..';
+  String get translating => '번역 중...';
 
   @override
-  String get listenPronunciation => '발음 ?�기';
+  String get listenPronunciation => '발음 듣기';
 
   @override
-  String get markAsLearned => '?�습 ?�료';
+  String get markAsLearned => '학습 완료';
 
   @override
-  String get previous => '?�전';
+  String get previous => '이전';
 
   @override
-  String get next => '?�음';
+  String get next => '다음';
 
   @override
   String get pronunciation => '발음';
@@ -89,7 +89,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => '??��???�집�?;
+  String get tapToFlip => '탭하여 뒤집기';
 
   @override
   String get levelA1 => '초급 1';
@@ -108,205 +108,205 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level ?�어';
+    return '$level 단어';
   }
 
   @override
-  String get flashcardMode => '?�래?�카??모드';
+  String get flashcardMode => '플래시카드 모드';
 
   @override
-  String get listMode => '리스??모드';
+  String get listMode => '리스트 모드';
 
   @override
-  String get language => '?�어';
+  String get language => '언어';
 
   @override
-  String get selectLanguage => '?�어 ?�택';
+  String get selectLanguage => '언어 선택';
 
   @override
   String languageChanged(String language) {
-    return '$language�?변경되?�습?�다';
+    return '$language로 변경되었습니다';
   }
 
   @override
-  String get translationInfo => '번역 ?�내';
+  String get translationInfo => '번역 안내';
 
   @override
-  String get translationInfoDesc => '?�어�?�????�동?�로 번역???�운로드?�니?? ?�운로드??번역?� ?�프?�인?�서???�용?????�도�??�?�됩?�다.';
+  String get translationInfoDesc => '단어를 볼 때 자동으로 번역이 다운로드됩니다. 다운로드된 번역은 오프라인에서도 사용할 수 있도록 저장됩니다.';
 
   @override
-  String get ok => '?�인';
+  String get ok => '확인';
 
   @override
-  String get darkMode => '?�크 모드';
+  String get darkMode => '다크 모드';
 
   @override
-  String get speechRate => '발음 ?�도';
+  String get speechRate => '발음 속도';
 
   @override
-  String get notifications => '?�림';
+  String get notifications => '알림';
 
   @override
-  String get dailyReminder => '매일 ?�림';
+  String get dailyReminder => '매일 알림';
 
   @override
-  String get about => '?�보';
+  String get about => '정보';
 
   @override
   String get version => '버전';
 
   @override
-  String get developer => '개발??;
+  String get developer => '개발자';
 
   @override
-  String get searchHint => '?�어�?검?�하?�요...';
+  String get searchHint => '단어를 검색하세요...';
 
   @override
-  String get noSearchResults => '검??결과가 ?�습?�다';
+  String get noSearchResults => '검색 결과가 없습니다';
 
   @override
-  String get typeToSearch => '?�어�?검?�해 보세??;
+  String get typeToSearch => '단어를 검색해 보세요';
 
   @override
-  String get noFavorites => '즐겨찾기가 ?�습?�다';
+  String get noFavorites => '즐겨찾기가 없습니다';
 
   @override
-  String get addFavoritesHint => '?�트 ?�이콘을 ?�러 즐겨찾기??추�??�세??;
+  String get addFavoritesHint => '하트 아이콘을 눌러 즐겨찾기에 추가하세요';
 
   @override
   String get posNoun => '명사';
 
   @override
-  String get posVerb => '?�사';
+  String get posVerb => '동사';
 
   @override
-  String get posAdjective => '?�용??;
+  String get posAdjective => '형용사';
 
   @override
-  String get posAdverb => '부??;
+  String get posAdverb => '부사';
 
   @override
-  String get posPronoun => '?�명사';
+  String get posPronoun => '대명사';
 
   @override
-  String get posPreposition => '?�치??;
+  String get posPreposition => '전치사';
 
   @override
-  String get posConjunction => '?�속??;
+  String get posConjunction => '접속사';
 
   @override
-  String get posInterjection => '감탄??;
+  String get posInterjection => '감탄사';
 
   @override
-  String get posArticle => '관??;
+  String get posArticle => '관사';
 
   @override
-  String get posDeterminer => '?�정??;
+  String get posDeterminer => '한정사';
 
   @override
-  String get posAuxiliary => '조동??;
+  String get posAuxiliary => '조동사';
 
   @override
-  String get posPhrasal => '구동??;
+  String get posPhrasal => '구동사';
 
   @override
-  String get showTranslationFirst => '번역 먼�? ?�시';
+  String get showTranslationFirst => '번역 먼저 표시';
 
   @override
-  String get showTranslationFirstDesc => '?�어 ?�에 번역???��?�??�시?�니??;
+  String get showTranslationFirstDesc => '영어 전에 번역된 의미를 표시합니다';
 
   @override
-  String get display => '?�면';
+  String get display => '화면';
 
   @override
-  String get useDarkTheme => '?�두???�마 ?�용';
+  String get useDarkTheme => '어두운 테마 사용';
 
   @override
-  String get restartToApply => '?�마 변경을 ?�용?�려�??�을 ?�시 ?�작?�세??;
+  String get restartToApply => '테마 변경을 적용하려면 앱을 다시 시작하세요';
 
   @override
-  String get learningSection => '?�습';
+  String get learningSection => '학습';
 
   @override
   String currentSpeed(String speed) {
-    return '?�재: $speed배속';
+    return '현재: $speed배속';
   }
 
   @override
-  String get getDailyReminders => '매일 ?�습 ?�림 받기';
+  String get getDailyReminders => '매일 학습 알림 받기';
 
   @override
-  String get copyright => '?�?�권';
+  String get copyright => '저작권';
 
   @override
-  String get copyrightDesc => '모든 ?�의???�리지???�는 AI ?�성?�니??;
+  String get copyrightDesc => '모든 정의는 오리지널 또는 AI 생성입니다';
 
   @override
-  String get copyrightNotice => '?�?�권 ?�내';
+  String get copyrightNotice => '저작권 안내';
 
   @override
-  String get copyrightContent => '???�의 모든 ?�어 ?�의?� ?�문?� ?�리지?�이거나 AI�??�성?�었?�니?? ?�?�권???�는 ?�전 콘텐츠는 ?�용?��? ?�았?�니??\n\n번역?� MyMemory API(무료 번역 ?�비??�??�공?�니??';
+  String get copyrightContent => '이 앱의 모든 단어 정의와 예문은 오리지널이거나 AI로 생성되었습니다. 저작권이 있는 사전 콘텐츠는 사용되지 않았습니다.\n\n번역은 MyMemory API(무료 번역 서비스)로 제공됩니다.';
 
   @override
-  String get privacyPolicy => '개인?�보 처리방침';
+  String get privacyPolicy => '개인정보 처리방침';
 
   @override
-  String get privacyContent => '???��? 개인 ?�보�??�집, ?�???�는 공유?��? ?�습?�다.\n\n번역 ?�청?� MyMemory API�??�송?�어 처리?�니?? ?�용???�이?�는 ?��? ?�버???�?�되지 ?�습?�다.';
+  String get privacyContent => '이 앱은 개인 정보를 수집, 저장 또는 공유하지 않습니다.\n\n번역 요청은 MyMemory API로 전송되어 처리됩니다. 사용자 데이터는 외부 서버에 저장되지 않습니다.';
 
   @override
-  String get alphabetical => '?�파벳순';
+  String get alphabetical => '알파벳순';
 
   @override
-  String get random => '?�덤';
+  String get random => '랜덤';
 
   @override
-  String get quiz => '?�즈';
+  String get quiz => '퀴즈';
 
   @override
-  String get testYourself => '?�력 ?�스??;
+  String get testYourself => '실력 테스트';
 
   @override
-  String get wordQuiz => '?�어 ?�즈';
+  String get wordQuiz => '단어 퀴즈';
 
   @override
   String quizWithLevel(String level) {
-    return '$level ?�즈';
+    return '$level 퀴즈';
   }
 
   @override
-  String get wordToMeaningMode => '?�어?�뜻';
+  String get wordToMeaningMode => '단어→뜻';
 
   @override
-  String get meaningToWordMode => '?�→?�어';
+  String get meaningToWordMode => '뜻→단어';
 
   @override
-  String get quizComplete => '?�� ?�즈 ?�료!';
+  String get quizComplete => '🎉 퀴즈 완료!';
 
   @override
   String correctAnswers(int percentage) {
-    return '$percentage% ?�답';
+    return '$percentage% 정답';
   }
 
   @override
   String get exit => '종료';
 
   @override
-  String get tryAgain => '?�시 ?�기';
+  String get tryAgain => '다시 하기';
 
   @override
-  String get quizCompleteMessage => '?�즈 ?�료!';
+  String get quizCompleteMessage => '퀴즈 완료!';
 
   @override
-  String get excellent => '?�벽?�요! ?��';
+  String get excellent => '완벽해요! 🌟';
 
   @override
-  String get greatJob => '?�했?�요! ?��';
+  String get greatJob => '잘했어요! 👏';
 
   @override
-  String get goodStart => '좋�? ?�작?�에?? ?��';
+  String get goodStart => '좋은 시작이에요! 💪';
 
   @override
-  String get keepPracticing => '???�습?�봐?? ?��';
+  String get keepPracticing => '더 연습해봐요! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => '???�어???��? 무엇?�까??';
+  String get whatIsTheMeaning => '이 단어의 뜻은 무엇일까요?';
 
   @override
-  String get whichWordMatches => '???�에 ?�당?�는 ?�어??';
+  String get whichWordMatches => '이 뜻에 해당하는 단어는?';
 
   @override
-  String get nextQuestion => '?�음';
+  String get nextQuestion => '다음';
 
   @override
-  String get loading => '로딩 �?..';
+  String get loading => '로딩 중...';
 
   @override
-  String get removeAds => '광고 ?�거';
+  String get removeAds => '광고 제거';
 
   @override
-  String get removeAdsTitle => '모든 광고 ?�거';
+  String get removeAdsTitle => '모든 광고 제거';
 
   @override
-  String get removeAdsDesc => '광고 ?�이 ?�습?�세??;
+  String get removeAdsDesc => '광고 없이 학습하세요';
 
   @override
-  String get adsRemoved => '광고 ?�거??;
+  String get adsRemoved => '광고 제거됨';
 
   @override
-  String get enjoyAdFree => '광고 ?�이 즐기?�요!';
+  String get enjoyAdFree => '광고 없이 즐기세요!';
 
   @override
   String get restorePurchase => '구매 복원';
 
   @override
-  String get restorePurchaseDesc => '?�을 ?�설치하거나 기기�?변경하?�나?? ?�기�??�러 광고 ?�거 구매�?복원?�세??';
+  String get restorePurchaseDesc => '앱을 재설치하거나 기기를 변경하셨나요? 여기를 눌러 광고 제거 구매를 복원하세요.';
 
   @override
-  String get purchaseFailed => '구매???�패?�습?�다. ?�시 ?�도?�주?�요.';
+  String get purchaseFailed => '구매에 실패했습니다. 다시 시도해주세요.';
 
   @override
-  String get purchaseRestored => '구매가 복원?�었?�니??';
+  String get purchaseRestored => '구매가 복원되었습니다!';
 
   @override
-  String get noPurchaseToRestore => '복원??구매 ?�역???�습?�다';
+  String get noPurchaseToRestore => '복원할 구매 내역이 없습니다';
 
   @override
   String get buy => '구매';
+
+  @override
+  String get wordFontSize => '플래시카드 단어 크기';
+
+  @override
+  String get fontSizeSmall => '작게';
+
+  @override
+  String get fontSizeMediumSmall => '약간 작게';
+
+  @override
+  String get fontSizeNormal => '보통';
+
+  @override
+  String get fontSizeMediumLarge => '약간 크게';
+
+  @override
+  String get fontSizeLarge => '크게';
+
+  @override
+  String get fontSizeExtraLarge => '매우 크게';
 }

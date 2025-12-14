@@ -12,76 +12,76 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� 今日?�词';
+  String get todayWord => '📅 今日单词';
 
   @override
   String get learning => '学习';
 
   @override
-  String get levelLearning => '?�级学习';
+  String get levelLearning => '分级学习';
 
   @override
-  String get allWords => '?�部?�词';
+  String get allWords => '全部单词';
 
   @override
-  String get viewAllWords => '?�看?�?�单�?;
+  String get viewAllWords => '查看所有单词';
 
   @override
-  String get favorites => '?�藏�?;
+  String get favorites => '收藏夹';
 
   @override
-  String get savedWords => '已保�?;
+  String get savedWords => '已保存';
 
   @override
-  String get flashcard => '?�卡';
+  String get flashcard => '闪卡';
 
   @override
-  String get cardLearning => '?�片学习';
+  String get cardLearning => '卡片学习';
 
   @override
-  String get search => '?�索';
+  String get search => '搜索';
 
   @override
-  String get searchWords => '?�索?�词';
+  String get searchWords => '搜索单词';
 
   @override
   String get settings => '设置';
 
   @override
-  String get noWords => '没有?�词';
+  String get noWords => '没有单词';
 
   @override
-  String get cannotLoadWords => '?�法?�载?�词';
+  String get cannotLoadWords => '无法加载单词';
 
   @override
-  String get addedToFavorites => '已添?�到?�藏�?;
+  String get addedToFavorites => '已添加到收藏夹';
 
   @override
-  String get removedFromFavorites => '已从?�藏夹移??;
+  String get removedFromFavorites => '已从收藏夹移除';
 
   @override
-  String get definition => '?�� ?�义';
+  String get definition => '📖 释义';
 
   @override
-  String get example => '?�� 例句';
+  String get example => '💬 例句';
 
   @override
-  String get translating => '翻译�?..';
+  String get translating => '翻译中...';
 
   @override
-  String get listenPronunciation => '?�发??;
+  String get listenPronunciation => '听发音';
 
   @override
-  String get markAsLearned => '?��?已�?';
+  String get markAsLearned => '标记已学';
 
   @override
-  String get previous => '上�?�?;
+  String get previous => '上一个';
 
   @override
-  String get next => '下�?�?;
+  String get next => '下一个';
 
   @override
-  String get pronunciation => '?�音';
+  String get pronunciation => '发音';
 
   @override
   String cardCount(int current, int total) {
@@ -89,101 +89,101 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => '?�击翻转';
+  String get tapToFlip => '点击翻转';
 
   @override
-  String get levelA1 => '?�级1';
+  String get levelA1 => '初级1';
 
   @override
-  String get levelA2 => '?�级2';
+  String get levelA2 => '初级2';
 
   @override
-  String get levelB1 => '�?��1';
+  String get levelB1 => '中级1';
 
   @override
-  String get levelB2 => '�?��2';
+  String get levelB2 => '中级2';
 
   @override
   String get levelC1 => '高级';
 
   @override
   String levelWords(String level) {
-    return '$level ?�词';
+    return '$level 单词';
   }
 
   @override
-  String get flashcardMode => '?�卡模式';
+  String get flashcardMode => '闪卡模式';
 
   @override
-  String get listMode => '?�表模式';
+  String get listMode => '列表模式';
 
   @override
-  String get language => '�??';
+  String get language => '语言';
 
   @override
-  String get selectLanguage => '?�择�??';
+  String get selectLanguage => '选择语言';
 
   @override
   String languageChanged(String language) {
-    return '已切?�到$language';
+    return '已切换到$language';
   }
 
   @override
   String get translationInfo => '翻译说明';
 
   @override
-  String get translationInfoDesc => '?�看?�词?�会?�动下载翻译?�下载后??��线使?��?;
+  String get translationInfoDesc => '查看单词时会自动下载翻译。下载后可离线使用。';
 
   @override
-  String get ok => '�?��';
+  String get ok => '确定';
 
   @override
   String get darkMode => '深色模式';
 
   @override
-  String get speechRate => '?��??�度';
+  String get speechRate => '朗读速度';
 
   @override
-  String get notifications => '?�知';
+  String get notifications => '通知';
 
   @override
-  String get dailyReminder => '每日?�醒';
+  String get dailyReminder => '每日提醒';
 
   @override
-  String get about => '?�于';
+  String get about => '关于';
 
   @override
-  String get version => '?�本';
+  String get version => '版本';
 
   @override
-  String get developer => '开?��?;
+  String get developer => '开发者';
 
   @override
-  String get searchHint => '?�索?�词...';
+  String get searchHint => '搜索单词...';
 
   @override
-  String get noSearchResults => '没有?�到结果';
+  String get noSearchResults => '没有找到结果';
 
   @override
-  String get typeToSearch => '输入以搜索单�?;
+  String get typeToSearch => '输入以搜索单词';
 
   @override
-  String get noFavorites => '?�无?�藏';
+  String get noFavorites => '暂无收藏';
 
   @override
-  String get addFavoritesHint => '?�击心形?�标添加?�藏';
+  String get addFavoritesHint => '点击心形图标添加收藏';
 
   @override
-  String get posNoun => '?�词';
+  String get posNoun => '名词';
 
   @override
-  String get posVerb => '?�词';
+  String get posVerb => '动词';
 
   @override
-  String get posAdjective => '形�?�?;
+  String get posAdjective => '形容词';
 
   @override
-  String get posAdverb => '??��';
+  String get posAdverb => '副词';
 
   @override
   String get posPronoun => '代词';
@@ -195,78 +195,78 @@ class AppLocalizationsZh extends AppLocalizations {
   String get posConjunction => '连词';
 
   @override
-  String get posInterjection => '?�叹�?;
+  String get posInterjection => '感叹词';
 
   @override
-  String get posArticle => '?�词';
+  String get posArticle => '冠词';
 
   @override
-  String get posDeterminer => '?�定�?;
+  String get posDeterminer => '限定词';
 
   @override
-  String get posAuxiliary => '?�动�?;
+  String get posAuxiliary => '助动词';
 
   @override
-  String get posPhrasal => '????�词';
+  String get posPhrasal => '短语动词';
 
   @override
-  String get showTranslationFirst => '?�显示翻�?;
+  String get showTranslationFirst => '先显示翻译';
 
   @override
-  String get showTranslationFirstDesc => '?�英�?��?�显示翻译含�?;
+  String get showTranslationFirstDesc => '在英语之前显示翻译含义';
 
   @override
-  String get display => '?�示';
+  String get display => '显示';
 
   @override
   String get useDarkTheme => '使用深色主题';
 
   @override
-  String get restartToApply => '?�启应用以应?�主题更??;
+  String get restartToApply => '重启应用以应用主题更改';
 
   @override
   String get learningSection => '学习';
 
   @override
   String currentSpeed(String speed) {
-    return '当前: $speed?��?;
+    return '当前: $speed倍速';
   }
 
   @override
-  String get getDailyReminders => '?�收每日学习?�醒';
+  String get getDailyReminders => '接收每日学习提醒';
 
   @override
-  String get copyright => '?�权';
+  String get copyright => '版权';
 
   @override
-  String get copyrightDesc => '?�?�定义均为原?�或AI?�成';
+  String get copyrightDesc => '所有定义均为原创或AI生成';
 
   @override
-  String get copyrightNotice => '?�权声明';
+  String get copyrightNotice => '版权声明';
 
   @override
-  String get copyrightContent => '此应?�程序中?��??�单词定义和例句?�为?�创?�AI?�成?�未使用?�版?�保?�的词典?��???n\n翻译?�MyMemory API（免费翻译服?�）?�供??;
+  String get copyrightContent => '此应用程序中的所有单词定义和例句均为原创或AI生成。未使用受版权保护的词典内容。\n\n翻译由MyMemory API（免费翻译服务）提供。';
 
   @override
-  String get privacyPolicy => '?�私?�策';
+  String get privacyPolicy => '隐私政策';
 
   @override
-  String get privacyContent => '此应?�程序不?�集?�存?�或?�享任何个人信息??n\n翻译请求?�送到MyMemory API进行处理?�用?�数??��会存?�在外部?�务?�上??;
+  String get privacyContent => '此应用程序不收集、存储或分享任何个人信息。\n\n翻译请求发送到MyMemory API进行处理。用户数据不会存储在外部服务器上。';
 
   @override
   String get alphabetical => '字母顺序';
 
   @override
-  String get random => '?�机';
+  String get random => '随机';
 
   @override
   String get quiz => '测验';
 
   @override
-  String get testYourself => '测试?�力';
+  String get testYourself => '测试能力';
 
   @override
-  String get wordQuiz => '?�词测验';
+  String get wordQuiz => '单词测验';
 
   @override
   String quizWithLevel(String level) {
@@ -274,13 +274,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => '?�词?�释�?;
+  String get wordToMeaningMode => '单词→释义';
 
   @override
-  String get meaningToWordMode => '?�义?�单�?;
+  String get meaningToWordMode => '释义→单词';
 
   @override
-  String get quizComplete => '?�� 测验完成�?;
+  String get quizComplete => '🎉 测验完成！';
 
   @override
   String correctAnswers(int percentage) {
@@ -288,25 +288,25 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get exit => '?�??;
+  String get exit => '退出';
 
   @override
-  String get tryAgain => '?�试一�?;
+  String get tryAgain => '再试一次';
 
   @override
-  String get quizCompleteMessage => '测验完成�?;
+  String get quizCompleteMessage => '测验完成！';
 
   @override
-  String get excellent => '太棒了！ ?��';
+  String get excellent => '太棒了！ 🌟';
 
   @override
-  String get greatJob => '?�得好！ ?��';
+  String get greatJob => '做得好！ 👏';
 
   @override
-  String get goodStart => '好的开始！ ?��';
+  String get goodStart => '好的开始！ 💪';
 
   @override
-  String get keepPracticing => '继续练习�??��';
+  String get keepPracticing => '继续练习！ 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => '这个?�词?�意?�是什么？';
+  String get whatIsTheMeaning => '这个单词的意思是什么？';
 
   @override
-  String get whichWordMatches => '?�个?�词�?��这个?�思？';
+  String get whichWordMatches => '哪个单词符合这个意思？';
 
   @override
-  String get nextQuestion => '下�?�?;
+  String get nextQuestion => '下一题';
 
   @override
-  String get loading => '?�载�?..';
+  String get loading => '加载中...';
 
   @override
   String get removeAds => '移除广告';
 
   @override
-  String get removeAdsTitle => '移除?�?�广??;
+  String get removeAdsTitle => '移除所有广告';
 
   @override
-  String get removeAdsDesc => '享受?�广?��?习体�?;
+  String get removeAdsDesc => '享受无广告学习体验';
 
   @override
-  String get adsRemoved => '广告已移??;
+  String get adsRemoved => '广告已移除';
 
   @override
-  String get enjoyAdFree => '享受?�广?�体验！';
+  String get enjoyAdFree => '享受无广告体验！';
 
   @override
-  String get restorePurchase => '?�复�?��';
+  String get restorePurchase => '恢复购买';
 
   @override
-  String get restorePurchaseDesc => '?�新安装应用?�更???备了?�？?�击此处?�复?�的?�广?�购买�?;
+  String get restorePurchaseDesc => '重新安装应用或更换设备了吗？点击此处恢复您的去广告购买。';
 
   @override
-  String get purchaseFailed => '�?��失败，�??�试??;
+  String get purchaseFailed => '购买失败，请重试。';
 
   @override
-  String get purchaseRestored => '�?��?�复?�功�?;
+  String get purchaseRestored => '购买恢复成功！';
 
   @override
-  String get noPurchaseToRestore => '没有??��复的�?��';
+  String get noPurchaseToRestore => '没有可恢复的购买';
 
   @override
-  String get buy => '�?��';
+  String get buy => '购买';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

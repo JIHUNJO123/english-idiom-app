@@ -405,7 +405,10 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
         children: [
           Text(
             word.word,
-            style: TextStyle(fontSize: 36 * _wordFontSize, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 36 * _wordFontSize,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 8),
           IconButton(

@@ -12,46 +12,46 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� T�?hôm nay';
+  String get todayWord => '📅 Từ hôm nay';
 
   @override
   String get learning => 'Học';
 
   @override
-  String get levelLearning => 'Theo cấp đ�?;
+  String get levelLearning => 'Theo cấp độ';
 
   @override
-  String get allWords => 'Tất c�?;
+  String get allWords => 'Tất cả';
 
   @override
-  String get viewAllWords => 'Xem tất c�?t�?;
+  String get viewAllWords => 'Xem tất cả từ';
 
   @override
   String get favorites => 'Yêu thích';
 
   @override
-  String get savedWords => 'T�?đã lưu';
+  String get savedWords => 'Từ đã lưu';
 
   @override
-  String get flashcard => 'Th�?;
+  String get flashcard => 'Thẻ';
 
   @override
-  String get cardLearning => 'Học bằng th�?;
+  String get cardLearning => 'Học bằng thẻ';
 
   @override
   String get search => 'Tìm kiếm';
 
   @override
-  String get searchWords => 'Tìm t�?;
+  String get searchWords => 'Tìm từ';
 
   @override
   String get settings => 'Cài đặt';
 
   @override
-  String get noWords => 'Không có t�?;
+  String get noWords => 'Không có từ';
 
   @override
-  String get cannotLoadWords => 'Không th�?tải t�?;
+  String get cannotLoadWords => 'Không thể tải từ';
 
   @override
   String get addedToFavorites => 'Đã thêm vào yêu thích';
@@ -60,10 +60,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get removedFromFavorites => 'Đã xóa khỏi yêu thích';
 
   @override
-  String get definition => '?�� Nghĩa';
+  String get definition => '📖 Nghĩa';
 
   @override
-  String get example => '?�� Ví d�?;
+  String get example => '💬 Ví dụ';
 
   @override
   String get translating => 'Đang dịch...';
@@ -89,7 +89,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => 'Chạm đ�?lật';
+  String get tapToFlip => 'Chạm để lật';
 
   @override
   String get levelA1 => 'Sơ cấp 1';
@@ -108,20 +108,20 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'T�?$level';
+    return 'Từ $level';
   }
 
   @override
-  String get flashcardMode => 'Ch�?đ�?th�?;
+  String get flashcardMode => 'Chế độ thẻ';
 
   @override
-  String get listMode => 'Ch�?đ�?danh sách';
+  String get listMode => 'Chế độ danh sách';
 
   @override
-  String get language => 'Ngôn ng�?;
+  String get language => 'Ngôn ngữ';
 
   @override
-  String get selectLanguage => 'Chọn ngôn ng�?;
+  String get selectLanguage => 'Chọn ngôn ngữ';
 
   @override
   String languageChanged(String language) {
@@ -132,25 +132,25 @@ class AppLocalizationsVi extends AppLocalizations {
   String get translationInfo => 'Thông tin dịch';
 
   @override
-  String get translationInfoDesc => 'Bản dịch s�?được tải xuống t�?động. Sau khi tải, có th�?s�?dụng ngoại tuyến.';
+  String get translationInfoDesc => 'Bản dịch sẽ được tải xuống tự động. Sau khi tải, có thể sử dụng ngoại tuyến.';
 
   @override
   String get ok => 'OK';
 
   @override
-  String get darkMode => 'Ch�?đ�?tối';
+  String get darkMode => 'Chế độ tối';
 
   @override
-  String get speechRate => 'Tốc đ�?;
+  String get speechRate => 'Tốc độ';
 
   @override
   String get notifications => 'Thông báo';
 
   @override
-  String get dailyReminder => 'Nhắc nh�?hàng ngày';
+  String get dailyReminder => 'Nhắc nhở hàng ngày';
 
   @override
-  String get about => 'V�?;
+  String get about => 'Về';
 
   @override
   String get version => 'Phiên bản';
@@ -159,70 +159,70 @@ class AppLocalizationsVi extends AppLocalizations {
   String get developer => 'Nhà phát triển';
 
   @override
-  String get searchHint => 'Tìm t�?..';
+  String get searchHint => 'Tìm từ...';
 
   @override
-  String get noSearchResults => 'Không có kết qu�?;
+  String get noSearchResults => 'Không có kết quả';
 
   @override
-  String get typeToSearch => 'Nhập đ�?tìm kiếm';
+  String get typeToSearch => 'Nhập để tìm kiếm';
 
   @override
   String get noFavorites => 'Chưa có yêu thích';
 
   @override
-  String get addFavoritesHint => 'Nhấn vào trái tim đ�?thêm';
+  String get addFavoritesHint => 'Nhấn vào trái tim để thêm';
 
   @override
-  String get posNoun => 'danh t�?;
+  String get posNoun => 'danh từ';
 
   @override
-  String get posVerb => 'động t�?;
+  String get posVerb => 'động từ';
 
   @override
-  String get posAdjective => 'tính t�?;
+  String get posAdjective => 'tính từ';
 
   @override
-  String get posAdverb => 'trạng t�?;
+  String get posAdverb => 'trạng từ';
 
   @override
-  String get posPronoun => 'đại t�?;
+  String get posPronoun => 'đại từ';
 
   @override
-  String get posPreposition => 'giới t�?;
+  String get posPreposition => 'giới từ';
 
   @override
-  String get posConjunction => 'liên t�?;
+  String get posConjunction => 'liên từ';
 
   @override
-  String get posInterjection => 'thán t�?;
+  String get posInterjection => 'thán từ';
 
   @override
-  String get posArticle => 'mạo t�?;
+  String get posArticle => 'mạo từ';
 
   @override
-  String get posDeterminer => 't�?hạn định';
+  String get posDeterminer => 'từ hạn định';
 
   @override
-  String get posAuxiliary => 'tr�?động t�?;
+  String get posAuxiliary => 'trợ động từ';
 
   @override
-  String get posPhrasal => 'cụm động t�?;
+  String get posPhrasal => 'cụm động từ';
 
   @override
-  String get showTranslationFirst => 'Hiển th�?bản dịch trước';
+  String get showTranslationFirst => 'Hiển thị bản dịch trước';
 
   @override
-  String get showTranslationFirstDesc => 'Hiển th�?nghĩa đã dịch trước tiếng Anh';
+  String get showTranslationFirstDesc => 'Hiển thị nghĩa đã dịch trước tiếng Anh';
 
   @override
-  String get display => 'Hiển th�?;
+  String get display => 'Hiển thị';
 
   @override
-  String get useDarkTheme => 'S�?dụng giao diện tối';
+  String get useDarkTheme => 'Sử dụng giao diện tối';
 
   @override
-  String get restartToApply => 'Khởi động lại ứng dụng đ�?áp dụng thay đổi giao diện';
+  String get restartToApply => 'Khởi động lại ứng dụng để áp dụng thay đổi giao diện';
 
   @override
   String get learningSection => 'Học tập';
@@ -233,28 +233,28 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get getDailyReminders => 'Nhận nhắc nh�?học tập hàng ngày';
+  String get getDailyReminders => 'Nhận nhắc nhở học tập hàng ngày';
 
   @override
   String get copyright => 'Bản quyền';
 
   @override
-  String get copyrightDesc => 'Tất c�?định nghĩa là gốc hoặc do AI tạo';
+  String get copyrightDesc => 'Tất cả định nghĩa là gốc hoặc do AI tạo';
 
   @override
   String get copyrightNotice => 'Thông báo bản quyền';
 
   @override
-  String get copyrightContent => 'Tất c�?định nghĩa t�?và câu ví d�?trong ứng dụng này là gốc hoặc do AI tạo ra. Không s�?dụng nội dung t�?điển có bản quyền.\n\nBản dịch được cung cấp bởi MyMemory API (dịch v�?dịch miễn phí).';
+  String get copyrightContent => 'Tất cả định nghĩa từ và câu ví dụ trong ứng dụng này là gốc hoặc do AI tạo ra. Không sử dụng nội dung từ điển có bản quyền.\n\nBản dịch được cung cấp bởi MyMemory API (dịch vụ dịch miễn phí).';
 
   @override
   String get privacyPolicy => 'Chính sách quyền riêng tư';
 
   @override
-  String get privacyContent => 'Ứng dụng này không thu thập, lưu tr�?hoặc chia s�?bất k�?thông tin cá nhân nào.\n\nCác yêu cầu dịch được gửi đến MyMemory API đ�?x�?lý. D�?liệu người dùng không được lưu tr�?trên máy ch�?bên ngoài.';
+  String get privacyContent => 'Ứng dụng này không thu thập, lưu trữ hoặc chia sẻ bất kỳ thông tin cá nhân nào.\n\nCác yêu cầu dịch được gửi đến MyMemory API để xử lý. Dữ liệu người dùng không được lưu trữ trên máy chủ bên ngoài.';
 
   @override
-  String get alphabetical => 'Theo bảng ch�?cái';
+  String get alphabetical => 'Theo bảng chữ cái';
 
   @override
   String get random => 'Ngẫu nhiên';
@@ -263,10 +263,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get quiz => 'Kiểm tra';
 
   @override
-  String get testYourself => 'T�?kiểm tra';
+  String get testYourself => 'Tự kiểm tra';
 
   @override
-  String get wordQuiz => 'Kiểm tra t�?vựng';
+  String get wordQuiz => 'Kiểm tra từ vựng';
 
   @override
   String quizWithLevel(String level) {
@@ -277,10 +277,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get wordToMeaningMode => 'Từ→Nghĩa';
 
   @override
-  String get meaningToWordMode => 'Nghĩa?�T�?;
+  String get meaningToWordMode => 'Nghĩa→Từ';
 
   @override
-  String get quizComplete => '?�� Hoàn thành kiểm tra!';
+  String get quizComplete => '🎉 Hoàn thành kiểm tra!';
 
   @override
   String correctAnswers(int percentage) {
@@ -291,22 +291,22 @@ class AppLocalizationsVi extends AppLocalizations {
   String get exit => 'Thoát';
 
   @override
-  String get tryAgain => 'Th�?lại';
+  String get tryAgain => 'Thử lại';
 
   @override
   String get quizCompleteMessage => 'Hoàn thành kiểm tra!';
 
   @override
-  String get excellent => 'Xuất sắc! ?��';
+  String get excellent => 'Xuất sắc! 🌟';
 
   @override
-  String get greatJob => 'Làm tốt lắm! ?��';
+  String get greatJob => 'Làm tốt lắm! 👏';
 
   @override
-  String get goodStart => 'Khởi đầu tốt! ?��';
+  String get goodStart => 'Khởi đầu tốt! 💪';
 
   @override
-  String get keepPracticing => 'Tiếp tục luyện tập! ?��';
+  String get keepPracticing => 'Tiếp tục luyện tập! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,10 +314,10 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Nghĩa của t�?này là gì?';
+  String get whatIsTheMeaning => 'Nghĩa của từ này là gì?';
 
   @override
-  String get whichWordMatches => 'T�?nào phù hợp với nghĩa này?';
+  String get whichWordMatches => 'Từ nào phù hợp với nghĩa này?';
 
   @override
   String get nextQuestion => 'Tiếp theo';
@@ -329,7 +329,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get removeAds => 'Xóa quảng cáo';
 
   @override
-  String get removeAdsTitle => 'Xóa tất c�?quảng cáo';
+  String get removeAdsTitle => 'Xóa tất cả quảng cáo';
 
   @override
   String get removeAdsDesc => 'Tận hưởng trải nghiệm học không quảng cáo';
@@ -344,17 +344,38 @@ class AppLocalizationsVi extends AppLocalizations {
   String get restorePurchase => 'Khôi phục giao dịch';
 
   @override
-  String get restorePurchaseDesc => 'Đã cài lại ứng dụng hoặc đổi thiết b�? Nhấn vào đây đ�?khôi phục giao dịch không quảng cáo.';
+  String get restorePurchaseDesc => 'Đã cài lại ứng dụng hoặc đổi thiết bị? Nhấn vào đây để khôi phục giao dịch không quảng cáo.';
 
   @override
-  String get purchaseFailed => 'Giao dịch thất bại. Vui lòng th�?lại.';
+  String get purchaseFailed => 'Giao dịch thất bại. Vui lòng thử lại.';
 
   @override
   String get purchaseRestored => 'Khôi phục giao dịch thành công!';
 
   @override
-  String get noPurchaseToRestore => 'Không tìm thấy giao dịch đ�?khôi phục';
+  String get noPurchaseToRestore => 'Không tìm thấy giao dịch để khôi phục';
 
   @override
   String get buy => 'Mua';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

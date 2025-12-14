@@ -12,7 +12,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� Günün Kelimesi';
+  String get todayWord => '📅 Günün Kelimesi';
 
   @override
   String get learning => 'Öğrenme';
@@ -60,10 +60,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get removedFromFavorites => 'Favorilerden kaldırıldı';
 
   @override
-  String get definition => '?�� Tanım';
+  String get definition => '📖 Tanım';
 
   @override
-  String get example => '?�� Örnek';
+  String get example => '💬 Örnek';
 
   @override
   String get translating => 'Çevriliyor...';
@@ -274,13 +274,13 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Kelime?�Anlam';
+  String get wordToMeaningMode => 'Kelime→Anlam';
 
   @override
-  String get meaningToWordMode => 'Anlam?�Kelime';
+  String get meaningToWordMode => 'Anlam→Kelime';
 
   @override
-  String get quizComplete => '?�� Test tamamlandı!';
+  String get quizComplete => '🎉 Test tamamlandı!';
 
   @override
   String correctAnswers(int percentage) {
@@ -297,16 +297,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get quizCompleteMessage => 'Test tamamlandı!';
 
   @override
-  String get excellent => 'Mükemmel! ?��';
+  String get excellent => 'Mükemmel! 🌟';
 
   @override
-  String get greatJob => 'Harika iş! ?��';
+  String get greatJob => 'Harika iş! 👏';
 
   @override
-  String get goodStart => 'İyi başlangıç! ?��';
+  String get goodStart => 'İyi başlangıç! 💪';
 
   @override
-  String get keepPracticing => 'Pratik yapmaya devam et! ?��';
+  String get keepPracticing => 'Pratik yapmaya devam et! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -357,4 +357,25 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get buy => 'Satın Al';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

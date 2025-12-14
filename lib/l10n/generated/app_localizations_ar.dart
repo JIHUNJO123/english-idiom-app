@@ -12,76 +12,76 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� ???ة ا????';
+  String get todayWord => '📅 كلمة اليوم';
 
   @override
-  String get learning => 'ا?تع??';
+  String get learning => 'التعلم';
 
   @override
-  String get levelLearning => 'ا?تع?? حسب ا??ست??';
+  String get levelLearning => 'التعلم حسب المستوى';
 
   @override
-  String get allWords => '?? ا????ات';
+  String get allWords => 'كل الكلمات';
 
   @override
-  String get viewAllWords => 'عرض ج??ع ا????ات';
+  String get viewAllWords => 'عرض جميع الكلمات';
 
   @override
-  String get favorites => 'ا???ض?ة';
+  String get favorites => 'المفضلة';
 
   @override
-  String get savedWords => 'ا????ات ا??ح??ظة';
+  String get savedWords => 'الكلمات المحفوظة';
 
   @override
-  String get flashcard => 'بطا?ات تع????ة';
+  String get flashcard => 'بطاقات تعليمية';
 
   @override
-  String get cardLearning => 'ا?تع?? با?بطا?ات';
+  String get cardLearning => 'التعلم بالبطاقات';
 
   @override
   String get search => 'بحث';
 
   @override
-  String get searchWords => 'ا?بحث ع? ???ات';
+  String get searchWords => 'البحث عن كلمات';
 
   @override
-  String get settings => 'ا?إعدادات';
+  String get settings => 'الإعدادات';
 
   @override
-  String get noWords => '?ا ت?جد ???ات';
+  String get noWords => 'لا توجد كلمات';
 
   @override
-  String get cannotLoadWords => '?ا ???? تح??? ا????ات';
+  String get cannotLoadWords => 'لا يمكن تحميل الكلمات';
 
   @override
-  String get addedToFavorites => 'ت?ت ا?إضا?ة ????ض?ة';
+  String get addedToFavorites => 'تمت الإضافة للمفضلة';
 
   @override
-  String get removedFromFavorites => 'ت?ت ا?إزا?ة ?? ا???ض?ة';
+  String get removedFromFavorites => 'تمت الإزالة من المفضلة';
 
   @override
-  String get definition => '?�� ا?تعر??';
+  String get definition => '📖 التعريف';
 
   @override
-  String get example => '?�� ?ثا?';
+  String get example => '💬 مثال';
 
   @override
-  String get translating => 'جار? ا?ترج?ة...';
+  String get translating => 'جاري الترجمة...';
 
   @override
-  String get listenPronunciation => 'است?ع ???ط?';
+  String get listenPronunciation => 'استمع للنطق';
 
   @override
-  String get markAsLearned => 'ت? ا?تع??';
+  String get markAsLearned => 'تم التعلم';
 
   @override
-  String get previous => 'ا?ساب?';
+  String get previous => 'السابق';
 
   @override
-  String get next => 'ا?تا??';
+  String get next => 'التالي';
 
   @override
-  String get pronunciation => 'ا??ط?';
+  String get pronunciation => 'النطق';
 
   @override
   String cardCount(int current, int total) {
@@ -89,184 +89,184 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => 'ا??ر ????ب';
+  String get tapToFlip => 'انقر للقلب';
 
   @override
-  String get levelA1 => '?بتدئ 1';
+  String get levelA1 => 'مبتدئ 1';
 
   @override
-  String get levelA2 => '?بتدئ 2';
+  String get levelA2 => 'مبتدئ 2';
 
   @override
-  String get levelB1 => '?ت?سط 1';
+  String get levelB1 => 'متوسط 1';
 
   @override
-  String get levelB2 => '?ت?سط 2';
+  String get levelB2 => 'متوسط 2';
 
   @override
-  String get levelC1 => '?ت?د?';
+  String get levelC1 => 'متقدم';
 
   @override
   String levelWords(String level) {
-    return '???ات $level';
+    return 'كلمات $level';
   }
 
   @override
-  String get flashcardMode => '?ضع ا?بطا?ات';
+  String get flashcardMode => 'وضع البطاقات';
 
   @override
-  String get listMode => '?ضع ا??ائ?ة';
+  String get listMode => 'وضع القائمة';
 
   @override
-  String get language => 'ا??غة';
+  String get language => 'اللغة';
 
   @override
-  String get selectLanguage => 'اختر ?غت?';
+  String get selectLanguage => 'اختر لغتك';
 
   @override
   String languageChanged(String language) {
-    return 'ت? تغ??ر ا??غة إ?? $language';
+    return 'تم تغيير اللغة إلى $language';
   }
 
   @override
-  String get translationInfo => '?ع???ات ا?ترج?ة';
+  String get translationInfo => 'معلومات الترجمة';
 
   @override
-  String get translationInfoDesc => 'س?ت? ت?ز?? ا?ترج?ات ت??ائ?ا? ع?د عرض ا????ات. بعد ا?ت?ز??? ?ت? تخز???ا ?ح??ا? ??استخدا? د?? اتصا?.';
+  String get translationInfoDesc => 'سيتم تنزيل الترجمات تلقائياً عند عرض الكلمات. بعد التنزيل، يتم تخزينها محلياً للاستخدام دون اتصال.';
 
   @override
-  String get ok => '??ا??';
+  String get ok => 'موافق';
 
   @override
-  String get darkMode => 'ا??ضع ا?دا??';
+  String get darkMode => 'الوضع الداكن';
 
   @override
-  String get speechRate => 'سرعة ا??ط?';
+  String get speechRate => 'سرعة النطق';
 
   @override
-  String get notifications => 'ا?إشعارات';
+  String get notifications => 'الإشعارات';
 
   @override
-  String get dailyReminder => 'تذ??ر ????';
+  String get dailyReminder => 'تذكير يومي';
 
   @override
-  String get about => 'ح??';
+  String get about => 'حول';
 
   @override
-  String get version => 'ا?إصدار';
+  String get version => 'الإصدار';
 
   @override
-  String get developer => 'ا??ط?ر';
+  String get developer => 'المطور';
 
   @override
-  String get searchHint => 'ابحث ع? ???ات...';
+  String get searchHint => 'ابحث عن كلمات...';
 
   @override
-  String get noSearchResults => '?ا ت?جد ?تائج';
+  String get noSearchResults => 'لا توجد نتائج';
 
   @override
-  String get typeToSearch => 'ا?تب ??بحث ع? ???ات';
+  String get typeToSearch => 'اكتب للبحث عن كلمات';
 
   @override
-  String get noFavorites => '?ا ت?جد ??ض?ات بعد';
+  String get noFavorites => 'لا توجد مفضلات بعد';
 
   @override
-  String get addFavoritesHint => 'أض? ???ات ????ض?ة با???ر ع?? أ????ة ا???ب';
+  String get addFavoritesHint => 'أضف كلمات للمفضلة بالنقر على أيقونة القلب';
 
   @override
-  String get posNoun => 'اس?';
+  String get posNoun => 'اسم';
 
   @override
-  String get posVerb => '?ع?';
+  String get posVerb => 'فعل';
 
   @override
-  String get posAdjective => 'ص?ة';
+  String get posAdjective => 'صفة';
 
   @override
-  String get posAdverb => 'ظر?';
+  String get posAdverb => 'ظرف';
 
   @override
-  String get posPronoun => 'ض??ر';
+  String get posPronoun => 'ضمير';
 
   @override
-  String get posPreposition => 'حر? جر';
+  String get posPreposition => 'حرف جر';
 
   @override
-  String get posConjunction => 'حر? عط?';
+  String get posConjunction => 'حرف عطف';
 
   @override
-  String get posInterjection => 'اس? تعجب';
+  String get posInterjection => 'اسم تعجب';
 
   @override
-  String get posArticle => 'أداة تعر??';
+  String get posArticle => 'أداة تعريف';
 
   @override
-  String get posDeterminer => '?حدد';
+  String get posDeterminer => 'محدد';
 
   @override
-  String get posAuxiliary => '?ع? ?ساعد';
+  String get posAuxiliary => 'فعل مساعد';
 
   @override
-  String get posPhrasal => '?ع? ?ر?ب';
+  String get posPhrasal => 'فعل مركب';
 
   @override
-  String get showTranslationFirst => 'عرض ا?ترج?ة أ??ا?';
+  String get showTranslationFirst => 'عرض الترجمة أولاً';
 
   @override
-  String get showTranslationFirstDesc => 'عرض ا??ع?? ا??ترج? ?ب? ا?إ?ج??ز?ة';
+  String get showTranslationFirstDesc => 'عرض المعنى المترجم قبل الإنجليزية';
 
   @override
-  String get display => 'ا?عرض';
+  String get display => 'العرض';
 
   @override
-  String get useDarkTheme => 'استخدا? ا?س?ة ا?دا??ة';
+  String get useDarkTheme => 'استخدام السمة الداكنة';
 
   @override
-  String get restartToApply => 'أعد تشغ?? ا?تطب?? ?تطب?? تغ??ر ا?س?ة';
+  String get restartToApply => 'أعد تشغيل التطبيق لتطبيق تغيير السمة';
 
   @override
-  String get learningSection => 'ا?تع??';
+  String get learningSection => 'التعلم';
 
   @override
   String currentSpeed(String speed) {
-    return 'ا?حا??: ${speed}x';
+    return 'الحالي: ${speed}x';
   }
 
   @override
-  String get getDailyReminders => 'احص? ع?? تذ??رات تع?? ????ة';
+  String get getDailyReminders => 'احصل على تذكيرات تعلم يومية';
 
   @override
-  String get copyright => 'ح??? ا??شر';
+  String get copyright => 'حقوق النشر';
 
   @override
-  String get copyrightDesc => 'ج??ع ا?تعر??ات أص??ة أ? ???دة با?ذ?اء ا?اصط?اع?';
+  String get copyrightDesc => 'جميع التعريفات أصلية أو مولدة بالذكاء الاصطناعي';
 
   @override
-  String get copyrightNotice => 'إشعار ح??? ا??شر';
+  String get copyrightNotice => 'إشعار حقوق النشر';
 
   @override
-  String get copyrightContent => 'ج??ع تعر??ات ا????ات ?ا?ج?? ا??ثا? ?? ?ذا ا?تطب?? أص??ة أ? ???دة با?ذ?اء ا?اصط?اع?. ?? ?ت? استخدا? ?حت?? ?ا??س ?ح?? بح??? ا??شر.\n\nا?ترج?ات ??د?ة ?? MyMemory API (خد?ة ترج?ة ?جا??ة).';
+  String get copyrightContent => 'جميع تعريفات الكلمات والجمل المثال في هذا التطبيق أصلية أو مولدة بالذكاء الاصطناعي. لم يتم استخدام محتوى قاموس محمي بحقوق النشر.\n\nالترجمات مقدمة من MyMemory API (خدمة ترجمة مجانية).';
 
   @override
-  String get privacyPolicy => 'س?اسة ا?خص?ص?ة';
+  String get privacyPolicy => 'سياسة الخصوصية';
 
   @override
-  String get privacyContent => '?ذا ا?تطب?? ?ا ?ج?ع أ? ?خز? أ? ?شار? أ? ?ع???ات شخص?ة.\n\n?ت? إرسا? ط?بات ا?ترج?ة إ?? MyMemory API ???عا?جة. ?ا ?ت? تخز?? ب?ا?ات ا??ستخد? ع?? خ?اد? خارج?ة.';
+  String get privacyContent => 'هذا التطبيق لا يجمع أو يخزن أو يشارك أي معلومات شخصية.\n\nيتم إرسال طلبات الترجمة إلى MyMemory API للمعالجة. لا يتم تخزين بيانات المستخدم على خوادم خارجية.';
 
   @override
-  String get alphabetical => 'أبجد?';
+  String get alphabetical => 'أبجدي';
 
   @override
-  String get random => 'عش?ائ?';
+  String get random => 'عشوائي';
 
   @override
   String get quiz => 'اختبار';
 
   @override
-  String get testYourself => 'اختبر ??س?';
+  String get testYourself => 'اختبر نفسك';
 
   @override
-  String get wordQuiz => 'اختبار ا????ات';
+  String get wordQuiz => 'اختبار الكلمات';
 
   @override
   String quizWithLevel(String level) {
@@ -274,39 +274,39 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => '???ة?�معن�?;
+  String get wordToMeaningMode => 'كلمة→معنى';
 
   @override
-  String get meaningToWordMode => '?ع???�كلم�?;
+  String get meaningToWordMode => 'معنى→كلمة';
 
   @override
-  String get quizComplete => '?�� ا?ت?? ا?اختبار!';
+  String get quizComplete => '🎉 اكتمل الاختبار!';
 
   @override
   String correctAnswers(int percentage) {
-    return '$percentage% صح?ح';
+    return '$percentage% صحيح';
   }
 
   @override
-  String get exit => 'خر?ج';
+  String get exit => 'خروج';
 
   @override
-  String get tryAgain => 'حا?? ?رة أخر?';
+  String get tryAgain => 'حاول مرة أخرى';
 
   @override
-  String get quizCompleteMessage => 'ا?ت?? ا?اختبار!';
+  String get quizCompleteMessage => 'اكتمل الاختبار!';
 
   @override
-  String get excellent => '??تاز! ?��';
+  String get excellent => 'ممتاز! 🌟';
 
   @override
-  String get greatJob => 'ع?? رائع! ?��';
+  String get greatJob => 'عمل رائع! 👏';
 
   @override
-  String get goodStart => 'بدا?ة ج?دة! ?��';
+  String get goodStart => 'بداية جيدة! 💪';
 
   @override
-  String get keepPracticing => 'است?ر ?? ا?تدر?ب! ?��';
+  String get keepPracticing => 'استمر في التدريب! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => '?ا ?ع?? ?ذ? ا????ة?';
+  String get whatIsTheMeaning => 'ما معنى هذه الكلمة؟';
 
   @override
-  String get whichWordMatches => 'أ? ???ة تتطاب? ?ع ?ذا ا??ع???';
+  String get whichWordMatches => 'أي كلمة تتطابق مع هذا المعنى؟';
 
   @override
-  String get nextQuestion => 'ا?تا??';
+  String get nextQuestion => 'التالي';
 
   @override
-  String get loading => 'جار ا?تح???...';
+  String get loading => 'جار التحميل...';
 
   @override
-  String get removeAds => 'إزا?ة ا?إع?ا?ات';
+  String get removeAds => 'إزالة الإعلانات';
 
   @override
-  String get removeAdsTitle => 'إزا?ة ج??ع ا?إع?ا?ات';
+  String get removeAdsTitle => 'إزالة جميع الإعلانات';
 
   @override
-  String get removeAdsDesc => 'است?تع بتجربة تع?? بد?? إع?ا?ات';
+  String get removeAdsDesc => 'استمتع بتجربة تعلم بدون إعلانات';
 
   @override
-  String get adsRemoved => 'ت?ت إزا?ة ا?إع?ا?ات';
+  String get adsRemoved => 'تمت إزالة الإعلانات';
 
   @override
-  String get enjoyAdFree => 'است?تع بتجربت? بد?? إع?ا?ات!';
+  String get enjoyAdFree => 'استمتع بتجربتك بدون إعلانات!';
 
   @override
-  String get restorePurchase => 'استعادة ا??شتر?ات';
+  String get restorePurchase => 'استعادة المشتريات';
 
   @override
-  String get restorePurchaseDesc => 'أعدت تثب?ت ا?تطب?? أ? غ?رت ا?ج?از? اضغط ??ا ?استعادة شراء إزا?ة ا?إع?ا?ات.';
+  String get restorePurchaseDesc => 'أعدت تثبيت التطبيق أو غيرت الجهاز؟ اضغط هنا لاستعادة شراء إزالة الإعلانات.';
 
   @override
-  String get purchaseFailed => '?ش?ت ع???ة ا?شراء. ?رج? ا??حا??ة ?رة أخر?.';
+  String get purchaseFailed => 'فشلت عملية الشراء. يرجى المحاولة مرة أخرى.';
 
   @override
-  String get purchaseRestored => 'ت?ت استعادة ع???ة ا?شراء ب?جاح!';
+  String get purchaseRestored => 'تمت استعادة عملية الشراء بنجاح!';
 
   @override
-  String get noPurchaseToRestore => '?ا ت?جد ع???ة شراء ??استعادة';
+  String get noPurchaseToRestore => 'لا توجد عملية شراء للاستعادة';
 
   @override
   String get buy => 'شراء';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

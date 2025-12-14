@@ -12,7 +12,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?“… Palavra do dia';
+  String get todayWord => 'ðŸ“… Palavra do dia';
 
   @override
   String get learning => 'Aprender';
@@ -60,10 +60,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get removedFromFavorites => 'Removido dos favoritos';
 
   @override
-  String get definition => '?“– DefiniÃ§Ã£o';
+  String get definition => 'ðŸ“– DefiniÃ§Ã£o';
 
   @override
-  String get example => '?’¬ Exemplo';
+  String get example => 'ðŸ’¬ Exemplo';
 
   @override
   String get translating => 'Traduzindo...';
@@ -274,13 +274,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Palavra?’Significado';
+  String get wordToMeaningMode => 'Palavraâ†’Significado';
 
   @override
-  String get meaningToWordMode => 'Significado?’Palavra';
+  String get meaningToWordMode => 'Significadoâ†’Palavra';
 
   @override
-  String get quizComplete => '?Ž‰ Teste concluÃ­do!';
+  String get quizComplete => 'ðŸŽ‰ Teste concluÃ­do!';
 
   @override
   String correctAnswers(int percentage) {
@@ -297,16 +297,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quizCompleteMessage => 'Teste concluÃ­do!';
 
   @override
-  String get excellent => 'Excelente! ?ŒŸ';
+  String get excellent => 'Excelente! ðŸŒŸ';
 
   @override
-  String get greatJob => 'Bom trabalho! ?‘';
+  String get greatJob => 'Bom trabalho! ðŸ‘';
 
   @override
-  String get goodStart => 'Bom comeÃ§o! ?’ª';
+  String get goodStart => 'Bom comeÃ§o! ðŸ’ª';
 
   @override
-  String get keepPracticing => 'Continue praticando! ?“š';
+  String get keepPracticing => 'Continue praticando! ðŸ“š';
 
   @override
   String questionProgress(int current, int total) {
@@ -357,4 +357,25 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get buy => 'Comprar';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }

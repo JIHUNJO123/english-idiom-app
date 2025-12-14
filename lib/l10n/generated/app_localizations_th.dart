@@ -12,7 +12,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get appTitle => 'English Word 10000';
 
   @override
-  String get todayWord => '?�� คำวันนี้';
+  String get todayWord => '📅 คำวันนี้';
 
   @override
   String get learning => 'เรียน';
@@ -21,34 +21,34 @@ class AppLocalizationsTh extends AppLocalizations {
   String get levelLearning => 'ตามระดับ';
 
   @override
-  String get allWords => 'ทั้งหม�?;
+  String get allWords => 'ทั้งหมด';
 
   @override
-  String get viewAllWords => 'ดูคำทั้งหม�?;
+  String get viewAllWords => 'ดูคำทั้งหมด';
 
   @override
   String get favorites => 'รายการโปรด';
 
   @override
-  String get savedWords => 'คำที่บันทึ�?;
+  String get savedWords => 'คำที่บันทึก';
 
   @override
-  String get flashcard => 'แฟ�?��การ์�?;
+  String get flashcard => 'แฟลชการ์ด';
 
   @override
-  String get cardLearning => 'เรียนด้วยการ์�?;
+  String get cardLearning => 'เรียนด้วยการ์ด';
 
   @override
-  String get search => 'ค้นห�?;
+  String get search => 'ค้นหา';
 
   @override
-  String get searchWords => 'ค้นหาค�?;
+  String get searchWords => 'ค้นหาคำ';
 
   @override
-  String get settings => 'ตั้งค่�?;
+  String get settings => 'ตั้งค่า';
 
   @override
-  String get noWords => 'ไม่มีค�?;
+  String get noWords => 'ไม่มีคำ';
 
   @override
   String get cannotLoadWords => 'ไม่สามารถโหลดได้';
@@ -57,31 +57,31 @@ class AppLocalizationsTh extends AppLocalizations {
   String get addedToFavorites => 'เพิ่มในรายการโปรด';
 
   @override
-  String get removedFromFavorites => '�?���?��กจากรายการโปรด';
+  String get removedFromFavorites => 'ลบออกจากรายการโปรด';
 
   @override
-  String get definition => '?�� ความหมาย';
+  String get definition => '📖 ความหมาย';
 
   @override
-  String get example => '?�� ตัวอย่าง';
+  String get example => '💬 ตัวอย่าง';
 
   @override
-  String get translating => 'กำ�?��งแปล...';
+  String get translating => 'กำลังแปล...';
 
   @override
-  String get listenPronunciation => 'ฟั�?;
+  String get listenPronunciation => 'ฟัง';
 
   @override
-  String get markAsLearned => 'ทำเครื่�?��หมายเรียนแล้ว';
+  String get markAsLearned => 'ทำเครื่องหมายเรียนแล้ว';
 
   @override
-  String get previous => 'ก่�?��หน้า';
+  String get previous => 'ก่อนหน้า';
 
   @override
-  String get next => 'ถัดไ�?;
+  String get next => 'ถัดไป';
 
   @override
-  String get pronunciation => '�?��ก�?สียง';
+  String get pronunciation => 'ออกเสียง';
 
   @override
   String cardCount(int current, int total) {
@@ -89,13 +89,13 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get tapToFlip => 'แตะ�?พื่อพลิก';
+  String get tapToFlip => 'แตะเพื่อพลิก';
 
   @override
-  String get levelA1 => 'เริ่มต้�?1';
+  String get levelA1 => 'เริ่มต้น 1';
 
   @override
-  String get levelA2 => 'เริ่มต้�?2';
+  String get levelA2 => 'เริ่มต้น 2';
 
   @override
   String get levelB1 => 'กลาง 1';
@@ -104,7 +104,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get levelB2 => 'กลาง 2';
 
   @override
-  String get levelC1 => 'ขั้นสู�?;
+  String get levelC1 => 'ขั้นสูง';
 
   @override
   String levelWords(String level) {
@@ -112,7 +112,7 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get flashcardMode => 'โหมดการ์�?;
+  String get flashcardMode => 'โหมดการ์ด';
 
   @override
   String get listMode => 'โหมดรายการ';
@@ -121,51 +121,51 @@ class AppLocalizationsTh extends AppLocalizations {
   String get language => 'ภาษา';
 
   @override
-  String get selectLanguage => 'เ�?���?��ภาษา';
+  String get selectLanguage => 'เลือกภาษา';
 
   @override
   String languageChanged(String language) {
-    return 'เปลี่ยนเป็�?$language';
+    return 'เปลี่ยนเป็น $language';
   }
 
   @override
-  String get translationInfo => 'ข้�?��ูลการแปล';
+  String get translationInfo => 'ข้อมูลการแปล';
 
   @override
-  String get translationInfoDesc => 'คำแป�?��ะดาวน์โห�?���?��ตโนมัต�?เมื่อดาวน์โหลดแ�?��วจะใช้งานอ�?��ไลน์ได�?;
+  String get translationInfoDesc => 'คำแปลจะดาวน์โหลดอัตโนมัติ เมื่อดาวน์โหลดแล้วจะใช้งานออฟไลน์ได้';
 
   @override
-  String get ok => 'ตก�?��';
+  String get ok => 'ตกลง';
 
   @override
-  String get darkMode => 'โหมดมื�?;
+  String get darkMode => 'โหมดมืด';
 
   @override
-  String get speechRate => 'ความเร็�?;
+  String get speechRate => 'ความเร็ว';
 
   @override
-  String get notifications => 'การแจ้ง�?ตื�?��';
+  String get notifications => 'การแจ้งเตือน';
 
   @override
-  String get dailyReminder => 'เตื�?��ทุกวัน';
+  String get dailyReminder => 'เตือนทุกวัน';
 
   @override
   String get about => 'เกี่ยวกับ';
 
   @override
-  String get version => 'เวอร์ชั�?;
+  String get version => 'เวอร์ชัน';
 
   @override
   String get developer => 'ผู้พัฒนา';
 
   @override
-  String get searchHint => 'ค้นหาค�?..';
+  String get searchHint => 'ค้นหาคำ...';
 
   @override
-  String get noSearchResults => 'ไม่พบผ�?��ัพธ์';
+  String get noSearchResults => 'ไม่พบผลลัพธ์';
 
   @override
-  String get typeToSearch => 'พิมพ์�?พื่อค้นห�?;
+  String get typeToSearch => 'พิมพ์เพื่อค้นหา';
 
   @override
   String get noFavorites => 'ยังไม่มีรายการโปรด';
@@ -174,139 +174,139 @@ class AppLocalizationsTh extends AppLocalizations {
   String get addFavoritesHint => 'แตะหัวใจเพื่อเพิ่ม';
 
   @override
-  String get posNoun => 'คำนา�?;
+  String get posNoun => 'คำนาม';
 
   @override
-  String get posVerb => 'กริย�?;
+  String get posVerb => 'กริยา';
 
   @override
   String get posAdjective => 'คำคุณศัพท์';
 
   @override
-  String get posAdverb => 'กริยาวิ�?ศษณ์';
+  String get posAdverb => 'กริยาวิเศษณ์';
 
   @override
-  String get posPronoun => 'สรรพนา�?;
+  String get posPronoun => 'สรรพนาม';
 
   @override
-  String get posPreposition => 'คำบุพบ�?;
+  String get posPreposition => 'คำบุพบท';
 
   @override
-  String get posConjunction => 'คำเชื่อ�?;
+  String get posConjunction => 'คำเชื่อม';
 
   @override
-  String get posInterjection => 'คำ�?��ทา�?;
+  String get posInterjection => 'คำอุทาน';
 
   @override
-  String get posArticle => 'คำนำหน้านา�?;
+  String get posArticle => 'คำนำหน้านาม';
 
   @override
-  String get posDeterminer => 'คำกำหน�?;
+  String get posDeterminer => 'คำกำหนด';
 
   @override
-  String get posAuxiliary => 'กริยาช่ว�?;
+  String get posAuxiliary => 'กริยาช่วย';
 
   @override
-  String get posPhrasal => 'กริยาว�?��';
+  String get posPhrasal => 'กริยาวลี';
 
   @override
-  String get showTranslationFirst => 'แสดงคำแป�?��่อ�?;
+  String get showTranslationFirst => 'แสดงคำแปลก่อน';
 
   @override
-  String get showTranslationFirstDesc => 'แสดงความหมายที่แปลแล้วก่�?��ภาษา�?��งกฤษ';
+  String get showTranslationFirstDesc => 'แสดงความหมายที่แปลแล้วก่อนภาษาอังกฤษ';
 
   @override
-  String get display => 'การแสดงผ�?;
+  String get display => 'การแสดงผล';
 
   @override
-  String get useDarkTheme => 'ใช้ธีมมื�?;
+  String get useDarkTheme => 'ใช้ธีมมืด';
 
   @override
-  String get restartToApply => 'รีสตาร์ทแอป�?พื่อใช้การเปลี่ยนธี�?;
+  String get restartToApply => 'รีสตาร์ทแอปเพื่อใช้การเปลี่ยนธีม';
 
   @override
-  String get learningSection => 'การ�?รียนรู�?;
+  String get learningSection => 'การเรียนรู้';
 
   @override
   String currentSpeed(String speed) {
-    return 'ปัจจุบัน: $speedเท่�?;
+    return 'ปัจจุบัน: $speedเท่า';
   }
 
   @override
-  String get getDailyReminders => 'รับการเตื�?��เรียนรู้ประจำวั�?;
+  String get getDailyReminders => 'รับการเตือนเรียนรู้ประจำวัน';
 
   @override
-  String get copyright => '�?��ขสิทธิ�?;
+  String get copyright => 'ลิขสิทธิ์';
 
   @override
   String get copyrightDesc => 'คำนิยามทั้งหมดเป็นต้นฉบับหรือสร้างโดย AI';
 
   @override
-  String get copyrightNotice => 'ประกาศ�?��ขสิทธิ�?;
+  String get copyrightNotice => 'ประกาศลิขสิทธิ์';
 
   @override
-  String get copyrightContent => 'คำนิยามคำศัพท์และตัว�?��่างประโยคทั้งหมดในแอปนี้เป็นต้นฉบับหรือสร้างโดย AI ไม่มีการใช้�?นื้อหาพจนานุกรมที่มี�?��ขสิทธิ�?n\nการแปลจัดหาโดย MyMemory API (บริการแป�?��รี)';
+  String get copyrightContent => 'คำนิยามคำศัพท์และตัวอย่างประโยคทั้งหมดในแอปนี้เป็นต้นฉบับหรือสร้างโดย AI ไม่มีการใช้เนื้อหาพจนานุกรมที่มีลิขสิทธิ์\n\nการแปลจัดหาโดย MyMemory API (บริการแปลฟรี)';
 
   @override
   String get privacyPolicy => 'นโยบายความเป็นส่วนตัว';
 
   @override
-  String get privacyContent => 'แอปนี้ไม่�?ก็บรวบรว�?จัด�?ก็�?หรือแชร์ข้�?��ูลส่วนบุคค�?��ดๆ\n\nคำขอแป�?��ะถูกส่งไปยัง MyMemory API เพื่อประมวลผล ข้�?��ูลผู้ใช้ไม่ถูกจัด�?ก็บบน�?ซิร์ฟ�?วอร์ภายน�?��';
+  String get privacyContent => 'แอปนี้ไม่เก็บรวบรวม จัดเก็บ หรือแชร์ข้อมูลส่วนบุคคลใดๆ\n\nคำขอแปลจะถูกส่งไปยัง MyMemory API เพื่อประมวลผล ข้อมูลผู้ใช้ไม่ถูกจัดเก็บบนเซิร์ฟเวอร์ภายนอก';
 
   @override
-  String get alphabetical => 'ตามตัว�?��กษ�?;
+  String get alphabetical => 'ตามตัวอักษร';
 
   @override
   String get random => 'สุ่ม';
 
   @override
-  String get quiz => 'แบบทดส�?��';
+  String get quiz => 'แบบทดสอบ';
 
   @override
-  String get testYourself => 'ทดสอบตัวเ�?��';
+  String get testYourself => 'ทดสอบตัวเอง';
 
   @override
-  String get wordQuiz => 'แบบทดส�?��คำศัพท�?;
+  String get wordQuiz => 'แบบทดสอบคำศัพท์';
 
   @override
   String quizWithLevel(String level) {
-    return 'แบบทดส�?�� $level';
+    return 'แบบทดสอบ $level';
   }
 
   @override
-  String get wordToMeaningMode => 'คำ?�ความหมา�?;
+  String get wordToMeaningMode => 'คำ→ความหมาย';
 
   @override
-  String get meaningToWordMode => 'ความหมาย?�ค�?;
+  String get meaningToWordMode => 'ความหมาย→คำ';
 
   @override
-  String get quizComplete => '?�� ทำแบบทดส�?��เสร็จแล้ว!';
+  String get quizComplete => '🎉 ทำแบบทดสอบเสร็จแล้ว!';
 
   @override
   String correctAnswers(int percentage) {
-    return '$percentage% ถูกต้อ�?;
+    return '$percentage% ถูกต้อง';
   }
 
   @override
-  String get exit => '�?���?;
+  String get exit => 'ออก';
 
   @override
-  String get tryAgain => '�?��งใหม�?;
+  String get tryAgain => 'ลองใหม่';
 
   @override
-  String get quizCompleteMessage => 'ทำแบบทดส�?��เสร็จแล้ว!';
+  String get quizCompleteMessage => 'ทำแบบทดสอบเสร็จแล้ว!';
 
   @override
-  String get excellent => 'ยอด�?ยี่ย�? ?��';
+  String get excellent => 'ยอดเยี่ยม! 🌟';
 
   @override
-  String get greatJob => 'เก่งมาก! ?��';
+  String get greatJob => 'เก่งมาก! 👏';
 
   @override
-  String get goodStart => 'เริ่มต้นด�? ?��';
+  String get goodStart => 'เริ่มต้นดี! 💪';
 
   @override
-  String get keepPracticing => 'ฝึกต่อไป! ?��';
+  String get keepPracticing => 'ฝึกต่อไป! 📚';
 
   @override
   String questionProgress(int current, int total) {
@@ -314,47 +314,68 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'คำนี้มีความหมายว่า�?��ไร?';
+  String get whatIsTheMeaning => 'คำนี้มีความหมายว่าอะไร?';
 
   @override
   String get whichWordMatches => 'คำไหนตรงกับความหมายนี้?';
 
   @override
-  String get nextQuestion => 'ถัดไ�?;
+  String get nextQuestion => 'ถัดไป';
 
   @override
-  String get loading => 'กำ�?��โห�?��...';
+  String get loading => 'กำลงโหลด...';
 
   @override
-  String get removeAds => '�?��โฆษณ�?;
+  String get removeAds => 'ลบโฆษณา';
 
   @override
-  String get removeAdsTitle => '�?��โฆษณาทั้งหมด';
+  String get removeAdsTitle => 'ลบโฆษณาทั้งหมด';
 
   @override
   String get removeAdsDesc => 'เพลิดเพลินกับการเรียนรู้โดยไม่มีโฆษณา';
 
   @override
-  String get adsRemoved => '�?��โฆษณาแ�?���?;
+  String get adsRemoved => 'ลบโฆษณาแล้ว';
 
   @override
-  String get enjoyAdFree => 'เพลิดเพลินกับประสบการณ์ไร้โฆษณ�?';
+  String get enjoyAdFree => 'เพลิดเพลินกับประสบการณ์ไร้โฆษณา!';
 
   @override
-  String get restorePurchase => 'กู้คืนการซื้�?;
+  String get restorePurchase => 'กู้คืนการซื้อ';
 
   @override
-  String get restorePurchaseDesc => 'ติดตั้งแ�?��ใหม่หรือเปลี่ยน�?��ปกรณ์ใช่ไห�? แตะที่นี่�?พื่อกู้คืนการซื้�?��ม่มีโฆษณาข�?��คุ�?;
+  String get restorePurchaseDesc => 'ติดตั้งแอปใหม่หรือเปลี่ยนอุปกรณ์ใช่ไหม? แตะที่นี่เพื่อกู้คืนการซื้อไม่มีโฆษณาของคุณ';
 
   @override
-  String get purchaseFailed => 'การซื้�?��้มเหล�?กรุณาล�?���?��กครั้ง';
+  String get purchaseFailed => 'การซื้อล้มเหลว กรุณาลองอีกครั้ง';
 
   @override
-  String get purchaseRestored => 'กู้คืนการซื้�?��ำ�?ร็�?';
+  String get purchaseRestored => 'กู้คืนการซื้อสำเร็จ!';
 
   @override
-  String get noPurchaseToRestore => 'ไม่พบการซื้อที่จะกู้คื�?;
+  String get noPurchaseToRestore => 'ไม่พบการซื้อที่จะกู้คืน';
 
   @override
   String get buy => 'ซื้อ';
+
+  @override
+  String get wordFontSize => 'Flashcard Word Size';
+
+  @override
+  String get fontSizeSmall => 'Small';
+
+  @override
+  String get fontSizeMediumSmall => 'Medium Small';
+
+  @override
+  String get fontSizeNormal => 'Normal';
+
+  @override
+  String get fontSizeMediumLarge => 'Medium Large';
+
+  @override
+  String get fontSizeLarge => 'Large';
+
+  @override
+  String get fontSizeExtraLarge => 'Extra Large';
 }
