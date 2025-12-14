@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:flutter/foundation.dart' show kIsWeb, debugPrint;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
@@ -21,25 +21,13 @@ void main() async {
   }
 
   // 번역 서비스 초기화
-  try {
-    await TranslationService.instance.init();
-  } catch (e) {
-    debugPrint('Translation service init error: $e');
-  }
+  await TranslationService.instance.init();
 
   // 광고 서비스 초기화
-  try {
-    await AdService.instance.initialize();
-  } catch (e) {
-    debugPrint('Ad service init error: $e');
-  }
+  await AdService.instance.initialize();
 
   // 인앱 구매 서비스 초기화
-  try {
-    await PurchaseService.instance.initialize();
-  } catch (e) {
-    debugPrint('Purchase service init error: $e');
-  }
+  await PurchaseService.instance.initialize();
 
   runApp(
     ChangeNotifierProvider(
