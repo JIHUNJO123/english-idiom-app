@@ -172,8 +172,9 @@ class _WordListScreenState extends State<WordListScreen> {
 
   void _sortWords(String order) {
     // 현재 보고 있는 단어 저장
-    final currentWord = _words.isNotEmpty ? _words[_currentFlashcardIndex] : null;
-    
+    final currentWord =
+        _words.isNotEmpty ? _words[_currentFlashcardIndex] : null;
+
     setState(() {
       _sortOrder = order;
       if (order == 'alphabetical') {
@@ -183,7 +184,7 @@ class _WordListScreenState extends State<WordListScreen> {
       } else if (order == 'random') {
         _words.shuffle();
       }
-      
+
       // 현재 보고 있던 단어의 새 위치 찾기
       if (currentWord != null) {
         final newIndex = _words.indexWhere((w) => w.id == currentWord.id);
@@ -191,7 +192,7 @@ class _WordListScreenState extends State<WordListScreen> {
       } else {
         _currentFlashcardIndex = 0;
       }
-      
+
       if (_pageController.hasClients) {
         _pageController.jumpToPage(_currentFlashcardIndex);
       }
@@ -573,19 +574,23 @@ class _WordListScreenState extends State<WordListScreen> {
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: _currentFlashcardIndex > 0
-                      ? Theme.of(context).colorScheme.primary
-                      : Colors.grey.shade300,
+                  color:
+                      _currentFlashcardIndex > 0
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.grey.shade300,
                   shape: BoxShape.circle,
-                  boxShadow: _currentFlashcardIndex > 0
-                      ? [
-                          BoxShadow(
-                            color: Theme.of(context).colorScheme.primary.withAlpha(100),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
+                  boxShadow:
+                      _currentFlashcardIndex > 0
+                          ? [
+                            BoxShadow(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.primary.withAlpha(100),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                          : null,
                 ),
                 child: IconButton(
                   onPressed:
@@ -599,7 +604,8 @@ class _WordListScreenState extends State<WordListScreen> {
                           : null,
                   icon: Icon(
                     Icons.arrow_back_rounded,
-                    color: _currentFlashcardIndex > 0 ? Colors.white : Colors.grey,
+                    color:
+                        _currentFlashcardIndex > 0 ? Colors.white : Colors.grey,
                   ),
                   iconSize: 28,
                 ),
@@ -622,7 +628,10 @@ class _WordListScreenState extends State<WordListScreen> {
                 ),
                 child: IconButton(
                   onPressed: () => _speak(_words[_currentFlashcardIndex].word),
-                  icon: const Icon(Icons.volume_up_rounded, color: Colors.white),
+                  icon: const Icon(
+                    Icons.volume_up_rounded,
+                    color: Colors.white,
+                  ),
                   iconSize: 36,
                 ),
               ),
@@ -632,19 +641,23 @@ class _WordListScreenState extends State<WordListScreen> {
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: _currentFlashcardIndex < _words.length - 1
-                      ? Theme.of(context).colorScheme.primary
-                      : Colors.grey.shade300,
+                  color:
+                      _currentFlashcardIndex < _words.length - 1
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.grey.shade300,
                   shape: BoxShape.circle,
-                  boxShadow: _currentFlashcardIndex < _words.length - 1
-                      ? [
-                          BoxShadow(
-                            color: Theme.of(context).colorScheme.primary.withAlpha(100),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
+                  boxShadow:
+                      _currentFlashcardIndex < _words.length - 1
+                          ? [
+                            BoxShadow(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.primary.withAlpha(100),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                          : null,
                 ),
                 child: IconButton(
                   onPressed:
@@ -658,7 +671,10 @@ class _WordListScreenState extends State<WordListScreen> {
                           : null,
                   icon: Icon(
                     Icons.arrow_forward_rounded,
-                    color: _currentFlashcardIndex < _words.length - 1 ? Colors.white : Colors.grey,
+                    color:
+                        _currentFlashcardIndex < _words.length - 1
+                            ? Colors.white
+                            : Colors.grey,
                   ),
                   iconSize: 28,
                 ),
@@ -762,26 +778,26 @@ class _WordListScreenState extends State<WordListScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 단어 (조금 작게)
+              // 단어 (크고 눈에 띄게)
               Text(
                 word.word,
                 style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey[600],
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               const SizedBox(height: 20),
-              // 의미 (가장 크고 눈에 띄게)
+              // 의미 (크고 눈에 띄게)
               if (isLoadingTranslation)
                 const CircularProgressIndicator()
               else
                 Text(
                   translatedDef ?? word.definition,
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
                     height: 1.3,
                   ),
                   textAlign: TextAlign.center,

@@ -250,7 +250,10 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
 
           // 네비게이션 버튼
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24.0,
+              vertical: 16.0,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -259,19 +262,23 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: _currentIndex > 0
-                        ? Theme.of(context).colorScheme.primary
-                        : Colors.grey.shade300,
+                    color:
+                        _currentIndex > 0
+                            ? Theme.of(context).colorScheme.primary
+                            : Colors.grey.shade300,
                     shape: BoxShape.circle,
-                    boxShadow: _currentIndex > 0
-                        ? [
-                            BoxShadow(
-                              color: Theme.of(context).colorScheme.primary.withAlpha(100),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
-                            ),
-                          ]
-                        : null,
+                    boxShadow:
+                        _currentIndex > 0
+                            ? [
+                              BoxShadow(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withAlpha(100),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ]
+                            : null,
                   ),
                   child: IconButton(
                     onPressed: _currentIndex > 0 ? _previousCard : null,
@@ -324,8 +331,12 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
                     ],
                   ),
                   child: IconButton(
-                    onPressed: () => _speak(_shuffledFavorites[_currentIndex].word),
-                    icon: const Icon(Icons.volume_up_rounded, color: Colors.white),
+                    onPressed:
+                        () => _speak(_shuffledFavorites[_currentIndex].word),
+                    icon: const Icon(
+                      Icons.volume_up_rounded,
+                      color: Colors.white,
+                    ),
                     iconSize: 36,
                   ),
                 ),
@@ -335,19 +346,23 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
                   width: 56,
                   height: 56,
                   decoration: BoxDecoration(
-                    color: _currentIndex < _shuffledFavorites.length - 1
-                        ? Theme.of(context).colorScheme.primary
-                        : Colors.grey.shade300,
+                    color:
+                        _currentIndex < _shuffledFavorites.length - 1
+                            ? Theme.of(context).colorScheme.primary
+                            : Colors.grey.shade300,
                     shape: BoxShape.circle,
-                    boxShadow: _currentIndex < _shuffledFavorites.length - 1
-                        ? [
-                            BoxShadow(
-                              color: Theme.of(context).colorScheme.primary.withAlpha(100),
-                              blurRadius: 8,
-                              offset: const Offset(0, 2),
-                            ),
-                          ]
-                        : null,
+                    boxShadow:
+                        _currentIndex < _shuffledFavorites.length - 1
+                            ? [
+                              BoxShadow(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withAlpha(100),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ]
+                            : null,
                   ),
                   child: IconButton(
                     onPressed:
@@ -356,7 +371,10 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
                             : null,
                     icon: Icon(
                       Icons.arrow_forward_rounded,
-                      color: _currentIndex < _shuffledFavorites.length - 1 ? Colors.white : Colors.grey,
+                      color:
+                          _currentIndex < _shuffledFavorites.length - 1
+                              ? Colors.white
+                              : Colors.grey,
                     ),
                     iconSize: 28,
                   ),
@@ -417,13 +435,13 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // 단어 (조금 작게)
+            // 단어 (크고 눈에 띄게)
             Text(
               word.word,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey[600],
+              style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1565C0),
               ),
             ),
             const SizedBox(height: 6),
@@ -436,16 +454,16 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
               ),
             ),
             const SizedBox(height: 16),
-            // 의미 (가장 크고 눈에 띄게)
+            // 의미 (크고 눈에 띄게)
             if (_isLoadingTranslation)
               const CircularProgressIndicator()
             else ...[
               Text(
                 _translatedDefinition ?? word.definition,
                 style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1565C0),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
                   height: 1.3,
                 ),
                 textAlign: TextAlign.center,
