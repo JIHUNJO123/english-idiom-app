@@ -9,10 +9,10 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Dagens Ord';
+  String get todayWord => '📅 Dagens Idiom';
 
   @override
   String get learning => 'Inlärning';
@@ -21,16 +21,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get levelLearning => 'Nivåbaserad Inlärning';
 
   @override
-  String get allWords => 'Alla Ord';
+  String get allWords => 'Alla Idiom';
 
   @override
-  String get viewAllWords => 'Visa alla ord';
+  String get viewAllWords => 'Visa alla idiom';
 
   @override
   String get favorites => 'Favoriter';
 
   @override
-  String get savedWords => 'Sparade ord';
+  String get savedWords => 'Sparade idiom';
 
   @override
   String get flashcard => 'Flashkort';
@@ -42,16 +42,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get search => 'Sök';
 
   @override
-  String get searchWords => 'Sök ord';
+  String get searchWords => 'Sök idiom';
 
   @override
   String get settings => 'Inställningar';
 
   @override
-  String get noWords => 'Inga ord hittades';
+  String get noWords => 'Inga idiom hittades';
 
   @override
-  String get cannotLoadWords => 'Kan inte ladda ord';
+  String get cannotLoadWords => 'Kan inte ladda idiom';
 
   @override
   String get addedToFavorites => 'Tillagd i favoriter';
@@ -108,7 +108,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level Ord';
+    return '$level Idiom';
   }
 
   @override
@@ -266,7 +266,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get testYourself => 'Testa dig själv';
 
   @override
-  String get wordQuiz => 'Ordquiz';
+  String get wordQuiz => 'Idiomquiz';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Ord→Betydelse';
+  String get wordToMeaningMode => 'Idiom→Betydelse';
 
   @override
-  String get meaningToWordMode => 'Betydelse→Ord';
+  String get meaningToWordMode => 'Betydelse→Idiom';
 
   @override
   String get quizComplete => '🎉 Quiz klar!';
@@ -314,10 +314,10 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Vad betyder detta ord?';
+  String get whatIsTheMeaning => 'Vad betyder detta idiom?';
 
   @override
-  String get whichWordMatches => 'Vilket ord matchar denna betydelse?';
+  String get whichWordMatches => 'Vilket idiom matchar denna betydelse?';
 
   @override
   String get nextQuestion => 'Nästa';
@@ -359,7 +359,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get buy => 'Köp';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

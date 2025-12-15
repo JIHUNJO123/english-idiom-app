@@ -9,10 +9,10 @@ class AppLocalizationsMs extends AppLocalizations {
   AppLocalizationsMs([String locale = 'ms']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Perkataan Hari Ini';
+  String get todayWord => '📅 Idiom Hari Ini';
 
   @override
   String get learning => 'Pembelajaran';
@@ -21,16 +21,16 @@ class AppLocalizationsMs extends AppLocalizations {
   String get levelLearning => 'Pembelajaran Mengikut Tahap';
 
   @override
-  String get allWords => 'Semua Perkataan';
+  String get allWords => 'Semua Idiom';
 
   @override
-  String get viewAllWords => 'Lihat semua perkataan';
+  String get viewAllWords => 'Lihat semua idiom';
 
   @override
   String get favorites => 'Kegemaran';
 
   @override
-  String get savedWords => 'Perkataan tersimpan';
+  String get savedWords => 'Idiom tersimpan';
 
   @override
   String get flashcard => 'Kad Imbasan';
@@ -42,16 +42,16 @@ class AppLocalizationsMs extends AppLocalizations {
   String get search => 'Cari';
 
   @override
-  String get searchWords => 'Cari perkataan';
+  String get searchWords => 'Cari idiom';
 
   @override
   String get settings => 'Tetapan';
 
   @override
-  String get noWords => 'Tiada perkataan dijumpai';
+  String get noWords => 'Tiada idiom dijumpai';
 
   @override
-  String get cannotLoadWords => 'Tidak dapat memuatkan perkataan';
+  String get cannotLoadWords => 'Tidak dapat memuatkan idiom';
 
   @override
   String get addedToFavorites => 'Ditambah ke kegemaran';
@@ -108,7 +108,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'Perkataan $level';
+    return 'Idiom $level';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get developer => 'Pembangun';
 
   @override
-  String get searchHint => 'Cari perkataan...';
+  String get searchHint => 'Cari idiom...';
 
   @override
   String get noSearchResults => 'Tiada hasil dijumpai';
@@ -266,7 +266,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get testYourself => 'Uji diri anda';
 
   @override
-  String get wordQuiz => 'Kuiz Perkataan';
+  String get wordQuiz => 'Kuiz Idiom';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Perkataan→Makna';
+  String get wordToMeaningMode => 'Idiom→Makna';
 
   @override
-  String get meaningToWordMode => 'Makna→Perkataan';
+  String get meaningToWordMode => 'Makna→Idiom';
 
   @override
   String get quizComplete => '🎉 Kuiz Selesai!';
@@ -317,7 +317,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get whatIsTheMeaning => 'Apakah makna perkataan ini?';
 
   @override
-  String get whichWordMatches => 'Perkataan mana yang sepadan dengan makna ini?';
+  String get whichWordMatches => 'Idiom mana yang sepadan dengan makna ini?';
 
   @override
   String get nextQuestion => 'Seterusnya';
@@ -359,7 +359,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get buy => 'Beli';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

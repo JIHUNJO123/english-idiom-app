@@ -9,10 +9,10 @@ class AppLocalizationsTh extends AppLocalizations {
   AppLocalizationsTh([String locale = 'th']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 คำวันนี้';
+  String get todayWord => '📅 สำนวนวันนี้';
 
   @override
   String get learning => 'เรียน';
@@ -24,13 +24,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get allWords => 'ทั้งหมด';
 
   @override
-  String get viewAllWords => 'ดูคำทั้งหมด';
+  String get viewAllWords => 'ดูสำนวนทั้งหมด';
 
   @override
   String get favorites => 'รายการโปรด';
 
   @override
-  String get savedWords => 'คำที่บันทึก';
+  String get savedWords => 'สำนวนที่บันทึก';
 
   @override
   String get flashcard => 'แฟลชการ์ด';
@@ -42,13 +42,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get search => 'ค้นหา';
 
   @override
-  String get searchWords => 'ค้นหาคำ';
+  String get searchWords => 'ค้นหาสำนวน';
 
   @override
   String get settings => 'ตั้งค่า';
 
   @override
-  String get noWords => 'ไม่มีคำ';
+  String get noWords => 'ไม่มีสำนวน';
 
   @override
   String get cannotLoadWords => 'ไม่สามารถโหลดได้';
@@ -108,7 +108,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'คำ $level';
+    return 'สำนวน $level';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get developer => 'ผู้พัฒนา';
 
   @override
-  String get searchHint => 'ค้นหาคำ...';
+  String get searchHint => 'ค้นหาสำนวน...';
 
   @override
   String get noSearchResults => 'ไม่พบผลลัพธ์';
@@ -266,7 +266,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get testYourself => 'ทดสอบตัวเอง';
 
   @override
-  String get wordQuiz => 'แบบทดสอบคำศัพท์';
+  String get wordQuiz => 'แบบทดสอบสำนวน';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'คำ→ความหมาย';
+  String get wordToMeaningMode => 'สำนวน→ความหมาย';
 
   @override
-  String get meaningToWordMode => 'ความหมาย→คำ';
+  String get meaningToWordMode => 'ความหมาย→สำนวน';
 
   @override
   String get quizComplete => '🎉 ทำแบบทดสอบเสร็จแล้ว!';
@@ -314,10 +314,10 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'คำนี้มีความหมายว่าอะไร?';
+  String get whatIsTheMeaning => 'สำนวนนี้มีความหมายว่าอะไร?';
 
   @override
-  String get whichWordMatches => 'คำไหนตรงกับความหมายนี้?';
+  String get whichWordMatches => 'สำนวนไหนตรงกับความหมายนี้?';
 
   @override
   String get nextQuestion => 'ถัดไป';
@@ -359,7 +359,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get buy => 'ซื้อ';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

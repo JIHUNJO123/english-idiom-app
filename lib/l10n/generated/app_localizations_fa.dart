@@ -9,10 +9,10 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 کلمه امروز';
+  String get todayWord => '📅 اصطلاح امروز';
 
   @override
   String get learning => 'یادگیری';
@@ -21,16 +21,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get levelLearning => 'یادگیری بر اساس سطح';
 
   @override
-  String get allWords => 'همه کلمات';
+  String get allWords => 'همه اصطلاحات';
 
   @override
-  String get viewAllWords => 'مشاهده همه کلمات';
+  String get viewAllWords => 'مشاهده همه اصطلاحات';
 
   @override
   String get favorites => 'علاقه‌مندی‌ها';
 
   @override
-  String get savedWords => 'کلمات ذخیره شده';
+  String get savedWords => 'اصطلاحات ذخیره شده';
 
   @override
   String get flashcard => 'فلش کارت';
@@ -42,16 +42,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get search => 'جستجو';
 
   @override
-  String get searchWords => 'جستجوی کلمات';
+  String get searchWords => 'جستجوی اصطلاحات';
 
   @override
   String get settings => 'تنظیمات';
 
   @override
-  String get noWords => 'کلمه‌ای یافت نشد';
+  String get noWords => 'اصطلاحی یافت نشد';
 
   @override
-  String get cannotLoadWords => 'بارگذاری کلمات ممکن نیست';
+  String get cannotLoadWords => 'بارگذاری اصطلاحات ممکن نیست';
 
   @override
   String get addedToFavorites => 'به علاقه‌مندی‌ها اضافه شد';
@@ -108,7 +108,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'کلمات $level';
+    return 'اصطلاحات $level';
   }
 
   @override
@@ -159,13 +159,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get developer => 'توسعه‌دهنده';
 
   @override
-  String get searchHint => 'جستجوی کلمات...';
+  String get searchHint => 'جستجوی اصطلاحات...';
 
   @override
   String get noSearchResults => 'نتیجه‌ای یافت نشد';
 
   @override
-  String get typeToSearch => 'برای جستجوی کلمات تایپ کنید';
+  String get typeToSearch => 'برای جستجوی اصطلاحات تایپ کنید';
 
   @override
   String get noFavorites => 'هنوز علاقه‌مندی‌ای نیست';
@@ -266,7 +266,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get testYourself => 'خودتان را بیازمایید';
 
   @override
-  String get wordQuiz => 'آزمون کلمات';
+  String get wordQuiz => 'آزمون اصطلاحات';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'کلمه←معنی';
+  String get wordToMeaningMode => 'اصطلاح←معنی';
 
   @override
-  String get meaningToWordMode => 'معنی←کلمه';
+  String get meaningToWordMode => 'معنی←اصطلاح';
 
   @override
   String get quizComplete => '🎉 آزمون کامل شد!';
@@ -314,10 +314,10 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'معنی این کلمه چیست؟';
+  String get whatIsTheMeaning => 'معنی این اصطلاح چیست؟';
 
   @override
-  String get whichWordMatches => 'کدام کلمه با این معنی مطابقت دارد؟';
+  String get whichWordMatches => 'کدام اصطلاح با این معنی مطابقت دارد؟';
 
   @override
   String get nextQuestion => 'بعدی';
@@ -359,7 +359,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get buy => 'خرید';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

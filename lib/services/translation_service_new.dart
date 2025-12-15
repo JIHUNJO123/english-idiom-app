@@ -17,10 +17,33 @@ class SupportedLanguage {
   });
 }
 
-/// 번역 서비스 (무료 API 사용 + 로컬 캐싱)
+/// 번역 서비스 (DeepL API 우선 + Lingva fallback)
 class TranslationService {
   static final TranslationService instance = TranslationService._init();
   TranslationService._init();
+
+  // DeepL API 키 (무료 버전)
+  // TODO: 여기에 DeepL API 키를 입력하세요
+  static const String _deeplApiKey = 'YOUR_DEEPL_API_KEY_HERE';
+
+  // DeepL 지원 언어 (고품질 번역)
+  static const Set<String> _deeplSupportedLanguages = {
+    'ko',
+    'ja',
+    'zh',
+    'es',
+    'fr',
+    'de',
+    'pt',
+    'ru',
+    'it',
+    'nl',
+    'pl',
+    'sv',
+    'tr',
+    'uk',
+    'id',
+  };
 
   // 지원 언어 목록
   static const List<SupportedLanguage> supportedLanguages = [
@@ -73,20 +96,16 @@ class TranslationService {
     final savedLanguage = prefs.getString('nativeLanguage');
 
     if (savedLanguage != null) {
-      // 저장된 언어가 있으면 사용
       _currentLanguage = savedLanguage;
     } else {
-      // 저장된 언어가 없으면 기기 언어 자동 감지
       final deviceLocale = ui.PlatformDispatcher.instance.locale;
       final deviceLangCode = deviceLocale.languageCode;
 
-      // 지원하는 언어인지 확인
       final isSupported = supportedLanguages.any(
         (lang) => lang.code == deviceLangCode,
       );
       _currentLanguage = isSupported ? deviceLangCode : 'en';
 
-      // 자동 감지된 언어 저장
       await prefs.setString('nativeLanguage', _currentLanguage);
     }
   }
@@ -101,22 +120,16 @@ class TranslationService {
   /// 번역 필요 여부
   bool get needsTranslation => _currentLanguage != 'en';
   
-  /// 내장 번역 지원 언어 (오프라인 지원)
-  static const Set<String> embeddedLanguages = {
-    'ko', 'ja', 'zh', 'es', 'fr', 'de', 'pt', 'ru', 'ar', 'hi'
-  };
-  
-  /// 현재 언어가 내장 번역 지원 여부
-  bool get hasEmbeddedTranslation => embeddedLanguages.contains(_currentLanguage);
+  /// 현재 언어 코드 가져오기
+  String get currentLanguage => _currentLanguage;
 
   /// 텍스트 번역 (내장 번역 → 캐시 → API 순서)
-  /// Returns: (번역된 텍스트, API 사용 여부)
-  Future<(String, bool)> translateWithInfo(String text, int wordId, String fieldType, {String? embeddedTranslation}) async {
-    if (!needsTranslation || text.isEmpty) return (text, false);
+  Future<String> translate(String text, int wordId, String fieldType, {String? embeddedTranslation}) async {
+    if (!needsTranslation || text.isEmpty) return text;
     
     // 0. 내장 번역 확인 (words.json에 포함된 번역)
     if (embeddedTranslation != null && embeddedTranslation.isNotEmpty) {
-      return (embeddedTranslation, false);
+      return embeddedTranslation;
     }
 
     // 1. 캐시 확인
@@ -125,7 +138,7 @@ class TranslationService {
       _currentLanguage,
       fieldType,
     );
-    if (cached != null) return (cached, false);
+    if (cached != null) return cached;
 
     // 2. API 호출
     final translated = await _translateWithAPI(text);
@@ -140,56 +153,98 @@ class TranslationService {
       );
     }
 
-    return (translated, true); // API 사용됨
-  }
-  
-  /// 기존 호환성을 위한 메서드
-  Future<String> translate(String text, int wordId, String fieldType, {String? embeddedTranslation}) async {
-    final (result, _) = await translateWithInfo(text, wordId, fieldType, embeddedTranslation: embeddedTranslation);
-    return result;
+    return translated;
   }
 
-  /// MyMemory API로 번역 (무료, 일 1000회)
+  /// API로 번역 (DeepL 우선, Lingva fallback)
   Future<String> _translateWithAPI(String text) async {
+    // DeepL 지원 언어면 DeepL 사용
+    if (_deeplSupportedLanguages.contains(_currentLanguage) &&
+        _deeplApiKey != 'YOUR_DEEPL_API_KEY_HERE') {
+      final result = await _translateWithDeepL(text);
+      if (result != null) return result;
+    }
+
+    // DeepL 실패 또는 미지원 언어면 Lingva 사용
+    final result = await _translateWithLingva(text);
+    return result ?? text;
+  }
+
+  /// DeepL API로 번역 (고품질, 숙어 의역 잘함)
+  Future<String?> _translateWithDeepL(String text) async {
     try {
-      final url = Uri.parse(
-        'https://api.mymemory.translated.net/get'
-        '?q=${Uri.encodeComponent(text)}'
-        '&langpair=en|$_currentLanguage',
-      );
+      // DeepL 언어 코드 변환
+      String targetLang = _currentLanguage.toUpperCase();
+      if (targetLang == 'ZH') targetLang = 'ZH-HANS'; // 중국어 간체
 
-      print('Translation API call: en -> $_currentLanguage');
-      print(
-        '  Text: ${text.substring(0, text.length > 50 ? 50 : text.length)}...',
-      );
+      final response = await http
+          .post(
+            Uri.parse('https://api-free.deepl.com/v2/translate'),
+            headers: {
+              'Authorization': 'DeepL-Auth-Key $_deeplApiKey',
+              'Content-Type': 'application/json',
+            },
+            body: json.encode({
+              'text': [text],
+              'source_lang': 'EN',
+              'target_lang': targetLang,
+            }),
+          )
+          .timeout(const Duration(seconds: 15));
 
-      final response = await http.get(url).timeout(const Duration(seconds: 10));
-
-      print('  Response status: ${response.statusCode}');
+      print('DeepL API call: EN -> $targetLang');
+      print('  Status: ${response.statusCode}');
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final translated = data['responseData']?['translatedText'];
-        final status = data['responseStatus'];
-
-        print('  API status: $status');
-        print(
-          '  Translated: ${translated?.toString().substring(0, (translated?.toString().length ?? 0) > 50 ? 50 : (translated?.toString().length ?? 0))}...',
-        );
-
+        final translated = data['translations']?[0]?['text'];
         if (translated != null && translated.toString().isNotEmpty) {
-          // MyMemory가 대문자로 반환할 때가 있어서 확인
-          if (translated.toString().toUpperCase() != translated.toString()) {
-            return translated.toString();
-          }
+          print('  Result: $translated');
           return translated.toString();
         }
+      } else {
+        print('  Error: ${response.body}');
       }
     } catch (e) {
-      print('Translation error: $e');
+      print('DeepL error: $e');
     }
-    print('  Translation failed, returning original text');
-    return text; // 실패시 원문 반환
+    return null;
+  }
+
+  /// Lingva API로 번역 (무료, 무제한, Google Translate 프록시)
+  Future<String?> _translateWithLingva(String text) async {
+    // 여러 Lingva 인스턴스 (하나 실패하면 다른 것 시도)
+    final instances = [
+      'https://lingva.ml',
+      'https://lingva.lunar.icu',
+      'https://translate.plausibility.cloud',
+    ];
+
+    for (final instance in instances) {
+      try {
+        final encodedText = Uri.encodeComponent(text);
+        final url = '$instance/api/v1/en/$_currentLanguage/$encodedText';
+
+        print('Lingva API call: $instance');
+
+        final response = await http
+            .get(Uri.parse(url))
+            .timeout(const Duration(seconds: 10));
+
+        if (response.statusCode == 200) {
+          final data = json.decode(response.body);
+          final translated = data['translation'];
+          if (translated != null && translated.toString().isNotEmpty) {
+            print('  Result: $translated');
+            return translated.toString();
+          }
+        }
+      } catch (e) {
+        print('Lingva error ($instance): $e');
+        continue; // 다음 인스턴스 시도
+      }
+    }
+    return null;
   }
 
   /// 배치 번역 (여러 단어 한번에)

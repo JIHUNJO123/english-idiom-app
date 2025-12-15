@@ -9,10 +9,10 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 今日の単語';
+  String get todayWord => '📅 今日の熟語';
 
   @override
   String get learning => '学習';
@@ -21,16 +21,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get levelLearning => 'レベル別学習';
 
   @override
-  String get allWords => '全単語';
+  String get allWords => '全熟語';
 
   @override
-  String get viewAllWords => 'すべての単語を見る';
+  String get viewAllWords => 'すべての熟語を見る';
 
   @override
   String get favorites => 'お気に入り';
 
   @override
-  String get savedWords => '保存した単語';
+  String get savedWords => '保存した熟語';
 
   @override
   String get flashcard => 'フラッシュカード';
@@ -42,16 +42,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get search => '検索';
 
   @override
-  String get searchWords => '単語を探す';
+  String get searchWords => '熟語を探す';
 
   @override
   String get settings => '設定';
 
   @override
-  String get noWords => '単語がありません';
+  String get noWords => '熟語がありません';
 
   @override
-  String get cannotLoadWords => '単語を読み込めません';
+  String get cannotLoadWords => '熟語を読み込めません';
 
   @override
   String get addedToFavorites => 'お気に入りに追加しました';
@@ -108,7 +108,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level 単語';
+    return '$level 熟語';
   }
 
   @override
@@ -132,7 +132,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get translationInfo => '翻訳について';
 
   @override
-  String get translationInfoDesc => '単語を見ると自動的に翻訳がダウンロードされます。ダウンロードした翻訳はオフラインでも使用できます。';
+  String get translationInfoDesc => '熟語を見ると自動的に翻訳がダウンロードされます。ダウンロードした翻訳はオフラインでも使用できます。';
 
   @override
   String get ok => 'OK';
@@ -159,13 +159,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get developer => '開発者';
 
   @override
-  String get searchHint => '単語を検索...';
+  String get searchHint => '熟語を検索...';
 
   @override
   String get noSearchResults => '検索結果がありません';
 
   @override
-  String get typeToSearch => '単語を検索してください';
+  String get typeToSearch => '熟語を検索してください';
 
   @override
   String get noFavorites => 'お気に入りがありません';
@@ -245,7 +245,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get copyrightNotice => '著作権情報';
 
   @override
-  String get copyrightContent => 'このアプリのすべての単語定義と例文はオリジナルまたはAIで生成されています。著作権のある辞書コンテンツは使用されていません。\n\n翻訳はMyMemory API（無料翻訳サービス）で提供されています。';
+  String get copyrightContent => 'このアプリのすべての熟語定義と例文はオリジナルまたはAIで生成されています。著作権のある辞書コンテンツは使用されていません。\n\n翻訳はMyMemory API（無料翻訳サービス）で提供されています。';
 
   @override
   String get privacyPolicy => 'プライバシーポリシー';
@@ -266,7 +266,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get testYourself => '実力テスト';
 
   @override
-  String get wordQuiz => '単語クイズ';
+  String get wordQuiz => '熟語クイズ';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => '単語→意味';
+  String get wordToMeaningMode => '熟語→意味';
 
   @override
-  String get meaningToWordMode => '意味→単語';
+  String get meaningToWordMode => '意味→熟語';
 
   @override
   String get quizComplete => '🎉 クイズ完了！';
@@ -314,10 +314,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'この単語の意味は何ですか？';
+  String get whatIsTheMeaning => 'この熟語の意味は何ですか？';
 
   @override
-  String get whichWordMatches => 'この意味に合う単語は？';
+  String get whichWordMatches => 'この意味に合う熟語は？';
 
   @override
   String get nextQuestion => '次へ';
@@ -359,7 +359,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get buy => '購入';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

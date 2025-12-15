@@ -9,10 +9,10 @@ class AppLocalizationsBn extends AppLocalizations {
   AppLocalizationsBn([String locale = 'bn']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 আজকের শব্দ';
+  String get todayWord => '📅 আজকের বাগধারা';
 
   @override
   String get learning => 'শেখা';
@@ -21,16 +21,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String get levelLearning => 'স্তর অনুযায়ী শেখা';
 
   @override
-  String get allWords => 'সব শব্দ';
+  String get allWords => 'সব বাগধারা';
 
   @override
-  String get viewAllWords => 'সব শব্দ দেখুন';
+  String get viewAllWords => 'সব বাগধারা দেখুন';
 
   @override
   String get favorites => 'পছন্দের';
 
   @override
-  String get savedWords => 'সংরক্ষিত শব্দ';
+  String get savedWords => 'সংরক্ষিত বাগধারা';
 
   @override
   String get flashcard => 'ফ্ল্যাশকার্ড';
@@ -42,16 +42,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String get search => 'খুঁজুন';
 
   @override
-  String get searchWords => 'শব্দ খুঁজুন';
+  String get searchWords => 'বাগধারা খুঁজুন';
 
   @override
   String get settings => 'সেটিংস';
 
   @override
-  String get noWords => 'কোনো শব্দ পাওয়া যায়নি';
+  String get noWords => 'কোনো বাগধারা পাওয়া যায়নি';
 
   @override
-  String get cannotLoadWords => 'শব্দ লোড করা যাচ্ছে না';
+  String get cannotLoadWords => 'বাগধারা লোড করা যাচ্ছে না';
 
   @override
   String get addedToFavorites => 'পছন্দে যোগ করা হয়েছে';
@@ -108,7 +108,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level শব্দ';
+    return '$level বাগধারা';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get developer => 'ডেভেলপার';
 
   @override
-  String get searchHint => 'শব্দ খুঁজুন...';
+  String get searchHint => 'বাগধারা খুঁজুন...';
 
   @override
   String get noSearchResults => 'কোনো ফলাফল পাওয়া যায়নি';
@@ -266,7 +266,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get testYourself => 'নিজেকে পরীক্ষা করুন';
 
   @override
-  String get wordQuiz => 'শব্দ কুইজ';
+  String get wordQuiz => 'বাগধারা কুইজ';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'শব্দ→অর্থ';
+  String get wordToMeaningMode => 'বাগধারা→অর্থ';
 
   @override
-  String get meaningToWordMode => 'অর্থ→শব্দ';
+  String get meaningToWordMode => 'অর্থ→বাগধারা';
 
   @override
   String get quizComplete => '🎉 কুইজ সম্পূর্ণ!';
@@ -314,10 +314,10 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'এই শব্দের অর্থ কী?';
+  String get whatIsTheMeaning => 'এই বাগধারার অর্থ কী?';
 
   @override
-  String get whichWordMatches => 'কোন শব্দটি এই অর্থের সাথে মেলে?';
+  String get whichWordMatches => 'কোন বাগধারাটি এই অর্থের সাথে মেলে?';
 
   @override
   String get nextQuestion => 'পরবর্তী';
@@ -359,7 +359,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get buy => 'কিনুন';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

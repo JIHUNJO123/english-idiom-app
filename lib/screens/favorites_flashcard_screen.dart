@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
+import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
 import '../utils/pos_helper.dart';
@@ -28,6 +28,7 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
   String? _translatedExample;
   bool _isLoadingTranslation = false;
   double _wordFontSize = 1.0; // 단어 폰트 크기 배율
+  bool _apiNoticeShown = false;
 
   @override
   void initState() {
@@ -64,17 +65,30 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
 
     if (translationService.needsTranslation) {
       setState(() => _isLoadingTranslation = true);
+      
+      // 내장 번역 가져오기
+      final langCode = translationService.currentLanguage;
+      final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
+      final embeddedEx = word.getEmbeddedTranslation(langCode, 'example');
 
-      final translatedDef = await translationService.translate(
+      final (translatedDef, apiUsedDef) = await translationService.translateWithInfo(
         word.definition,
         word.id,
         'definition',
+        embeddedTranslation: embeddedDef,
       );
-      final translatedEx = await translationService.translate(
+      final (translatedEx, apiUsedEx) = await translationService.translateWithInfo(
         word.example,
         word.id,
         'example',
+        embeddedTranslation: embeddedEx,
       );
+      
+      // API 사용 시 한 번만 안내
+      if ((apiUsedDef || apiUsedEx) && !_apiNoticeShown && mounted) {
+        _apiNoticeShown = true;
+        _showApiTranslationNotice();
+      }
 
       setState(() {
         _translatedDefinition = translatedDef;
@@ -87,6 +101,17 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
         _translatedExample = null;
       });
     }
+  }
+  
+  void _showApiTranslationNotice() {
+    final l10n = AppLocalizations.of(context)!;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(l10n.apiTranslationNotice),
+        duration: const Duration(seconds: 4),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   void _flipCard() {

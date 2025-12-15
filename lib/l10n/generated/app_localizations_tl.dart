@@ -9,10 +9,10 @@ class AppLocalizationsTl extends AppLocalizations {
   AppLocalizationsTl([String locale = 'tl']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Salita Ngayong Araw';
+  String get todayWord => '📅 Idiom Ngayong Araw';
 
   @override
   String get learning => 'Pag-aaral';
@@ -21,16 +21,16 @@ class AppLocalizationsTl extends AppLocalizations {
   String get levelLearning => 'Pag-aaral ayon sa Antas';
 
   @override
-  String get allWords => 'Lahat ng Salita';
+  String get allWords => 'Lahat ng Idiom';
 
   @override
-  String get viewAllWords => 'Tingnan lahat ng salita';
+  String get viewAllWords => 'Tingnan lahat ng idiom';
 
   @override
   String get favorites => 'Mga Paborito';
 
   @override
-  String get savedWords => 'Mga naka-save na salita';
+  String get savedWords => 'Mga naka-save na idiom';
 
   @override
   String get flashcard => 'Flashcard';
@@ -42,16 +42,16 @@ class AppLocalizationsTl extends AppLocalizations {
   String get search => 'Maghanap';
 
   @override
-  String get searchWords => 'Maghanap ng salita';
+  String get searchWords => 'Maghanap ng idiom';
 
   @override
   String get settings => 'Mga Setting';
 
   @override
-  String get noWords => 'Walang nahanap na salita';
+  String get noWords => 'Walang nahanap na idiom';
 
   @override
-  String get cannotLoadWords => 'Hindi mai-load ang mga salita';
+  String get cannotLoadWords => 'Hindi mai-load ang mga idiom';
 
   @override
   String get addedToFavorites => 'Idinagdag sa mga paborito';
@@ -108,7 +108,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level na Salita';
+    return '$level na Idiom';
   }
 
   @override
@@ -266,7 +266,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get testYourself => 'Subukan ang iyong sarili';
 
   @override
-  String get wordQuiz => 'Quiz sa Salita';
+  String get wordQuiz => 'Quiz sa Idiom';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsTl extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Salita→Kahulugan';
+  String get wordToMeaningMode => 'Idiom→Kahulugan';
 
   @override
-  String get meaningToWordMode => 'Kahulugan→Salita';
+  String get meaningToWordMode => 'Kahulugan→Idiom';
 
   @override
   String get quizComplete => '🎉 Tapos na ang Quiz!';
@@ -314,10 +314,10 @@ class AppLocalizationsTl extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Ano ang kahulugan ng salitang ito?';
+  String get whatIsTheMeaning => 'Ano ang kahulugan ng idiom na ito?';
 
   @override
-  String get whichWordMatches => 'Aling salita ang tumutugma sa kahulugang ito?';
+  String get whichWordMatches => 'Aling idiom ang tumutugma sa kahulugang ito?';
 
   @override
   String get nextQuestion => 'Susunod';
@@ -359,7 +359,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get buy => 'Bumili';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

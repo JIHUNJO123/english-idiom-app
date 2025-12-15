@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
+﻿import 'package:flutter/material.dart';
+import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
@@ -19,6 +19,7 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
   bool _isTranslating = false;
   String? _translatedDefinition;
   String? _translatedExample;
+  bool _apiNoticeShown = false;
 
   @override
   void initState() {
@@ -36,16 +37,29 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
     setState(() => _isTranslating = true);
 
     try {
-      final translatedDef = await translationService.translate(
+      // 내장 번역 가져오기
+      final langCode = translationService.currentLanguage;
+      final embeddedDef = _word.getEmbeddedTranslation(langCode, 'definition');
+      final embeddedEx = _word.getEmbeddedTranslation(langCode, 'example');
+      
+      final (translatedDef, apiUsedDef) = await translationService.translateWithInfo(
         _word.definition,
         _word.id,
         'definition',
+        embeddedTranslation: embeddedDef,
       );
-      final translatedEx = await translationService.translate(
+      final (translatedEx, apiUsedEx) = await translationService.translateWithInfo(
         _word.example,
         _word.id,
         'example',
+        embeddedTranslation: embeddedEx,
       );
+      
+      // API 사용 시 한 번만 안내
+      if ((apiUsedDef || apiUsedEx) && !_apiNoticeShown && mounted) {
+        _apiNoticeShown = true;
+        _showApiTranslationNotice();
+      }
 
       if (mounted) {
         setState(() {
@@ -59,6 +73,17 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
         setState(() => _isTranslating = false);
       }
     }
+  }
+  
+  void _showApiTranslationNotice() {
+    final l10n = AppLocalizations.of(context)!;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(l10n.apiTranslationNotice),
+        duration: const Duration(seconds: 4),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   Future<void> _toggleFavorite() async {

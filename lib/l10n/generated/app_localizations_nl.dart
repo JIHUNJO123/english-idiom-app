@@ -9,10 +9,10 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Woord van de Dag';
+  String get todayWord => '📅 Uitdrukking van de Dag';
 
   @override
   String get learning => 'Leren';
@@ -21,16 +21,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get levelLearning => 'Leren per Niveau';
 
   @override
-  String get allWords => 'Alle Woorden';
+  String get allWords => 'Alle Uitdrukkingen';
 
   @override
-  String get viewAllWords => 'Bekijk alle woorden';
+  String get viewAllWords => 'Bekijk alle uitdrukkingen';
 
   @override
   String get favorites => 'Favorieten';
 
   @override
-  String get savedWords => 'Opgeslagen woorden';
+  String get savedWords => 'Opgeslagen uitdrukkingen';
 
   @override
   String get flashcard => 'Flashcards';
@@ -42,16 +42,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get search => 'Zoeken';
 
   @override
-  String get searchWords => 'Zoek woorden';
+  String get searchWords => 'Zoek uitdrukkingen';
 
   @override
   String get settings => 'Instellingen';
 
   @override
-  String get noWords => 'Geen woorden gevonden';
+  String get noWords => 'Geen uitdrukkingen gevonden';
 
   @override
-  String get cannotLoadWords => 'Kan woorden niet laden';
+  String get cannotLoadWords => 'Kan uitdrukkingen niet laden';
 
   @override
   String get addedToFavorites => 'Toegevoegd aan favorieten';
@@ -108,7 +108,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level Woorden';
+    return '$level Uitdrukkingen';
   }
 
   @override
@@ -132,7 +132,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get translationInfo => 'Vertaalinformatie';
 
   @override
-  String get translationInfoDesc => 'Vertalingen worden automatisch gedownload wanneer je woorden bekijkt. Eenmaal gedownload worden ze lokaal opgeslagen voor offline gebruik.';
+  String get translationInfoDesc => 'Vertalingen worden automatisch gedownload wanneer je uitdrukkingen bekijkt. Eenmaal gedownload worden ze lokaal opgeslagen voor offline gebruik.';
 
   @override
   String get ok => 'OK';
@@ -159,7 +159,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get developer => 'Ontwikkelaar';
 
   @override
-  String get searchHint => 'Zoek woorden...';
+  String get searchHint => 'Zoek uitdrukkingen...';
 
   @override
   String get noSearchResults => 'Geen resultaten gevonden';
@@ -245,7 +245,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get copyrightNotice => 'Auteursrechtmelding';
 
   @override
-  String get copyrightContent => 'Alle woorddefinities en voorbeeldzinnen in deze app zijn origineel of door AI gegenereerd. Er wordt geen auteursrechtelijk beschermde woordenboekinhoud gebruikt.\n\nVertalingen worden geleverd door MyMemory API (gratis vertaaldienst).';
+  String get copyrightContent => 'Alle uitdrukkingsdefinities en voorbeeldzinnen in deze app zijn origineel of door AI gegenereerd. Er wordt geen auteursrechtelijk beschermde woordenboekinhoud gebruikt.\n\nVertalingen worden geleverd door MyMemory API (gratis vertaaldienst).';
 
   @override
   String get privacyPolicy => 'Privacybeleid';
@@ -266,7 +266,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get testYourself => 'Test jezelf';
 
   @override
-  String get wordQuiz => 'Woordenquiz';
+  String get wordQuiz => 'Uitdrukkingenquiz';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Woord→Betekenis';
+  String get wordToMeaningMode => 'Uitdrukking→Betekenis';
 
   @override
-  String get meaningToWordMode => 'Betekenis→Woord';
+  String get meaningToWordMode => 'Betekenis→Uitdrukking';
 
   @override
   String get quizComplete => '🎉 Quiz voltooid!';
@@ -314,10 +314,10 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Wat betekent dit woord?';
+  String get whatIsTheMeaning => 'Wat betekent deze uitdrukking?';
 
   @override
-  String get whichWordMatches => 'Welk woord past bij deze betekenis?';
+  String get whichWordMatches => 'Welke uitdrukking past bij deze betekenis?';
 
   @override
   String get nextQuestion => 'Volgende';
@@ -359,7 +359,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get buy => 'Kopen';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

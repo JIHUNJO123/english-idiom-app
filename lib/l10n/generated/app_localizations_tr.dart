@@ -9,10 +9,10 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Günün Kelimesi';
+  String get todayWord => '📅 Günün Deyimi';
 
   @override
   String get learning => 'Öğrenme';
@@ -21,16 +21,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get levelLearning => 'Seviyeye Göre Öğrenme';
 
   @override
-  String get allWords => 'Tüm Kelimeler';
+  String get allWords => 'Tüm Deyimler';
 
   @override
-  String get viewAllWords => 'Tüm kelimeleri görüntüle';
+  String get viewAllWords => 'Tüm deyimleri görüntüle';
 
   @override
   String get favorites => 'Favoriler';
 
   @override
-  String get savedWords => 'Kayıtlı kelimeler';
+  String get savedWords => 'Kayıtlı deyimler';
 
   @override
   String get flashcard => 'Kartlar';
@@ -42,16 +42,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get search => 'Ara';
 
   @override
-  String get searchWords => 'Kelime ara';
+  String get searchWords => 'Deyim ara';
 
   @override
   String get settings => 'Ayarlar';
 
   @override
-  String get noWords => 'Kelime bulunamadı';
+  String get noWords => 'Deyim bulunamadı';
 
   @override
-  String get cannotLoadWords => 'Kelimeler yüklenemedi';
+  String get cannotLoadWords => 'Deyimler yüklenemedi';
 
   @override
   String get addedToFavorites => 'Favorilere eklendi';
@@ -108,7 +108,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level Kelimeler';
+    return '$level Deyimler';
   }
 
   @override
@@ -159,13 +159,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get developer => 'Geliştirici';
 
   @override
-  String get searchHint => 'Kelime ara...';
+  String get searchHint => 'Deyim ara...';
 
   @override
   String get noSearchResults => 'Sonuç bulunamadı';
 
   @override
-  String get typeToSearch => 'Kelime aramak için yazın';
+  String get typeToSearch => 'Deyim aramak için yazın';
 
   @override
   String get noFavorites => 'Henüz favori yok';
@@ -266,7 +266,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get testYourself => 'Kendini test et';
 
   @override
-  String get wordQuiz => 'Kelime testi';
+  String get wordQuiz => 'Deyim testi';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Kelime→Anlam';
+  String get wordToMeaningMode => 'Deyim→Anlam';
 
   @override
-  String get meaningToWordMode => 'Anlam→Kelime';
+  String get meaningToWordMode => 'Anlam→Deyim';
 
   @override
   String get quizComplete => '🎉 Test tamamlandı!';
@@ -314,10 +314,10 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Bu kelimenin anlamı nedir?';
+  String get whatIsTheMeaning => 'Bu deyimin anlamı nedir?';
 
   @override
-  String get whichWordMatches => 'Hangi kelime bu anlama uyuyor?';
+  String get whichWordMatches => 'Hangi deyim bu anlama uyuyor?';
 
   @override
   String get nextQuestion => 'İleri';
@@ -359,7 +359,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get buy => 'Satın Al';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

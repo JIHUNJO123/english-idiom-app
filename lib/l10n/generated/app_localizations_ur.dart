@@ -9,10 +9,10 @@ class AppLocalizationsUr extends AppLocalizations {
   AppLocalizationsUr([String locale = 'ur']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 آج کا لفظ';
+  String get todayWord => '📅 آج کا محاورہ';
 
   @override
   String get learning => 'سیکھنا';
@@ -21,16 +21,16 @@ class AppLocalizationsUr extends AppLocalizations {
   String get levelLearning => 'سطح کے مطابق سیکھنا';
 
   @override
-  String get allWords => 'تمام الفاظ';
+  String get allWords => 'تمام محاورے';
 
   @override
-  String get viewAllWords => 'تمام الفاظ دیکھیں';
+  String get viewAllWords => 'تمام محاورے دیکھیں';
 
   @override
   String get favorites => 'پسندیدہ';
 
   @override
-  String get savedWords => 'محفوظ الفاظ';
+  String get savedWords => 'محفوظ محاورے';
 
   @override
   String get flashcard => 'فلیش کارڈ';
@@ -42,16 +42,16 @@ class AppLocalizationsUr extends AppLocalizations {
   String get search => 'تلاش';
 
   @override
-  String get searchWords => 'الفاظ تلاش کریں';
+  String get searchWords => 'محاورے تلاش کریں';
 
   @override
   String get settings => 'ترتیبات';
 
   @override
-  String get noWords => 'کوئی الفاظ نہیں ملے';
+  String get noWords => 'کوئی محاورے نہیں ملے';
 
   @override
-  String get cannotLoadWords => 'الفاظ لوڈ نہیں ہو سکے';
+  String get cannotLoadWords => 'محاورے لوڈ نہیں ہو سکے';
 
   @override
   String get addedToFavorites => 'پسندیدہ میں شامل';
@@ -108,7 +108,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level الفاظ';
+    return '$level محاورے';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get developer => 'ڈویلپر';
 
   @override
-  String get searchHint => 'الفاظ تلاش کریں...';
+  String get searchHint => 'محاورے تلاش کریں...';
 
   @override
   String get noSearchResults => 'کوئی نتائج نہیں ملے';
@@ -245,7 +245,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get copyrightNotice => 'کاپی رائٹ نوٹس';
 
   @override
-  String get copyrightContent => 'اس ایپ میں تمام الفاظ کی تعریفیں اور مثالی جملے اصلی یا AI سے تیار کردہ ہیں۔';
+  String get copyrightContent => 'اس ایپ میں تمام محاورے کی تعریفیں اور مثالی جملے اصلی یا AI سے تیار کردہ ہیں۔';
 
   @override
   String get privacyPolicy => 'رازداری کی پالیسی';
@@ -266,7 +266,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get testYourself => 'خود کو آزمائیں';
 
   @override
-  String get wordQuiz => 'لفظ کوئز';
+  String get wordQuiz => 'محاورہ کوئز';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'لفظ←معنی';
+  String get wordToMeaningMode => 'محاورہ←معنی';
 
   @override
-  String get meaningToWordMode => 'معنی←لفظ';
+  String get meaningToWordMode => 'معنی←محاورہ';
 
   @override
   String get quizComplete => '🎉 کوئز مکمل!';
@@ -314,10 +314,10 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'اس لفظ کا مطلب کیا ہے؟';
+  String get whatIsTheMeaning => 'اس محاورے کا مطلب کیا ہے؟';
 
   @override
-  String get whichWordMatches => 'کون سا لفظ اس معنی سے ملتا ہے؟';
+  String get whichWordMatches => 'کون سا محاورہ اس معنی سے ملتا ہے؟';
 
   @override
   String get nextQuestion => 'اگلا';
@@ -359,7 +359,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get buy => 'خریدیں';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

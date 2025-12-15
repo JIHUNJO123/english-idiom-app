@@ -1,4 +1,4 @@
-import 'package:english_vocab_app/l10n/generated/app_localizations.dart';
+﻿import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 
 /// 영어 품사를 현재 언어로 번역하는 헬퍼 함수
 String translatePartOfSpeech(AppLocalizations l10n, String pos) {

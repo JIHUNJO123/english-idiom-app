@@ -9,10 +9,10 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Palabra del día';
+  String get todayWord => '📅 Modismo del día';
 
   @override
   String get learning => 'Aprender';
@@ -21,16 +21,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get levelLearning => 'Por nivel';
 
   @override
-  String get allWords => 'Todas';
+  String get allWords => 'Todos los modismos';
 
   @override
-  String get viewAllWords => 'Ver todas las palabras';
+  String get viewAllWords => 'Ver todos los modismos';
 
   @override
   String get favorites => 'Favoritos';
 
   @override
-  String get savedWords => 'Palabras guardadas';
+  String get savedWords => 'Modismos guardados';
 
   @override
   String get flashcard => 'Tarjetas';
@@ -42,13 +42,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get search => 'Buscar';
 
   @override
-  String get searchWords => 'Buscar palabras';
+  String get searchWords => 'Buscar modismos';
 
   @override
   String get settings => 'Ajustes';
 
   @override
-  String get noWords => 'No hay palabras';
+  String get noWords => 'No hay modismos';
 
   @override
   String get cannotLoadWords => 'No se pueden cargar';
@@ -108,7 +108,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'Palabras $level';
+    return 'Modismos $level';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get developer => 'Desarrollador';
 
   @override
-  String get searchHint => 'Buscar palabras...';
+  String get searchHint => 'Buscar modismos...';
 
   @override
   String get noSearchResults => 'Sin resultados';
@@ -266,7 +266,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get testYourself => 'Ponte a prueba';
 
   @override
-  String get wordQuiz => 'Prueba de vocabulario';
+  String get wordQuiz => 'Prueba de modismos';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Palabra→Significado';
+  String get wordToMeaningMode => 'Modismo→Significado';
 
   @override
-  String get meaningToWordMode => 'Significado→Palabra';
+  String get meaningToWordMode => 'Significado→Modismo';
 
   @override
   String get quizComplete => '🎉 ¡Prueba completada!';
@@ -317,7 +317,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whatIsTheMeaning => '¿Cuál es el significado de esta palabra?';
 
   @override
-  String get whichWordMatches => '¿Qué palabra corresponde a este significado?';
+  String get whichWordMatches => '¿Qué modismo corresponde a este significado?';
 
   @override
   String get nextQuestion => 'Siguiente';
@@ -359,7 +359,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get buy => 'Comprar';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

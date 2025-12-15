@@ -9,10 +9,10 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 今日单词';
+  String get todayWord => '📅 今日熟语';
 
   @override
   String get learning => '学习';
@@ -21,10 +21,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get levelLearning => '分级学习';
 
   @override
-  String get allWords => '全部单词';
+  String get allWords => '全部熟语';
 
   @override
-  String get viewAllWords => '查看所有单词';
+  String get viewAllWords => '查看所有熟语';
 
   @override
   String get favorites => '收藏夹';
@@ -42,16 +42,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get search => '搜索';
 
   @override
-  String get searchWords => '搜索单词';
+  String get searchWords => '搜索熟语';
 
   @override
   String get settings => '设置';
 
   @override
-  String get noWords => '没有单词';
+  String get noWords => '没有熟语';
 
   @override
-  String get cannotLoadWords => '无法加载单词';
+  String get cannotLoadWords => '无法加载熟语';
 
   @override
   String get addedToFavorites => '已添加到收藏夹';
@@ -108,7 +108,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return '$level 单词';
+    return '$level 熟语';
   }
 
   @override
@@ -132,7 +132,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get translationInfo => '翻译说明';
 
   @override
-  String get translationInfoDesc => '查看单词时会自动下载翻译。下载后可离线使用。';
+  String get translationInfoDesc => '查看熟语时会自动下载翻译。下载后可离线使用。';
 
   @override
   String get ok => '确定';
@@ -159,13 +159,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get developer => '开发者';
 
   @override
-  String get searchHint => '搜索单词...';
+  String get searchHint => '搜索熟语...';
 
   @override
   String get noSearchResults => '没有找到结果';
 
   @override
-  String get typeToSearch => '输入以搜索单词';
+  String get typeToSearch => '输入以搜索熟语';
 
   @override
   String get noFavorites => '暂无收藏';
@@ -245,7 +245,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get copyrightNotice => '版权声明';
 
   @override
-  String get copyrightContent => '此应用程序中的所有单词定义和例句均为原创或AI生成。未使用受版权保护的词典内容。\n\n翻译由MyMemory API（免费翻译服务）提供。';
+  String get copyrightContent => '此应用程序中的所有熟语定义和例句均为原创或AI生成。未使用受版权保护的词典内容。\n\n翻译由MyMemory API（免费翻译服务）提供。';
 
   @override
   String get privacyPolicy => '隐私政策';
@@ -266,7 +266,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get testYourself => '测试能力';
 
   @override
-  String get wordQuiz => '单词测验';
+  String get wordQuiz => '熟语测验';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => '单词→释义';
+  String get wordToMeaningMode => '熟语→释义';
 
   @override
-  String get meaningToWordMode => '释义→单词';
+  String get meaningToWordMode => '释义→熟语';
 
   @override
   String get quizComplete => '🎉 测验完成！';
@@ -314,10 +314,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => '这个单词的意思是什么？';
+  String get whatIsTheMeaning => '这个熟语的意思是什么？';
 
   @override
-  String get whichWordMatches => '哪个单词符合这个意思？';
+  String get whichWordMatches => '哪个熟语符合这个意思？';
 
   @override
   String get nextQuestion => '下一题';
@@ -359,7 +359,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get buy => '购买';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

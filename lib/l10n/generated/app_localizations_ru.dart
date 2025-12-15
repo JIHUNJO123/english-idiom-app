@@ -9,10 +9,10 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Слово дня';
+  String get todayWord => '📅 Идиома дня';
 
   @override
   String get learning => 'Обучение';
@@ -21,16 +21,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get levelLearning => 'Обучение по уровням';
 
   @override
-  String get allWords => 'Все слова';
+  String get allWords => 'Все идиомы';
 
   @override
-  String get viewAllWords => 'Показать все слова';
+  String get viewAllWords => 'Показать все идиомы';
 
   @override
   String get favorites => 'Избранное';
 
   @override
-  String get savedWords => 'Сохраненные слова';
+  String get savedWords => 'Сохраненные идиомы';
 
   @override
   String get flashcard => 'Карточки';
@@ -42,16 +42,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get search => 'Поиск';
 
   @override
-  String get searchWords => 'Поиск слов';
+  String get searchWords => 'Поиск идиом';
 
   @override
   String get settings => 'Настройки';
 
   @override
-  String get noWords => 'Слова не найдены';
+  String get noWords => 'Идиомы не найдены';
 
   @override
-  String get cannotLoadWords => 'Невозможно загрузить слова';
+  String get cannotLoadWords => 'Невозможно загрузить идиомы';
 
   @override
   String get addedToFavorites => 'Добавлено в избранное';
@@ -108,7 +108,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'Слова $level';
+    return 'Идиомы $level';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get developer => 'Разработчик';
 
   @override
-  String get searchHint => 'Поиск слов...';
+  String get searchHint => 'Поиск идиом...';
 
   @override
   String get noSearchResults => 'Результаты не найдены';
@@ -266,7 +266,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get testYourself => 'Проверь себя';
 
   @override
-  String get wordQuiz => 'Тест по словам';
+  String get wordQuiz => 'Тест по идиомам';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Слово→Значение';
+  String get wordToMeaningMode => 'Идиома→Значение';
 
   @override
-  String get meaningToWordMode => 'Значение→Слово';
+  String get meaningToWordMode => 'Значение→Идиома';
 
   @override
   String get quizComplete => '🎉 Тест завершен!';
@@ -314,10 +314,10 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Что означает это слово?';
+  String get whatIsTheMeaning => 'Что означает эта идиома?';
 
   @override
-  String get whichWordMatches => 'Какое слово соответствует этому значению?';
+  String get whichWordMatches => 'Какая идиома соответствует этому значению?';
 
   @override
   String get nextQuestion => 'Далее';
@@ -359,7 +359,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get buy => 'Купить';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

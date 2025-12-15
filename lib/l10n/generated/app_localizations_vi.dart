@@ -9,10 +9,10 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get appTitle => 'English Word 10000';
+  String get appTitle => 'English Idioms 1000';
 
   @override
-  String get todayWord => '📅 Từ hôm nay';
+  String get todayWord => '📅 Thành ngữ hôm nay';
 
   @override
   String get learning => 'Học';
@@ -24,13 +24,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get allWords => 'Tất cả';
 
   @override
-  String get viewAllWords => 'Xem tất cả từ';
+  String get viewAllWords => 'Xem tất cả thành ngữ';
 
   @override
   String get favorites => 'Yêu thích';
 
   @override
-  String get savedWords => 'Từ đã lưu';
+  String get savedWords => 'Thành ngữ đã lưu';
 
   @override
   String get flashcard => 'Thẻ';
@@ -42,16 +42,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get search => 'Tìm kiếm';
 
   @override
-  String get searchWords => 'Tìm từ';
+  String get searchWords => 'Tìm thành ngữ';
 
   @override
   String get settings => 'Cài đặt';
 
   @override
-  String get noWords => 'Không có từ';
+  String get noWords => 'Không có thành ngữ';
 
   @override
-  String get cannotLoadWords => 'Không thể tải từ';
+  String get cannotLoadWords => 'Không thể tải thành ngữ';
 
   @override
   String get addedToFavorites => 'Đã thêm vào yêu thích';
@@ -108,7 +108,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String levelWords(String level) {
-    return 'Từ $level';
+    return 'Thành ngữ $level';
   }
 
   @override
@@ -159,7 +159,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get developer => 'Nhà phát triển';
 
   @override
-  String get searchHint => 'Tìm từ...';
+  String get searchHint => 'Tìm thành ngữ...';
 
   @override
   String get noSearchResults => 'Không có kết quả';
@@ -266,7 +266,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get testYourself => 'Tự kiểm tra';
 
   @override
-  String get wordQuiz => 'Kiểm tra từ vựng';
+  String get wordQuiz => 'Kiểm tra thành ngữ';
 
   @override
   String quizWithLevel(String level) {
@@ -274,10 +274,10 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get wordToMeaningMode => 'Từ→Nghĩa';
+  String get wordToMeaningMode => 'Thành ngữ→Nghĩa';
 
   @override
-  String get meaningToWordMode => 'Nghĩa→Từ';
+  String get meaningToWordMode => 'Nghĩa→Thành ngữ';
 
   @override
   String get quizComplete => '🎉 Hoàn thành kiểm tra!';
@@ -314,10 +314,10 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get whatIsTheMeaning => 'Nghĩa của từ này là gì?';
+  String get whatIsTheMeaning => 'Nghĩa của thành ngữ này là gì?';
 
   @override
-  String get whichWordMatches => 'Từ nào phù hợp với nghĩa này?';
+  String get whichWordMatches => 'Thành ngữ nào phù hợp với nghĩa này?';
 
   @override
   String get nextQuestion => 'Tiếp theo';
@@ -359,7 +359,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get buy => 'Mua';
 
   @override
-  String get wordFontSize => 'Flashcard Word Size';
+  String get wordFontSize => 'Flashcard Idiom Size';
 
   @override
   String get fontSizeSmall => 'Small';
@@ -378,4 +378,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get fontSizeExtraLarge => 'Extra Large';
+
+  @override
+  String get apiTranslationNotice => 'Translations are being provided via API (online translation)';
 }

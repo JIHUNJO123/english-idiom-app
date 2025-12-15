@@ -1,5 +1,5 @@
-/// 단어 모델 (다국어 지원)
-/// 영어 원본 데이터 + 동적 번역
+﻿/// 단어 모델 (다국어 지원)
+/// 영어 원본 데이터 + 내장 번역 + 동적 번역
 class Word {
   final int id;
   final String word;
@@ -8,6 +8,9 @@ class Word {
   final String definition; // 영어 정의
   final String example; // 영어 예문
   bool isFavorite;
+  
+  // 내장 번역 데이터 (words.json에서 로드)
+  final Map<String, Map<String, String>>? translations;
 
   // 번역된 텍스트 (런타임에 설정됨)
   String? translatedDefinition;
@@ -21,12 +24,35 @@ class Word {
     required this.definition,
     required this.example,
     this.isFavorite = false,
+    this.translations,
     this.translatedDefinition,
     this.translatedExample,
   });
+  
+  /// 내장 번역 가져오기
+  String? getEmbeddedTranslation(String langCode, String fieldType) {
+    if (translations == null) return null;
+    final langData = translations![langCode];
+    if (langData == null) return null;
+    return langData[fieldType];
+  }
 
-  /// JSON에서 생성 (영어 원본)
+  /// JSON에서 생성 (영어 원본 + 내장 번역)
   factory Word.fromJson(Map<String, dynamic> json) {
+    // translations 파싱
+    Map<String, Map<String, String>>? translations;
+    if (json['translations'] != null) {
+      translations = {};
+      (json['translations'] as Map<String, dynamic>).forEach((langCode, data) {
+        if (data is Map<String, dynamic>) {
+          translations![langCode] = {
+            'definition': data['definition']?.toString() ?? '',
+            'example': data['example']?.toString() ?? '',
+          };
+        }
+      });
+    }
+    
     return Word(
       id: json['id'],
       word: json['word'],
@@ -35,6 +61,7 @@ class Word {
       definition: json['definition'],
       example: json['example'],
       isFavorite: json['isFavorite'] == 1 || json['isFavorite'] == true,
+      translations: translations,
     );
   }
 
@@ -91,6 +118,7 @@ class Word {
     String? definition,
     String? example,
     bool? isFavorite,
+    Map<String, Map<String, String>>? translations,
     String? translatedDefinition,
     String? translatedExample,
   }) {
@@ -102,6 +130,7 @@ class Word {
       definition: definition ?? this.definition,
       example: example ?? this.example,
       isFavorite: isFavorite ?? this.isFavorite,
+      translations: translations ?? this.translations,
       translatedDefinition: translatedDefinition ?? this.translatedDefinition,
       translatedExample: translatedExample ?? this.translatedExample,
     );
