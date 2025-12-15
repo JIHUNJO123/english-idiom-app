@@ -18,13 +18,13 @@ class AdService {
   // 실제 광고 ID
   // Android
   static const String _androidBannerId =
-      'ca-app-pub-5837885590326347/4429537819';
+      'ca-app-pub-5837885590326347/1366074983';
   static const String _androidInterstitialId =
-      'ca-app-pub-5837885590326347/1033218289';
+      'ca-app-pub-5837885590326347/2747439411';
   // iOS
-  static const String _iosBannerId = 'ca-app-pub-5837885590326347/5742619486';
+  static const String _iosBannerId = 'ca-app-pub-5837885590326347/6686684424';
   static const String _iosInterstitialId =
-      'ca-app-pub-5837885590326347/1847800024';
+      'ca-app-pub-5837885590326347/5373602757';
 
   String get bannerAdUnitId {
     if (Platform.isAndroid) {
