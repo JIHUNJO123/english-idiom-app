@@ -752,6 +752,7 @@ class _WordListScreenState extends State<WordListScreen> {
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).primaryColor,
                 ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
               // 의미 (크고 눈에 띄게)
