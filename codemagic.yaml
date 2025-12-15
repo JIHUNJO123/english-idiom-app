@@ -9,6 +9,8 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.wordbook.englishIdiomApp
+        provisioning_profiles_create: true
+        certificates_create: true
       vars:
         APP_ID: 6756547799
       flutter: stable
