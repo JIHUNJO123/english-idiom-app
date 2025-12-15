@@ -31,7 +31,6 @@ class _QuizScreenState extends State<QuizScreen> {
   // 번역 관련
   Map<int, String> _translatedDefinitions = {};
   bool _isLoadingTranslation = false;
-  bool _apiNoticeShown = false;
 
   @override
   void initState() {
@@ -73,44 +72,22 @@ class _QuizScreenState extends State<QuizScreen> {
     if (!mounted) return;
 
     setState(() => _isLoadingTranslation = true);
-    final langCode = translationService.currentLanguage;
-    bool apiUsed = false;
 
     for (final word in _currentOptions) {
       if (!mounted) return;
       if (!_translatedDefinitions.containsKey(word.id)) {
-        final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
-        final (translated, usedApi) = await translationService.translateWithInfo(
+        final translated = await translationService.translate(
           word.definition,
           word.id,
           'definition',
-          embeddedTranslation: embeddedDef,
         );
         if (!mounted) return;
         _translatedDefinitions[word.id] = translated;
-        if (usedApi) apiUsed = true;
       }
-    }
-    
-    // API 사용 시 한 번만 안내
-    if (apiUsed && !_apiNoticeShown && mounted) {
-      _apiNoticeShown = true;
-      _showApiTranslationNotice();
     }
 
     if (!mounted) return;
     setState(() => _isLoadingTranslation = false);
-  }
-  
-  void _showApiTranslationNotice() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.apiTranslationNotice),
-        duration: const Duration(seconds: 4),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
   }
 
   void _generateOptions() {

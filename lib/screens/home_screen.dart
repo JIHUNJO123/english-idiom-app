@@ -24,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isLoading = true;
   bool _isBannerAdLoaded = false;
   String? _lastLanguage; // 마지막 로드된 언어 추적
-  bool _apiNoticeShown = false;
 
   @override
   void initState() {
@@ -69,23 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
       await translationService.init();
 
       if (translationService.needsTranslation) {
-        final langCode = translationService.currentLanguage;
-        final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
-        final (translated, apiUsed) = await translationService.translateWithInfo(
+        final translated = await translationService.translate(
           word.definition,
           word.id,
           'definition',
-          embeddedTranslation: embeddedDef,
         );
-        
-        // API 사용 시 한 번만 안내
-        if (apiUsed && !_apiNoticeShown && mounted) {
-          _apiNoticeShown = true;
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _showApiTranslationNotice();
-          });
-        }
-        
         setState(() {
           _todayWord = word;
           _translatedDefinition = translated;
@@ -104,17 +91,6 @@ class _HomeScreenState extends State<HomeScreen> {
         _isLoading = false;
       });
     }
-  }
-  
-  void _showApiTranslationNotice() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.apiTranslationNotice),
-        duration: const Duration(seconds: 4),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
   }
 
   @override
