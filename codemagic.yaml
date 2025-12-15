@@ -15,6 +15,12 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Debug - List profiles and certs
+        script: |
+          echo "=== Provisioning Profiles ==="
+          ls -la /Users/builder/Library/MobileDevice/Provisioning\ Profiles/ || echo "No profiles"
+          echo "=== Certificates in keychain ==="
+          security find-identity -v -p codesigning || echo "No certs"
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles --warn-only --verbose
