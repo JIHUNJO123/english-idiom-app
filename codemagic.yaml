@@ -21,9 +21,19 @@ workflows:
           ls -la /Users/builder/Library/MobileDevice/Provisioning\ Profiles/ || echo "No profiles"
           echo "=== Certificates in keychain ==="
           security find-identity -v -p codesigning || echo "No certs"
+          echo "=== Default keychain ==="
+          security default-keychain
       - name: Set up code signing settings on Xcode project
         script: |
-          xcode-project use-profiles --warn-only --verbose
+          xcode-project use-profiles --verbose
+      - name: Unlock keychain for Flutter
+        script: |
+          echo "=== Setting keychain for Xcode ==="
+          KEYCHAIN_PATH=$(security default-keychain | tr -d '"' | xargs)
+          security unlock-keychain -p "" "$KEYCHAIN_PATH" || true
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" "$KEYCHAIN_PATH" || true
+          echo "=== Verify certs after unlock ==="
+          security find-identity -v -p codesigning
       - name: Get Flutter packages
         script: |
           flutter pub get
