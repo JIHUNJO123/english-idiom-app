@@ -39,7 +39,6 @@ class _WordListScreenState extends State<WordListScreen> {
   Map<int, String> _translatedDefinitions = {};
   Map<int, String> _translatedExamples = {};
   Set<int> _loadingTranslations = {};
-  bool _apiNoticeShown = false; // API 번역 안내 표시 여부
 
   // 위치 저장 키 생성
   String get _positionKey =>
@@ -139,30 +138,17 @@ class _WordListScreenState extends State<WordListScreen> {
     if (!mounted) return;
 
     setState(() => _loadingTranslations.add(word.id));
-    
-    // 내장 번역 가져오기
-    final langCode = translationService.currentLanguage;
-    final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
-    final embeddedEx = word.getEmbeddedTranslation(langCode, 'example');
 
-    final (translatedDef, apiUsedDef) = await translationService.translateWithInfo(
+    final translatedDef = await translationService.translate(
       word.definition,
       word.id,
       'definition',
-      embeddedTranslation: embeddedDef,
     );
-    final (translatedEx, apiUsedEx) = await translationService.translateWithInfo(
+    final translatedEx = await translationService.translate(
       word.example,
       word.id,
       'example',
-      embeddedTranslation: embeddedEx,
     );
-    
-    // API 사용 시 한 번만 안내
-    if ((apiUsedDef || apiUsedEx) && !_apiNoticeShown && mounted) {
-      _apiNoticeShown = true;
-      _showApiTranslationNotice();
-    }
 
     if (!mounted) return;
     setState(() {
@@ -170,17 +156,6 @@ class _WordListScreenState extends State<WordListScreen> {
       _translatedExamples[word.id] = translatedEx;
       _loadingTranslations.remove(word.id);
     });
-  }
-  
-  void _showApiTranslationNotice() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.apiTranslationNotice),
-        duration: const Duration(seconds: 4),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
   }
 
   void _sortWords(String order) {

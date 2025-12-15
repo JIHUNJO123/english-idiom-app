@@ -19,7 +19,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Map<int, String> _translatedDefinitions = {}; // 번역된 정의 캐시
   bool _isLoading = true;
   bool _showNativeLanguage = true; // 모국어/영어 전환 (기본: 모국어)
-  bool _apiNoticeShown = false;
 
   @override
   void initState() {
@@ -35,28 +34,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     await translationService.init();
 
     Map<int, String> translations = {};
-    bool apiUsed = false;
     if (translationService.needsTranslation) {
-      final langCode = translationService.currentLanguage;
       for (var word in favorites) {
-        final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
-        final (translated, usedApi) = await translationService.translateWithInfo(
+        final translated = await translationService.translate(
           word.definition,
           word.id,
           'definition',
-          embeddedTranslation: embeddedDef,
         );
         translations[word.id] = translated;
-        if (usedApi) apiUsed = true;
       }
-    }
-    
-    // API 사용 시 한 번만 안내
-    if (apiUsed && !_apiNoticeShown && mounted) {
-      _apiNoticeShown = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _showApiTranslationNotice();
-      });
     }
 
     setState(() {
@@ -64,17 +50,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       _translatedDefinitions = translations;
       _isLoading = false;
     });
-  }
-  
-  void _showApiTranslationNotice() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.apiTranslationNotice),
-        duration: const Duration(seconds: 4),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
   }
 
   Future<void> _removeFavorite(Word word) async {
