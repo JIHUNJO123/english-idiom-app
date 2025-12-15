@@ -679,8 +679,8 @@ class _WordListScreenState extends State<WordListScreen> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 8),
               Text(
                 translatePartOfSpeech(
                   AppLocalizations.of(context)!,
