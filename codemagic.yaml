@@ -21,19 +21,31 @@ workflows:
           ls -la /Users/builder/Library/MobileDevice/Provisioning\ Profiles/ || echo "No profiles"
           echo "=== Certificates in keychain ==="
           security find-identity -v -p codesigning || echo "No certs"
-          echo "=== Default keychain ==="
-          security default-keychain
-      - name: Set up code signing settings on Xcode project
+          echo "=== Profile content ==="
+          PROFILE=$(ls /Users/builder/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision 2>/dev/null | head -1)
+          if [ -n "$PROFILE" ]; then
+            security cms -D -i "$PROFILE" | grep -A1 "application-identifier\|UUID\|TeamIdentifier"
+          fi
+      - name: Set up code signing manually
         script: |
-          xcode-project use-profiles --verbose
-      - name: Unlock keychain for Flutter
-        script: |
-          echo "=== Setting keychain for Xcode ==="
-          KEYCHAIN_PATH=$(security default-keychain | tr -d '"' | xargs)
-          security unlock-keychain -p "" "$KEYCHAIN_PATH" || true
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" "$KEYCHAIN_PATH" || true
-          echo "=== Verify certs after unlock ==="
-          security find-identity -v -p codesigning
+          # Get profile UUID
+          PROFILE_PATH=$(ls /Users/builder/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision 2>/dev/null | head -1)
+          PROFILE_UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(security cms -D -i "$PROFILE_PATH"))
+          TEAM_ID=$(/usr/libexec/PlistBuddy -c "Print TeamIdentifier:0" /dev/stdin <<< $(security cms -D -i "$PROFILE_PATH"))
+          
+          echo "Profile UUID: $PROFILE_UUID"
+          echo "Team ID: $TEAM_ID"
+          
+          # Update Xcode project
+          cd ios
+          xcodebuild -project Runner.xcodeproj -scheme Runner -showBuildSettings | head -20
+          
+          # Set build settings using PlistBuddy or sed
+          /usr/libexec/PlistBuddy -c "Set :objects:*:buildSettings:CODE_SIGN_STYLE Manual" Runner.xcodeproj/project.pbxproj 2>/dev/null || true
+          
+          # Use xcode-project as fallback
+          cd ..
+          xcode-project use-profiles --warn-only || echo "xcode-project failed, continuing anyway"
       - name: Get Flutter packages
         script: |
           flutter pub get
