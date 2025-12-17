@@ -245,13 +245,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get copyrightNotice => 'ประกาศลิขสิทธิ์';
 
   @override
-  String get copyrightContent => 'คำนิยามคำศัพท์และตัวอย่างประโยคทั้งหมดในแอปนี้เป็นต้นฉบับหรือสร้างโดย AI ไม่มีการใช้เนื้อหาพจนานุกรมที่มีลิขสิทธิ์\n\nการแปลจัดหาโดย MyMemory API (บริการแปลฟรี)';
+  String get copyrightContent => 'คำนิยามคำศัพท์และตัวอย่างประโยคทั้งหมดในแอปนี้เป็นต้นฉบับหรือสร้างโดย AI ไม่มีการใช้เนื้อหาพจนานุกรมที่มีลิขสิทธิ์';
 
   @override
   String get privacyPolicy => 'นโยบายความเป็นส่วนตัว';
 
   @override
-  String get privacyContent => 'แอปนี้ไม่เก็บรวบรวม จัดเก็บ หรือแชร์ข้อมูลส่วนบุคคลใดๆ\n\nคำขอแปลจะถูกส่งไปยัง MyMemory API เพื่อประมวลผล ข้อมูลผู้ใช้ไม่ถูกจัดเก็บบนเซิร์ฟเวอร์ภายนอก';
+  String get privacyContent => 'แอปนี้ไม่เก็บรวบรวม จัดเก็บ หรือแชร์ข้อมูลส่วนบุคคลใดๆ';
 
   @override
   String get alphabetical => 'ตามตัวอักษร';

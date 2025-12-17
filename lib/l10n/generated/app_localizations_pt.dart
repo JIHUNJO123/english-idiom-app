@@ -245,13 +245,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get copyrightNotice => 'Aviso de direitos autorais';
 
   @override
-  String get copyrightContent => 'Todas as expressões as definições de palavras e frases de exemplo neste aplicativo são originais ou geradas por IA. Nenhum conteúdo de dicionário com direitos autorais é usado.\n\nAs traduções são fornecidas pela MyMemory API (serviço de tradução gratuito).';
+  String get copyrightContent => 'Todas as expressões as definições de palavras e frases de exemplo neste aplicativo são originais ou geradas por IA. Nenhum conteúdo de dicionário com direitos autorais é usado.';
 
   @override
   String get privacyPolicy => 'Política de privacidade';
 
   @override
-  String get privacyContent => 'Este aplicativo não coleta, armazena ou compartilha nenhuma informação pessoal.\n\nAs solicitações de tradução são enviadas para a MyMemory API para processamento. Os dados do usuário não são armazenados em servidores externos.';
+  String get privacyContent => 'Este aplicativo não coleta, armazena ou compartilha nenhuma informação pessoal.';
 
   @override
   String get alphabetical => 'Alfabética';

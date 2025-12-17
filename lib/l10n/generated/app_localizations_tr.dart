@@ -245,13 +245,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get copyrightNotice => 'Telif Hakkı Bildirimi';
 
   @override
-  String get copyrightContent => 'Bu uygulamadaki tüm kelime tanımları ve örnek cümleler orijinaldir veya yapay zeka tarafından oluşturulmuştur. Telif hakkıyla korunan sözlük içeriği kullanılmamıştır.\n\nÇeviriler MyMemory API (ücretsiz çeviri hizmeti) tarafından sağlanmaktadır.';
+  String get copyrightContent => 'Bu uygulamadaki tüm kelime tanımları ve örnek cümleler orijinaldir veya yapay zeka tarafından oluşturulmuştur. Telif hakkıyla korunan sözlük içeriği kullanılmamıştır.';
 
   @override
   String get privacyPolicy => 'Gizlilik Politikası';
 
   @override
-  String get privacyContent => 'Bu uygulama hiçbir kişisel bilgi toplamaz, saklamaz veya paylaşmaz.\n\nÇeviri istekleri işlenmek üzere MyMemory API\'ye gönderilir. Kullanıcı verileri harici sunucularda saklanmaz.';
+  String get privacyContent => 'Bu uygulama hiçbir kişisel bilgi toplamaz, saklamaz veya paylaşmaz.';
 
   @override
   String get alphabetical => 'Alfabetik';

@@ -245,13 +245,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get copyrightNotice => 'Pemberitahuan hak cipta';
 
   @override
-  String get copyrightContent => 'Semua definisi kata dan kalimat contoh dalam aplikasi ini adalah asli atau dibuat oleh AI. Tidak ada konten kamus berhak cipta yang digunakan.\n\nTerjemahan disediakan oleh MyMemory API (layanan terjemahan gratis).';
+  String get copyrightContent => 'Semua definisi kata dan kalimat contoh dalam aplikasi ini adalah asli atau dibuat oleh AI. Tidak ada konten kamus berhak cipta yang digunakan.';
 
   @override
   String get privacyPolicy => 'Kebijakan privasi';
 
   @override
-  String get privacyContent => 'Aplikasi ini tidak mengumpulkan, menyimpan, atau membagikan informasi pribadi apa pun.\n\nPermintaan terjemahan dikirim ke MyMemory API untuk diproses. Data pengguna tidak disimpan di server eksternal.';
+  String get privacyContent => 'Aplikasi ini tidak mengumpulkan, menyimpan, atau membagikan informasi pribadi apa pun.';
 
   @override
   String get alphabetical => 'Abjad';
