@@ -402,35 +402,35 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-              // 예문 (덜 눈에 띄게)
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.white.withAlpha(150),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
+            // 예문 (덜 눈에 띄게)
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(150),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    word.example,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.grey[600],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (_translatedExample != null) ...[
+                    const SizedBox(height: 8),
                     Text(
-                      word.example,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.grey[600],
-                      ),
+                      _translatedExample!,
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                       textAlign: TextAlign.center,
                     ),
-                    if (_translatedExample != null) ...[
-                      const SizedBox(height: 8),
-                      Text(
-                        _translatedExample!,
-                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
                   ],
-                ),
+                ],
               ),
+            ),
           ],
         ),
       ),
