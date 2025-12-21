@@ -1,4 +1,4 @@
-ï»¿import 'dart:io';
+import 'dart:io';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,24 +15,42 @@ import 'services/purchase_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // í”Œë«í¼ë³„ sqflite ì´ˆê¸°í™”
-  if (kIsWeb) {
-    // ì›¹ì—ì„œ sqflite ì´ˆê¸°í™”
-    databaseFactory = databaseFactoryFfiWeb;
-  } else if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    // Windows, Linux, macOSì—ì„œ sqflite ì´ˆê¸°í™”
-    sqfliteFfiInit();
-    databaseFactory = databaseFactoryFfi;
+  // ±Û·Î¹ú ¿¡·¯ ÇÚµé¸µ
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    debugPrint('Flutter Error: ${details.exception}');
+  };
+
+  try {
+    // ÇÃ·§Æûº° sqflite ÃÊ±âÈ­
+    if (kIsWeb) {
+      // À¥¿¡¼­ sqflite ÃÊ±âÈ­
+      databaseFactory = databaseFactoryFfiWeb;
+    } else if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+      // Windows, Linux, macOS¿¡¼­ sqflite ÃÊ±âÈ­
+      sqfliteFfiInit();
+      databaseFactory = databaseFactoryFfi;
+    }
+
+    // ¹ø¿ª ¼­ºñ½º ÃÊ±âÈ­
+    await TranslationService.instance.init();
+
+    // ±¤°í ¼­ºñ½º ÃÊ±âÈ­ (½ÇÆĞÇØµµ ¾ÛÀº °è¼Ó ½ÇÇà)
+    try {
+      await AdService.instance.initialize();
+    } catch (e) {
+      debugPrint('AdService initialization error: $e');
+    }
+
+    // ÀÎ¾Û ±¸¸Å ¼­ºñ½º ÃÊ±âÈ­ (½ÇÆĞÇØµµ ¾ÛÀº °è¼Ó ½ÇÇà)
+    try {
+      await PurchaseService.instance.initialize();
+    } catch (e) {
+      debugPrint('PurchaseService initialization error: $e');
+    }
+  } catch (e) {
+    debugPrint('App initialization error: $e');
   }
-
-  // ë²ˆì—­ ì„œë¹„ìŠ¤ ì´ˆê¸°í™”
-  await TranslationService.instance.init();
-
-  // ê´‘ê³  ì„œë¹„ìŠ¤ ì´ˆê¸°í™”
-  await AdService.instance.initialize();
-
-  // ì¸ì•± êµ¬ë§¤ ì„œë¹„ìŠ¤ ì´ˆê¸°í™”
-  await PurchaseService.instance.initialize();
 
   runApp(
     ChangeNotifierProvider(
@@ -42,7 +60,7 @@ void main() async {
   );
 }
 
-/// ì–¸ì–´ ë° í…Œë§ˆ ë³€ê²½ì„ ìœ„í•œ Provider
+/// ¾ğ¾î ¹× Å×¸¶ º¯°æÀ» À§ÇÑ Provider
 class LocaleProvider extends ChangeNotifier {
   Locale _locale = const Locale('en');
   ThemeMode _themeMode = ThemeMode.light;
@@ -55,18 +73,22 @@ class LocaleProvider extends ChangeNotifier {
   }
 
   Future<void> _loadSavedSettings() async {
-    final prefs = await SharedPreferences.getInstance();
+    try {
+      final prefs = await SharedPreferences.getInstance();
 
-    // ì–¸ì–´ ë¡œë“œ
-    await TranslationService.instance.init();
-    final langCode = TranslationService.instance.currentLanguage;
-    _locale = Locale(langCode);
+      // ¾ğ¾î ·Îµå
+      await TranslationService.instance.init();
+      final langCode = TranslationService.instance.currentLanguage;
+      _locale = Locale(langCode);
 
-    // ë‹¤í¬ëª¨ë“œ ë¡œë“œ
-    final isDarkMode = prefs.getBool('darkMode') ?? false;
-    _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+      // ´ÙÅ©¸ğµå ·Îµå
+      final isDarkMode = prefs.getBool('darkMode') ?? false;
+      _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
 
-    notifyListeners();
+      notifyListeners();
+    } catch (e) {
+      debugPrint('LocaleProvider load error: $e');
+    }
   }
 
   void setLocale(Locale locale) {
@@ -92,7 +114,7 @@ class EnglishVocabApp extends StatelessWidget {
       title: 'English Vocabulary',
       debugShowCheckedModeBanner: false,
 
-      // Localization ì„¤ì •
+      // Localization ¼³Á¤
       locale: localeProvider.locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -133,7 +155,7 @@ class EnglishVocabApp extends StatelessWidget {
           seedColor: const Color(0xFF4A90E2),
           brightness: Brightness.light,
         ),
-        useMaterial3: false, // Material 2 ì‚¬ìš© (shader ì»´íŒŒì¼ ë¬¸ì œ ë°©ì§€)
+        useMaterial3: false, // Material 2 »ç¿ë (shader ÄÄÆÄÀÏ ¹®Á¦ ¹æÁö)
         appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
         cardTheme: CardThemeData(
           elevation: 2,

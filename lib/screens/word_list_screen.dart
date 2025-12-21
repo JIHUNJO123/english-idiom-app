@@ -226,6 +226,19 @@ class _WordListScreenState extends State<WordListScreen> {
     );
   }
 
+  // 플래시카드 모드에서 뒤로가기 시 전면 광고 표시
+  Future<void> _handleBackPress() async {
+    if (widget.isFlashcardMode) {
+      final adService = AdService.instance;
+      if (!adService.adsRemoved && adService.isInterstitialAdLoaded) {
+        await adService.showInterstitialAd();
+      }
+    }
+    if (mounted) {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -252,6 +265,12 @@ class _WordListScreenState extends State<WordListScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: widget.isFlashcardMode
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: _handleBackPress,
+              )
+            : null,
         title: Text(title),
         centerTitle: true,
         actions: [
