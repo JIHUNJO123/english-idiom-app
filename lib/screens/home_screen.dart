@@ -30,6 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _loadTodayWord();
     _loadBannerAd();
+    // iOS에서 ATT 권한 요청 (앱이 화면에 표시된 후)
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      AdService.instance.requestTrackingAuthorizationIfNeeded();
+    });
   }
 
   @override
@@ -61,30 +65,24 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadTodayWord() async {
-    final word = await DatabaseHelper.instance.getTodayWord();
+    // JSON에서 내장 번역이 포함된 단어 로드 (API 호출 없음)
+    final word = await DatabaseHelper.instance.getTodayWordWithTranslations();
     if (word != null) {
-      // 번역 적용
       final translationService = TranslationService.instance;
       await translationService.init();
 
+      String? translated;
       if (translationService.needsTranslation) {
-        final translated = await translationService.translate(
-          word.definition,
-          word.id,
-          'definition',
-        );
-        setState(() {
-          _todayWord = word;
-          _translatedDefinition = translated;
-          _isLoading = false;
-        });
-      } else {
-        setState(() {
-          _todayWord = word;
-          _translatedDefinition = null;
-          _isLoading = false;
-        });
+        // 내장 번역만 사용 (API 호출 없음)
+        final langCode = translationService.currentLanguage;
+        translated = word.getEmbeddedTranslation(langCode, 'definition');
       }
+
+      setState(() {
+        _todayWord = word;
+        _translatedDefinition = translated;
+        _isLoading = false;
+      });
     } else {
       setState(() {
         _todayWord = null;

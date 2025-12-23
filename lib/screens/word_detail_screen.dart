@@ -3,7 +3,6 @@ import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
-import '../utils/pos_helper.dart';
 
 class WordDetailScreen extends StatefulWidget {
   final Word word;
@@ -24,7 +23,6 @@ class WordDetailScreen extends StatefulWidget {
 class _WordDetailScreenState extends State<WordDetailScreen> {
   late Word _word;
   late int _currentIndex;
-  bool _isTranslating = false;
   String? _translatedDefinition;
   String? _translatedExample;
 
@@ -42,31 +40,16 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
 
     if (!translationService.needsTranslation) return;
 
-    setState(() => _isTranslating = true);
+    // 내장 번역만 사용 (API 호출 없음)
+    final langCode = translationService.currentLanguage;
+    final embeddedDef = _word.getEmbeddedTranslation(langCode, 'definition');
+    final embeddedEx = _word.getEmbeddedTranslation(langCode, 'example');
 
-    try {
-      final translatedDef = await translationService.translate(
-        _word.definition,
-        _word.id,
-        'definition',
-      );
-      final translatedEx = await translationService.translate(
-        _word.example,
-        _word.id,
-        'example',
-      );
-
-      if (mounted) {
-        setState(() {
-          _translatedDefinition = translatedDef;
-          _translatedExample = translatedEx;
-          _isTranslating = false;
-        });
-      }
-    } catch (e) {
-      if (mounted) {
-        setState(() => _isTranslating = false);
-      }
+    if (mounted) {
+      setState(() {
+        _translatedDefinition = embeddedDef;
+        _translatedExample = embeddedEx;
+      });
     }
   }
 
@@ -158,6 +141,7 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(_currentIndex),
           ),
+<<<<<<< HEAD
           title: Text(_word.word),
           centerTitle: true,
           actions: [
@@ -165,6 +149,147 @@ class _WordDetailScreenState extends State<WordDetailScreen> {
               icon: Icon(
                 _word.isFavorite ? Icons.favorite : Icons.favorite_border,
                 color: _word.isFavorite ? Colors.red : null,
+=======
+        ],
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Word Header Card
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(24.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  gradient: LinearGradient(
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Theme.of(
+                        context,
+                      ).primaryColor.withAlpha((0.7 * 255).toInt()),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      _word.word,
+                      style: const TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: _getLevelColor(_word.level),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        _word.level,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // Definition Section
+            _buildSection(
+              title: AppLocalizations.of(context)!.definition,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 번역이 있으면 번역 먼저 표시
+                  if (_hasTranslation && _translatedDefinition != null) ...[
+                    Text(
+                      _translatedDefinition!,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      _word.definition,
+                      style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                    ),
+                  ] else
+                    Text(
+                      _word.definition,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            // Example Section
+            _buildSection(
+              title: AppLocalizations.of(context)!.example,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    _word.example,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                  if (_hasTranslation && _translatedExample != null) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      _translatedExample!,
+                      style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // Action Buttons
+            Center(
+              child: OutlinedButton.icon(
+                onPressed: _toggleFavorite,
+                icon: Icon(
+                  _word.isFavorite ? Icons.favorite : Icons.favorite_border,
+                  color: _word.isFavorite ? Colors.red : null,
+                ),
+                label: Text(_word.isFavorite ? 'Unfavorite' : 'Favorite'),
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 24,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+>>>>>>> 4e6d5dd845c7be8c7b5e06d1a2490339fb58116e
               ),
               onPressed: _toggleFavorite,
             ),

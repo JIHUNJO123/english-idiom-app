@@ -7,7 +7,6 @@ import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
 import '../services/ad_service.dart';
-import '../utils/pos_helper.dart';
 import 'word_detail_screen.dart';
 
 class WordListScreen extends StatefulWidget {
@@ -38,7 +37,6 @@ class _WordListScreenState extends State<WordListScreen> {
   // 번역 관련
   Map<int, String> _translatedDefinitions = {};
   Map<int, String> _translatedExamples = {};
-  Set<int> _loadingTranslations = {};
 
   // 위치 저장 키 생성
   String get _positionKey =>
@@ -129,7 +127,6 @@ class _WordListScreenState extends State<WordListScreen> {
 
   Future<void> _loadTranslationForWord(Word word) async {
     if (_translatedDefinitions.containsKey(word.id)) return;
-    if (_loadingTranslations.contains(word.id)) return;
 
     final translationService = TranslationService.instance;
     await translationService.init();
@@ -137,25 +134,20 @@ class _WordListScreenState extends State<WordListScreen> {
     if (!translationService.needsTranslation) return;
     if (!mounted) return;
 
-    setState(() => _loadingTranslations.add(word.id));
-
-    final translatedDef = await translationService.translate(
-      word.definition,
-      word.id,
-      'definition',
-    );
-    final translatedEx = await translationService.translate(
-      word.example,
-      word.id,
-      'example',
-    );
+    // 내장 번역만 사용 (API 호출 없음)
+    final langCode = translationService.currentLanguage;
+    final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
+    final embeddedEx = word.getEmbeddedTranslation(langCode, 'example');
 
     if (!mounted) return;
-    setState(() {
-      _translatedDefinitions[word.id] = translatedDef;
-      _translatedExamples[word.id] = translatedEx;
-      _loadingTranslations.remove(word.id);
-    });
+    if (embeddedDef != null && embeddedDef.isNotEmpty) {
+      setState(() {
+        _translatedDefinitions[word.id] = embeddedDef;
+        if (embeddedEx != null && embeddedEx.isNotEmpty) {
+          _translatedExamples[word.id] = embeddedEx;
+        }
+      });
+    }
   }
 
   void _sortWords(String order) {
@@ -234,6 +226,19 @@ class _WordListScreenState extends State<WordListScreen> {
     );
   }
 
+  // 플래시카드 모드에서 뒤로가기 시 전면 광고 표시
+  Future<void> _handleBackPress() async {
+    if (widget.isFlashcardMode) {
+      final adService = AdService.instance;
+      if (!adService.adsRemoved && adService.isInterstitialAdLoaded) {
+        await adService.showInterstitialAd();
+      }
+    }
+    if (mounted) {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -260,6 +265,12 @@ class _WordListScreenState extends State<WordListScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: widget.isFlashcardMode
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: _handleBackPress,
+              )
+            : null,
         title: Text(title),
         centerTitle: true,
         actions: [
@@ -445,7 +456,6 @@ class _WordListScreenState extends State<WordListScreen> {
           // 리스트 모드에서도 번역 로드
           _loadTranslationForWord(word);
           final translatedDef = _translatedDefinitions[word.id];
-          final isLoading = _loadingTranslations.contains(word.id);
 
           return Card(
             margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
@@ -461,36 +471,12 @@ class _WordListScreenState extends State<WordListScreen> {
                   fontSize: 20,
                 ),
               ),
-              subtitle:
-                  isLoading && _showNativeLanguage
-                      ? Row(
-                        children: [
-                          SizedBox(
-                            width: 12,
-                            height: 12,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            '...',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ],
-                      )
-                      : Text(
-                        _showNativeLanguage
-                            ? (translatedDef ?? word.definition)
-                            : word.definition,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 13, color: Colors.grey[600]),
-                      ),
+              subtitle: Text(
+                _showNativeLanguage ? (translatedDef ?? '') : word.definition,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+              ),
               trailing: IconButton(
                 icon: Icon(
                   word.isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -694,17 +680,7 @@ class _WordListScreenState extends State<WordListScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Text(
-                translatePartOfSpeech(
-                  AppLocalizations.of(context)!,
-                  word.partOfSpeech,
-                ),
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white.withAlpha((0.8 * 255).toInt()),
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
+              // partOfSpeech badge removed for idioms
               const SizedBox(height: 24),
               Container(
                 padding: const EdgeInsets.symmetric(
@@ -740,7 +716,6 @@ class _WordListScreenState extends State<WordListScreen> {
   Widget _buildFlashcardBack(Word word) {
     // 번역 로드
     _loadTranslationForWord(word);
-    final isLoadingTranslation = _loadingTranslations.contains(word.id);
     final translatedDef = _translatedDefinitions[word.id];
     final translatedEx = _translatedExamples[word.id];
 
@@ -769,19 +744,16 @@ class _WordListScreenState extends State<WordListScreen> {
               ),
               const SizedBox(height: 20),
               // 의미 (크고 눈에 띄게)
-              if (isLoadingTranslation)
-                const CircularProgressIndicator()
-              else
-                Text(
-                  translatedDef ?? word.definition,
-                  style: TextStyle(
-                    fontSize: 22 * _wordFontSize,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                    height: 1.3,
-                  ),
-                  textAlign: TextAlign.center,
+              Text(
+                translatedDef ?? '',
+                style: TextStyle(
+                  fontSize: 22 * _wordFontSize,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                  height: 1.3,
                 ),
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(height: 24),
               // 예문 섹션 (덜 눈에 띄게)
               Container(

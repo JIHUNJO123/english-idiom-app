@@ -245,13 +245,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get copyrightNotice => 'कॉपीराइट नोटिस';
 
   @override
-  String get copyrightContent => 'इस ऐप में सभी मुहावरे परिभाषाएं और उदाहरण वाक्य मूल हैं या AI द्वारा उत्पन्न हैं। कोई कॉपीराइट शब्दकोश सामग्री का उपयोग नहीं किया गया है।\n\nअनुवाद MyMemory API (मुफ्त अनुवाद सेवा) द्वारा प्रदान किए जाते हैं।';
+  String get copyrightContent => 'इस ऐप में सभी मुहावरे परिभाषाएं और उदाहरण वाक्य मूल हैं या AI द्वारा उत्पन्न हैं। कोई कॉपीराइट शब्दकोश सामग्री का उपयोग नहीं किया गया है।';
 
   @override
   String get privacyPolicy => 'गोपनीयता नीति';
 
   @override
-  String get privacyContent => 'यह ऐप कोई व्यक्तिगत जानकारी एकत्र, संग्रहीत या साझा नहीं करता है।\n\nअनुवाद अनुरोध प्रसंस्करण के लिए MyMemory API को भेजे जाते हैं। कोई उपयोगकर्ता डेटा बाहरी सर्वर पर संग्रहीत नहीं किया जाता है।';
+  String get privacyContent => 'यह ऐप कोई व्यक्तिगत जानकारी एकत्र, संग्रहीत या साझा नहीं करता है।';
 
   @override
   String get alphabetical => 'वर्णानुक्रम';

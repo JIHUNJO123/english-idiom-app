@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
-import '../utils/pos_helper.dart';
 
 class FavoritesFlashcardScreen extends StatefulWidget {
   final List<Word> favorites;
@@ -26,7 +25,6 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
   // 번역 관련
   String? _translatedDefinition;
   String? _translatedExample;
-  bool _isLoadingTranslation = false;
   double _wordFontSize = 1.0; // 단어 폰트 크기 배율
 
   @override
@@ -63,23 +61,14 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
     await translationService.init();
 
     if (translationService.needsTranslation) {
-      setState(() => _isLoadingTranslation = true);
-
-      final translatedDef = await translationService.translate(
-        word.definition,
-        word.id,
-        'definition',
-      );
-      final translatedEx = await translationService.translate(
-        word.example,
-        word.id,
-        'example',
-      );
+      // 내장 번역만 사용 (API 호출 없음)
+      final langCode = translationService.currentLanguage;
+      final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
+      final embeddedEx = word.getEmbeddedTranslation(langCode, 'example');
 
       setState(() {
-        _translatedDefinition = translatedDef;
-        _translatedExample = translatedEx;
-        _isLoadingTranslation = false;
+        _translatedDefinition = embeddedDef;
+        _translatedExample = embeddedEx;
       });
     } else {
       setState(() {
@@ -398,62 +387,50 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF1565C0),
               ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              translatePartOfSpeech(l10n, word.partOfSpeech),
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey[500],
-                fontStyle: FontStyle.italic,
-              ),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             // 의미 (크고 눈에 띄게)
-            if (_isLoadingTranslation)
-              const CircularProgressIndicator()
-            else ...[
-              Text(
-                _translatedDefinition ?? word.definition,
-                style: TextStyle(
-                  fontSize: 20 * _wordFontSize,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black87,
-                  height: 1.3,
-                ),
-                textAlign: TextAlign.center,
+            Text(
+              _translatedDefinition ?? '',
+              style: TextStyle(
+                fontSize: 20 * _wordFontSize,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+                height: 1.3,
               ),
-              const SizedBox(height: 16),
-              // 예문 (덜 눈에 띄게)
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.white.withAlpha(150),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            // 예문 (덜 눈에 띄게)
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(150),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    word.example,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.grey[600],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (_translatedExample != null) ...[
+                    const SizedBox(height: 8),
                     Text(
-                      word.example,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.grey[600],
-                      ),
+                      _translatedExample!,
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                       textAlign: TextAlign.center,
                     ),
-                    if (_translatedExample != null) ...[
-                      const SizedBox(height: 8),
-                      Text(
-                        _translatedExample!,
-                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
                   ],
-                ),
+                ],
               ),
-            ],
+            ),
           ],
         ),
       ),
@@ -462,7 +439,7 @@ class _FavoritesFlashcardScreenState extends State<FavoritesFlashcardScreen>
 
   Widget _buildCard({required Widget child, Color? color}) {
     return Container(
-      margin: const EdgeInsets.all(24),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: color ?? Colors.white,

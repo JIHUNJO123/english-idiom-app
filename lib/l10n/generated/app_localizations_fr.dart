@@ -245,13 +245,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get copyrightNotice => 'Avis de droits d\'auteur';
 
   @override
-  String get copyrightContent => 'Toutes les définitions de mots et phrases d\'exemple dans cette application sont originales ou générées par IA. Aucun contenu de dictionnaire protégé par le droit d\'auteur n\'est utilisé.\n\nLes traductions sont fournies par MyMemory API (service de traduction gratuit).';
+  String get copyrightContent => 'Toutes les définitions de mots et phrases d\'exemple dans cette application sont originales ou générées par IA. Aucun contenu de dictionnaire protégé par le droit d\'auteur n\'est utilisé.';
 
   @override
   String get privacyPolicy => 'Politique de confidentialité';
 
   @override
-  String get privacyContent => 'Cette application ne collecte, ne stocke ni ne partage aucune information personnelle.\n\nLes demandes de traduction sont envoyées à MyMemory API pour traitement. Les données utilisateur ne sont pas stockées sur des serveurs externes.';
+  String get privacyContent => 'Cette application ne collecte, ne stocke ni ne partage aucune information personnelle.';
 
   @override
   String get alphabetical => 'Alphabétique';

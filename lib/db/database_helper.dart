@@ -22,14 +22,14 @@ class DatabaseHelper {
 
     return await openDatabase(
       path,
-      version: 3,
+      version: 4,
       onCreate: _createDB,
       onUpgrade: _upgradeDB,
     );
   }
 
   Future _createDB(Database db, int version) async {
-    // 단어 테이블 (영어 원본만)
+    // 단어 테이블 (내장 번역 포함)
     await db.execute('''
       CREATE TABLE words (
         id INTEGER PRIMARY KEY,
@@ -38,7 +38,8 @@ class DatabaseHelper {
         partOfSpeech TEXT NOT NULL,
         definition TEXT NOT NULL,
         example TEXT NOT NULL,
-        isFavorite INTEGER DEFAULT 0
+        isFavorite INTEGER DEFAULT 0,
+        translations TEXT
       )
     ''');
 
@@ -66,12 +67,10 @@ class DatabaseHelper {
   }
 
   Future _upgradeDB(Database db, int oldVersion, int newVersion) async {
-    if (oldVersion < 3) {
-      // 기존 테이블 삭제하고 새로 생성 (새 정의 데이터 반영)
-      await db.execute('DROP TABLE IF EXISTS words');
-      await db.execute('DROP TABLE IF EXISTS translations');
-      await _createDB(db, newVersion);
-    }
+    // 항상 재생성하여 내장 번역 포함
+    await db.execute('DROP TABLE IF EXISTS words');
+    await db.execute('DROP TABLE IF EXISTS translations');
+    await _createDB(db, newVersion);
   }
 
   Future<void> _loadInitialData(Database db) async {
@@ -81,6 +80,12 @@ class DatabaseHelper {
     final List<dynamic> data = json.decode(response);
 
     for (var wordJson in data) {
+      // translations를 JSON 문자열로 저장
+      String? translationsJson;
+      if (wordJson['translations'] != null) {
+        translationsJson = json.encode(wordJson['translations']);
+      }
+
       await db.insert('words', {
         'id': wordJson['id'],
         'word': wordJson['word'],
@@ -89,6 +94,7 @@ class DatabaseHelper {
         'definition': wordJson['definition'],
         'example': wordJson['example'],
         'isFavorite': 0,
+        'translations': translationsJson,
       });
     }
   }
@@ -231,6 +237,44 @@ class DatabaseHelper {
     ]);
     if (result.isEmpty) return null;
     return Word.fromDb(result.first);
+  }
+
+  /// 오늘의 단어를 JSON에서 직접 로드 (내장 번역 포함)
+  /// API 호출 없이 즉시 로드 가능
+  Future<Word?> getTodayWordWithTranslations() async {
+    try {
+      final String response = await rootBundle.loadString(
+        'assets/data/words.json',
+      );
+      final List<dynamic> data = json.decode(response);
+
+      if (data.isEmpty) return null;
+
+      // Use date as seed for consistent daily word
+      final today = DateTime.now();
+      final seed = today.year * 10000 + today.month * 100 + today.day;
+      final index = seed % data.length;
+
+      final word = Word.fromJson(data[index]);
+
+      // DB에서 즐겨찾기 상태 가져오기
+      final db = await instance.database;
+      final dbResult = await db.query(
+        'words',
+        columns: ['isFavorite'],
+        where: 'id = ?',
+        whereArgs: [word.id],
+      );
+
+      if (dbResult.isNotEmpty) {
+        word.isFavorite = (dbResult.first['isFavorite'] as int) == 1;
+      }
+
+      return word;
+    } catch (e) {
+      print('Error loading today word with translations: $e');
+      return null;
+    }
   }
 
   /// 단어에 번역 데이터 적용

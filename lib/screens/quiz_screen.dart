@@ -4,7 +4,6 @@ import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
 import '../services/ad_service.dart';
-import '../utils/pos_helper.dart';
 
 enum QuizType { wordToMeaning, meaningToWord }
 
@@ -30,7 +29,6 @@ class _QuizScreenState extends State<QuizScreen> {
 
   // 번역 관련
   Map<int, String> _translatedDefinitions = {};
-  bool _isLoadingTranslation = false;
 
   @override
   void initState() {
@@ -64,30 +62,24 @@ class _QuizScreenState extends State<QuizScreen> {
     }
   }
 
-  Future<void> _loadTranslationsForOptions() async {
+  void _loadTranslationsForOptions() {
     final translationService = TranslationService.instance;
-    await translationService.init();
 
     if (!translationService.needsTranslation) return;
     if (!mounted) return;
 
-    setState(() => _isLoadingTranslation = true);
-
+    final langCode = translationService.currentLanguage;
     for (final word in _currentOptions) {
-      if (!mounted) return;
       if (!_translatedDefinitions.containsKey(word.id)) {
-        final translated = await translationService.translate(
-          word.definition,
-          word.id,
-          'definition',
-        );
-        if (!mounted) return;
-        _translatedDefinitions[word.id] = translated;
+        // 내장 번역만 사용 (API 호출 없음)
+        final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
+        if (embeddedDef != null && embeddedDef.isNotEmpty) {
+          _translatedDefinitions[word.id] = embeddedDef;
+        }
       }
     }
 
-    if (!mounted) return;
-    setState(() => _isLoadingTranslation = false);
+    if (mounted) setState(() {});
   }
 
   void _generateOptions() {
@@ -349,18 +341,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            translatePartOfSpeech(
-                              AppLocalizations.of(context)!,
-                              currentWord.partOfSpeech,
-                            ),
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey[600],
-                              fontStyle: FontStyle.italic,
-                            ),
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 16),
                           Text(
@@ -372,15 +353,12 @@ class _QuizScreenState extends State<QuizScreen> {
                           ),
                         ] else ...[
                           // 뜻 → 단어 맞추기
-                          if (_isLoadingTranslation)
-                            const CircularProgressIndicator()
-                          else
-                            Text(
-                              _translatedDefinitions[currentWord.id] ??
-                                  currentWord.definition,
-                              style: const TextStyle(fontSize: 18),
-                              textAlign: TextAlign.center,
-                            ),
+                          Text(
+                            _translatedDefinitions[currentWord.id] ??
+                                currentWord.definition,
+                            style: const TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
                           const SizedBox(height: 16),
                           Text(
                             l10n.whichWordMatches,
@@ -464,37 +442,13 @@ class _QuizScreenState extends State<QuizScreen> {
                                 Expanded(
                                   child:
                                       _quizType == QuizType.wordToMeaning
-                                          ? _isLoadingTranslation
-                                              ? Row(
-                                                children: [
-                                                  SizedBox(
-                                                    width: 16,
-                                                    height: 16,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                          strokeWidth: 2,
-                                                          color:
-                                                              Colors.grey[400],
-                                                        ),
-                                                  ),
-                                                  const SizedBox(width: 8),
-                                                  Text(
-                                                    l10n.loading,
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      color: Colors.grey[500],
-                                                    ),
-                                                  ),
-                                                ],
-                                              )
-                                              : Text(
-                                                _translatedDefinitions[option
-                                                        .id] ??
-                                                    option.definition,
-                                                style: const TextStyle(
-                                                  fontSize: 16,
-                                                ),
-                                              )
+                                          ? Text(
+                                            _translatedDefinitions[option.id] ??
+                                                option.definition,
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          )
                                           : Text(
                                             option.word,
                                             style: const TextStyle(

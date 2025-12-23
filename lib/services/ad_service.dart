@@ -2,6 +2,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 
 class AdService {
   static final AdService _instance = AdService._internal();
@@ -18,13 +19,13 @@ class AdService {
   // 실제 광고 ID
   // Android
   static const String _androidBannerId =
-      'ca-app-pub-5837885590326347/4429537819';
+      'ca-app-pub-5837885590326347/1366074983';
   static const String _androidInterstitialId =
-      'ca-app-pub-5837885590326347/1033218289';
+      'ca-app-pub-5837885590326347/2747439411';
   // iOS
-  static const String _iosBannerId = 'ca-app-pub-5837885590326347/5742619486';
+  static const String _iosBannerId = 'ca-app-pub-5837885590326347/6686684424';
   static const String _iosInterstitialId =
-      'ca-app-pub-5837885590326347/1847800024';
+      'ca-app-pub-5837885590326347/5373602757';
 
   String get bannerAdUnitId {
     if (Platform.isAndroid) {
@@ -70,6 +71,26 @@ class AdService {
 
     await MobileAds.instance.initialize();
     _isInitialized = true;
+  }
+
+  // iOS ATT 권한 요청 - 앱이 화면에 표시된 후 호출해야 함
+  Future<void> requestTrackingAuthorizationIfNeeded() async {
+    if (!Platform.isIOS) return;
+
+    try {
+      final status = await AppTrackingTransparency.trackingAuthorizationStatus;
+      debugPrint('ATT current status: $status');
+
+      if (status == TrackingStatus.notDetermined) {
+        // 앱이 완전히 활성화된 후 권한 요청
+        await Future.delayed(const Duration(seconds: 1));
+        final result =
+            await AppTrackingTransparency.requestTrackingAuthorization();
+        debugPrint('ATT request result: $result');
+      }
+    } catch (e) {
+      debugPrint('ATT request error: $e');
+    }
   }
 
   Future<void> loadBannerAd({Function()? onLoaded}) async {

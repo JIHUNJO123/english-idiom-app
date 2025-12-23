@@ -245,13 +245,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get copyrightNotice => 'Thông báo bản quyền';
 
   @override
-  String get copyrightContent => 'Tất cả định nghĩa từ và câu ví dụ trong ứng dụng này là gốc hoặc do AI tạo ra. Không sử dụng nội dung từ điển có bản quyền.\n\nBản dịch được cung cấp bởi MyMemory API (dịch vụ dịch miễn phí).';
+  String get copyrightContent => 'Tất cả định nghĩa từ và câu ví dụ trong ứng dụng này là gốc hoặc do AI tạo ra. Không sử dụng nội dung từ điển có bản quyền.';
 
   @override
   String get privacyPolicy => 'Chính sách quyền riêng tư';
 
   @override
-  String get privacyContent => 'Ứng dụng này không thu thập, lưu trữ hoặc chia sẻ bất kỳ thông tin cá nhân nào.\n\nCác yêu cầu dịch được gửi đến MyMemory API để xử lý. Dữ liệu người dùng không được lưu trữ trên máy chủ bên ngoài.';
+  String get privacyContent => 'Ứng dụng này không thu thập, lưu trữ hoặc chia sẻ bất kỳ thông tin cá nhân nào.';
 
   @override
   String get alphabetical => 'Theo bảng chữ cái';

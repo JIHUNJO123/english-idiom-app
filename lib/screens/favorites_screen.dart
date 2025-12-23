@@ -2,7 +2,6 @@
 import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import '../db/database_helper.dart';
 import '../models/word.dart';
-import '../utils/pos_helper.dart';
 import '../services/translation_service.dart';
 import 'word_detail_screen.dart';
 import 'favorites_flashcard_screen.dart';
@@ -29,19 +28,18 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Future<void> _loadFavorites() async {
     final favorites = await DatabaseHelper.instance.getFavorites();
 
-    // 번역 적용
+    // 내장 번역만 사용 (API 호출 없음)
     final translationService = TranslationService.instance;
     await translationService.init();
 
     Map<int, String> translations = {};
     if (translationService.needsTranslation) {
+      final langCode = translationService.currentLanguage;
       for (var word in favorites) {
-        final translated = await translationService.translate(
-          word.definition,
-          word.id,
-          'definition',
-        );
-        translations[word.id] = translated;
+        final embeddedDef = word.getEmbeddedTranslation(langCode, 'definition');
+        if (embeddedDef != null && embeddedDef.isNotEmpty) {
+          translations[word.id] = embeddedDef;
+        }
       }
     }
 
@@ -246,11 +244,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                         ),
                         title: Row(
                           children: [
-                            Text(
-                              word.word,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                            Expanded(
+                              child: Text(
+                                word.word,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             const SizedBox(width: 8),
@@ -280,19 +282,11 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              translatePartOfSpeech(l10n, word.partOfSpeech),
-                              style: const TextStyle(
-                                fontStyle: FontStyle.italic,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
                               _showNativeLanguage
                                   ? (_translatedDefinitions[word.id] ??
                                       word.definition)
                                   : word.definition,
-                              maxLines: 1,
+                              maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],
