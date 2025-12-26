@@ -2,7 +2,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:english_idiom_app/l10n/generated/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../db/database_helper.dart';
 import '../models/word.dart';
 import '../services/translation_service.dart';
@@ -31,8 +30,6 @@ class _WordListScreenState extends State<WordListScreen> {
   int _currentFlashcardIndex = 0;
   late PageController _pageController;
   String _sortOrder = 'alphabetical'; // 'alphabetical' or 'random'
-  bool _isBannerAdLoaded = false;
-  int _flashcardViewCount = 0; // 플래시카드 전면 광고용 카운터
   double _wordFontSize = 1.0; // 단어 폰트 크기 배율
   bool _showNativeLanguage = true; // 모국어/영어 전환 (기본: 모국어)
 
@@ -53,8 +50,8 @@ class _WordListScreenState extends State<WordListScreen> {
     super.initState();
     _pageController = PageController();
     _loadWords();
-    _loadBannerAd();
-    _loadInterstitialAd();
+    _loadUnlockStatus();
+    AdService.instance.loadRewardedAd();
     _loadFontSize();
   }
 
@@ -65,27 +62,74 @@ class _WordListScreenState extends State<WordListScreen> {
     });
   }
 
-  Future<void> _loadInterstitialAd() async {
-    if (widget.isFlashcardMode) {
-      await AdService.instance.loadInterstitialAd();
-    }
+  Future<void> _loadUnlockStatus() async {
+    await AdService.instance.loadUnlockStatus();
+    if (mounted) setState(() {});
   }
 
-  Future<void> _loadBannerAd() async {
-    final adService = AdService.instance;
-    await adService.initialize();
+  // 잠긴 단어인지 확인 (짝수 인덱스 = 2, 4, 6...)
+  bool _isWordLocked(int index) {
+    // 홀수 단어는 무료, 짝수 단어(2, 4, 6...)는 잠김
+    if (index % 2 == 0) return false; // 0, 2, 4... -> 1번, 3번, 5번 단어 (무료)
+    return !AdService.instance.isUnlocked; // 1, 3, 5... -> 2번, 4번, 6번 단어 (잠김)
+  }
 
-    if (!adService.adsRemoved) {
-      await adService.loadBannerAd(
-        onLoaded: () {
-          if (mounted) {
-            setState(() {
-              _isBannerAdLoaded = true;
-            });
-          }
-        },
+  // 광고 시청 다이얼로그 표시
+  void _showUnlockDialog() {
+    final l10n = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.lock, color: Colors.orange),
+            const SizedBox(width: 8),
+            Expanded(child: Text(l10n.lockedContent)),
+          ],
+        ),
+        content: Text(l10n.watchAdToUnlock),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.cancel),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pop(context);
+              _watchAdToUnlock();
+            },
+            icon: const Icon(Icons.play_circle_outline),
+            label: Text(l10n.watchAd),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // 광고 시청하여 잠금 해제
+  Future<void> _watchAdToUnlock() async {
+    final l10n = AppLocalizations.of(context)!;
+    final adService = AdService.instance;
+
+    if (!adService.isAdReady) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.adNotReady)),
       );
+      adService.loadRewardedAd();
+      return;
     }
+
+    await adService.showRewardedAd(
+      onRewarded: () async {
+        await adService.unlockUntilMidnight();
+        if (mounted) {
+          setState(() {});
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(l10n.unlockedUntilMidnight)),
+          );
+        }
+      },
+    );
   }
 
   Future<void> _loadWords() async {
@@ -234,14 +278,8 @@ class _WordListScreenState extends State<WordListScreen> {
     );
   }
 
-  // 플래시카드 모드에서 뒤로가기 시 전면 광고 표시
-  Future<void> _handleBackPress() async {
-    if (widget.isFlashcardMode) {
-      final adService = AdService.instance;
-      if (!adService.adsRemoved && adService.isInterstitialAdLoaded) {
-        await adService.showInterstitialAd();
-      }
-    }
+  // 플래시카드 모드에서 뒤로가기 처리
+  void _handleBackPress() {
     if (mounted) {
       Navigator.of(context).pop();
     }
@@ -251,7 +289,6 @@ class _WordListScreenState extends State<WordListScreen> {
   void dispose() {
     _pageController.dispose();
     _listScrollController.dispose();
-    AdService.instance.disposeBannerAd();
     // 종료 시 현재 위치 저장
     if (widget.isFlashcardMode) {
       _savePosition(_currentFlashcardIndex);
@@ -419,26 +456,8 @@ class _WordListScreenState extends State<WordListScreen> {
                     ? _buildFlashcardMode()
                     : _buildListMode(),
           ),
-          _buildBannerAd(),
         ],
       ),
-    );
-  }
-
-  Widget _buildBannerAd() {
-    final adService = AdService.instance;
-
-    if (adService.adsRemoved ||
-        !_isBannerAdLoaded ||
-        adService.bannerAd == null) {
-      return const SizedBox.shrink();
-    }
-
-    return Container(
-      width: adService.bannerAd!.size.width.toDouble(),
-      height: adService.bannerAd!.size.height.toDouble(),
-      alignment: Alignment.center,
-      child: AdWidget(ad: adService.bannerAd!),
     );
   }
 
@@ -462,9 +481,26 @@ class _WordListScreenState extends State<WordListScreen> {
         itemCount: _words.length,
         itemBuilder: (context, index) {
           final word = _words[index];
+          final isLocked = _isWordLocked(index);
+
           // 리스트 모드에서도 번역 로드
-          _loadTranslationForWord(word);
+          if (!isLocked) {
+            _loadTranslationForWord(word);
+          }
           final translatedDef = _translatedDefinitions[word.id];
+
+          final definition =
+              isLocked
+                  ? '🔒 ••••••••••••••'
+                  : (_showNativeLanguage
+                      ? (translatedDef ?? '')
+                      : word.definition);
+
+          // 잠긴 경우 텍스트 마스킹
+          final displayText =
+              isLocked
+                  ? '${word.word.substring(0, (word.word.length * 0.3).ceil().clamp(1, word.word.length))}...'
+                  : word.word;
 
           return Card(
             margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
@@ -473,18 +509,32 @@ class _WordListScreenState extends State<WordListScreen> {
                 horizontal: 16,
                 vertical: 8,
               ),
-              title: Text(
-                word.word,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+              title: Row(
+                children: [
+                  if (isLocked) ...[
+                    Icon(Icons.lock, size: 18, color: Colors.grey[500]),
+                    const SizedBox(width: 6),
+                  ],
+                  Expanded(
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: isLocked ? Colors.grey : null,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               subtitle: Text(
-                _showNativeLanguage ? (translatedDef ?? '') : word.definition,
+                definition,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+                style: TextStyle(
+                  fontSize: 13,
+                  color: isLocked ? Colors.grey[400] : Colors.grey[600],
+                ),
               ),
               trailing: IconButton(
                 icon: Icon(
@@ -494,6 +544,11 @@ class _WordListScreenState extends State<WordListScreen> {
                 onPressed: () => _toggleFavorite(word),
               ),
               onTap: () async {
+                // 잠긴 단어면 광고 다이얼로그 표시
+                if (isLocked) {
+                  _showUnlockDialog();
+                  return;
+                }
                 // 클릭한 위치 저장
                 _savePosition(index);
                 final result = await Navigator.push<int>(
@@ -542,12 +597,6 @@ class _WordListScreenState extends State<WordListScreen> {
               });
               // 위치 저장
               _savePosition(index);
-
-              // 플래시카드 10장마다 전면 광고 표시
-              _flashcardViewCount++;
-              if (_flashcardViewCount % 10 == 0) {
-                AdService.instance.showInterstitialAd();
-              }
             },
             itemCount: _words.length,
             itemBuilder: (context, index) {
