@@ -608,8 +608,6 @@ class _WordListScreenState extends State<WordListScreen> {
                   _showUnlockDialog();
                   return;
                 }
-                // 클릭한 위치 저장
-                _savePosition(index);
                 final result = await Navigator.push<int>(
                   context,
                   MaterialPageRoute(
