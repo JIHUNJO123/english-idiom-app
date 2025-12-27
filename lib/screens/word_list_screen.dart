@@ -631,7 +631,6 @@ class _WordListScreenState extends State<WordListScreen> {
                     );
                   }
                 }
-                _loadWords();
               },
             ),
           );
