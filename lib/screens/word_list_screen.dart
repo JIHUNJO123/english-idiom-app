@@ -35,6 +35,7 @@ class _WordListScreenState extends State<WordListScreen> {
 
   // 리스트 모드용 스크롤 컨트롤러
   final ScrollController _listScrollController = ScrollController();
+  bool _isAnimatingScroll = false;
   int _lastListPosition = 0;
 
   // 번역 관련
@@ -523,7 +524,8 @@ class _WordListScreenState extends State<WordListScreen> {
   Widget _buildListMode() {
     return NotificationListener<ScrollNotification>(
       onNotification: (scrollNotification) {
-        if (scrollNotification is ScrollEndNotification) {
+        if (scrollNotification is ScrollEndNotification &&
+            !_isAnimatingScroll) {
           // 스크롤이 끝났을 때 현재 보이는 아이템 인덱스 저장
           final scrollPosition = _listScrollController.position.pixels;
           final itemIndex = (scrollPosition / 80.0).round().clamp(
@@ -622,11 +624,16 @@ class _WordListScreenState extends State<WordListScreen> {
                 if (result != null && mounted) {
                   _savePosition(result);
                   if (result != index && _listScrollController.hasClients) {
-                    _listScrollController.animateTo(
-                      result * 80.0,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
+                    _isAnimatingScroll = true;
+                    _listScrollController
+                        .animateTo(
+                          result * 80.0,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        )
+                        .then((_) {
+                          _isAnimatingScroll = false;
+                        });
                   }
                 }
               },
