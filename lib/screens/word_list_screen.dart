@@ -552,7 +552,7 @@ class _WordListScreenState extends State<WordListScreen> {
               isLocked
                   ? '🔒 ••••••••••••••'
                   : (_showNativeLanguage
-                      ? (translatedDef ?? '')
+                      ? (translatedDef ?? word.definition)
                       : word.definition);
 
           // 잠긴 경우 텍스트 마스킹
